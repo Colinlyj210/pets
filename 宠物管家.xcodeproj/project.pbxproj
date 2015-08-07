@@ -49,6 +49,7 @@
 		2C02768C1B745E3500F3C76F /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C02767A1B745E3500F3C76F /* UIImageView+HighlightedWebCache.m */; };
 		2C02768D1B745E3500F3C76F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C02767C1B745E3500F3C76F /* UIImageView+WebCache.m */; };
 		2C02768E1B745E3500F3C76F /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C02767E1B745E3500F3C76F /* UIView+WebCacheOperation.m */; };
+		2C0276BA1B74E02C00F3C76F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,7 +94,7 @@
 		2C02760A1B744A6C00F3C76F /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
 		2C02760B1B744A6C00F3C76F /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		2C02760C1B744A6C00F3C76F /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
-		2C02760F1B744AB000F3C76F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		2C02760F1B744AB000F3C76F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2C0276131B744B5400F3C76F /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		2C0276141B74535800F3C76F /* PetsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsTableViewController.swift; sourceTree = "<group>"; };
 		2C02765B1B745A7D00F3C76F /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +131,7 @@
 		2C02767C1B745E3500F3C76F /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		2C02767D1B745E3500F3C76F /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		2C02767E1B745E3500F3C76F /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		783A068A18BC1994DE1A3387 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DB94B45EF30F4DFD451D36FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,6 +184,7 @@
 				2C0275DB1B7449F400F3C76F /* ProgressHUD */,
 				2C0275C41B74491600F3C76F /* AppDelegate.swift */,
 				2C0276141B74535800F3C76F /* PetsTableViewController.swift */,
+				2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */,
 				2C02765B1B745A7D00F3C76F /* WebViewController.swift */,
 				2C0275C81B74491600F3C76F /* Main.storyboard */,
 				2C0275CE1B74491600F3C76F /* Assets.xcassets */,
@@ -429,6 +432,7 @@
 				2C0276841B745E3500F3C76F /* SDWebImageDownloader.m in Sources */,
 				2C0276891B745E3500F3C76F /* UIImage+GIF.m in Sources */,
 				2C0275FA1B744A2D00F3C76F /* MJRefreshGifHeader.m in Sources */,
+				2C0276BA1B74E02C00F3C76F /* HomeTableViewController.swift in Sources */,
 				2C0275FF1B744A2D00F3C76F /* UIScrollView+MJRefresh.m in Sources */,
 				2C02767F1B745E3500F3C76F /* MKAnnotationView+WebCache.m in Sources */,
 				2C0275FC1B744A2D00F3C76F /* MJRefreshLegendFooter.m in Sources */,
