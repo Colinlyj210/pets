@@ -33,31 +33,7 @@
                         <view key="tableHeaderView" contentMode="scaleToFill" id="Etg-Qs-TmH">
                             <rect key="frame" x="0.0" y="64" width="600" height="226"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caJ-Wg-6Gf">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="226"/>
-                                    <connections>
-                                        <segue destination="3Ml-uI-CuP" kind="show" identifier="imgToweb" id="XqO-6M-Ie7"/>
-                                    </connections>
-                                </button>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Agf-hh-LTn">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="226"/>
-                                </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mh-Vw-ZzY">
-                                    <rect key="frame" x="0.0" y="205" width="600" height="21"/>
-                                    <color key="backgroundColor" red="0.88197326659999997" green="0.88199394939999998" blue="0.88198286290000005" alpha="1" colorSpace="deviceRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstItem="Agf-hh-LTn" firstAttribute="centerY" secondItem="Etg-Qs-TmH" secondAttribute="centerY" id="JhL-i2-Q0g"/>
-                                <constraint firstItem="Agf-hh-LTn" firstAttribute="width" secondItem="Etg-Qs-TmH" secondAttribute="width" id="PSp-o9-paB"/>
-                                <constraint firstItem="Agf-hh-LTn" firstAttribute="centerX" secondItem="Etg-Qs-TmH" secondAttribute="centerX" id="Qan-YD-3eU"/>
-                                <constraint firstItem="Agf-hh-LTn" firstAttribute="height" secondItem="Etg-Qs-TmH" secondAttribute="height" id="rJJ-yr-fMf"/>
-                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3S8-Cf-G2m">
@@ -79,7 +55,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="4rQ-Pt-RN0"/>
                     <connections>
-                        <outlet property="img" destination="Agf-hh-LTn" id="9kW-hE-COA"/>
+                        <outlet property="uiscview" destination="Etg-Qs-TmH" id="bWD-7s-KDv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvm-G3-iWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -139,7 +115,4 @@
             <point key="canvasLocation" x="388" y="52"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="MgX-Zb-Y39"/>
-    </inferredMetricsTieBreakers>
 </document>

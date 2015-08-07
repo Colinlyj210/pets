@@ -8,10 +8,13 @@
 
 import UIKit
 
-class PetsTableViewController: UITableViewController {
-    @IBOutlet weak var img: UIImageView!
+class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
+    @IBOutlet weak var uiscview: UIView!
     var objArray = [String]()
     var i = 0
+    let arr = ["http://www.lyj210.cn/cwgj/pic/huli/huli.jpg","http://www.lyj210.cn/cwgj/pic/siyang/siyang.jpg","http://www.lyj210.cn/cwgj/pic/xunlian/xunlian.jpg"]
+    let ss = ["网络图片1","网络图片2","网路图片3"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         SDImageCache.sharedImageCache().cleanDisk()//清除硬盘中的缓存
@@ -24,7 +27,20 @@ class PetsTableViewController: UITableViewController {
         self.tableView.addLegendHeaderWithRefreshingTarget(self, refreshingAction: "headRefresh")
         //添加下拉加载
         self.tableView.addGifFooterWithRefreshingTarget(self, refreshingAction: "footRefresh")
-      
+        
+        
+        let sc = SDCycleScrollView(frame:uiscview.frame, imageURLStringsGroup: nil)
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            sc.imageURLStringsGroup = self.arr
+        }
+        
+        sc.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
+        sc.titlesGroup = ss
+        sc.delegate = self
+        sc.autoScrollTimeInterval = 2
+        //cycleScrollView2.dotColor = [UIColor yellowColor]; // 自定义分页控件小圆标颜色
+        sc.placeholderImage = UIImage(named: "h1")//网络图片未加载时显示图片h1
+        self.uiscview.addSubview(sc)
     }
     func headRefresh(){
         //下拉刷新
@@ -58,10 +74,13 @@ class PetsTableViewController: UITableViewController {
     func Delay(time:Double,closure:()->()){
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(time * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
     }
+    func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
+        print("点击了第\(index)张")
+    }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.tabBarController?.tabBar.hidden = false
-        img.sd_setImageWithURL(NSURL(string: "http://www.lyj210.cn/cwgj/pic/huli/huli.jpg"))
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
