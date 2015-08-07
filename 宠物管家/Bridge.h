@@ -10,3 +10,4 @@
 #import "MJRefresh.h"
 #import "PopMenu.h"
 #import "UIImageView+WebCache.h"
+#import "SDCycleScrollView.h"

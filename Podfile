@@ -1,1 +1,2 @@
 pod 'PopMenu'
+pod 'SDCycleScrollView'
