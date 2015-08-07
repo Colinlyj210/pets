@@ -4,12 +4,27 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>PNChart.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>PopMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDCycleScrollView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>UICountingLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,12 +42,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>1AE6B33C6672F782787391808FF04C6C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>47C800E42623009B7192B025B3DD25A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>96F69932FF5B438325F540C37FA1BDE0</key>
+		<key>8CEB55D34A1113BE8ECA1EB1E24C8F03</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A48540ADF447F9D17CC54EEA4752502A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -43,6 +68,11 @@
 			<true/>
 		</dict>
 		<key>B7D1247F0660EE6DA6EBA56AF1B44D11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DF6B62D79728EF0641BA03AAAE9C576B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
