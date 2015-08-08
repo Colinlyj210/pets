@@ -80,6 +80,7 @@
                     <connections>
                         <outlet property="userName" destination="CWf-mx-kI7" id="liL-CX-Hqu"/>
                         <outlet property="userPwd" destination="C1X-0E-nYm" id="V3K-tg-H9w"/>
+                        <segue destination="3H8-W3-NV7" kind="show" identifier="login" id="sVv-tx-j8O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nOO-07-mcf" userLabel="First Responder" sceneMemberID="firstResponder"/>

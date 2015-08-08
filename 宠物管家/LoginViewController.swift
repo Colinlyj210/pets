@@ -7,23 +7,25 @@
 //
 
 import UIKit
+import Pitaya
 class LoginViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userPwd: UITextField!
     @IBAction func loginBtn(sender: AnyObject) {
+        print("dianji")
         let Id = userName.text!
         let Pwd = userPwd.text!
-//        Pitaya.request(.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Index/selectUser", params: ["uid":userId, "upwd":userPwd], errorCallback: { (error) -> Void in
-//            print("出错了")
-//            }) { (data, response, error) -> Void in
-//                let json = JSON(data: data!)
-//                if json["state"] == 1{
-//                    print("登陆成功")
-//                    self.performSegueWithIdentifier("login", sender: self)
-//                }else{
-//                    print("登陆失败")
-//                }
-//        }
+        Pitaya.request(.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Index/selectUser", params: ["uid":Id, "upwd":Pwd], errorCallback: { (error) -> Void in
+            print("出错了")
+            }) { (data, response, error) -> Void in
+                let json = JSON(data: data!)
+                if json["state"] == 1{
+                    print("登陆成功")
+                    self.performSegueWithIdentifier("login", sender: self)
+                }else{
+                    print("登陆失败")
+                }
+        }
         
     }
     override func viewDidLoad() {
@@ -38,7 +40,7 @@ class LoginViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -46,6 +48,6 @@ class LoginViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
 
 }
