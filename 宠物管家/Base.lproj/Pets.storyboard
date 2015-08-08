@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bno-e3-wZc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+    </dependencies>
+    <scenes>
+        <!--Pets Table View Controller-->
+        <scene sceneID="EAV-hz-Za7">
+            <objects>
+                <tableViewController id="Egk-Ln-V0T" customClass="PetsTableViewController" customModule="宠物管家" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mzw-tN-uJ0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Etg-Qs-TmH">
+                            <rect key="frame" x="0.0" y="64" width="600" height="226"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3S8-Cf-G2m">
+                                <rect key="frame" x="0.0" y="312" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3S8-Cf-G2m" id="lha-p3-xIj">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="3Ml-uI-CuP" kind="show" identifier="cellToweb" id="MgX-Zb-Y39"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Egk-Ln-V0T" id="wGl-tT-ocZ"/>
+                            <outlet property="delegate" destination="Egk-Ln-V0T" id="uA8-pm-WZW"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="4rQ-Pt-RN0"/>
+                    <connections>
+                        <outlet property="uiscview" destination="Etg-Qs-TmH" id="bWD-7s-KDv"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vvm-G3-iWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="691" y="-154"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="zya-qH-U8g">
+            <objects>
+                <viewController id="3Ml-uI-CuP" customClass="WebViewController" customModule="宠物管家" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FlT-Os-NOQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="h4n-lM-vkg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jVd-zf-Gz2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8t-ID-4T8">
+                                <rect key="frame" x="-20" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f8t-ID-4T8" firstAttribute="centerX" secondItem="jVd-zf-Gz2" secondAttribute="centerX" id="Gts-1I-AZj"/>
+                            <constraint firstItem="f8t-ID-4T8" firstAttribute="width" secondItem="jVd-zf-Gz2" secondAttribute="width" id="Z86-K6-zhv"/>
+                            <constraint firstItem="f8t-ID-4T8" firstAttribute="height" secondItem="jVd-zf-Gz2" secondAttribute="height" id="hBW-md-nMP"/>
+                            <constraint firstItem="f8t-ID-4T8" firstAttribute="centerY" secondItem="jVd-zf-Gz2" secondAttribute="centerY" id="zPL-xz-8hw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="web" destination="f8t-ID-4T8" id="CEC-Ha-Llo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1JB-ai-eP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1453" y="-154"/>
+        </scene>
+        <!--Pets-->
+        <scene sceneID="sIe-Ms-5Vc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bno-e3-wZc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pets" id="DBs-6y-c1s"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w4s-TZ-pMf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Egk-Ln-V0T" kind="relationship" relationship="rootViewController" id="sMO-N9-aNp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oDF-2L-FoW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="-154"/>
+        </scene>
+    </scenes>
+</document>
