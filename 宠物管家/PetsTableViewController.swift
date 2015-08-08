@@ -14,7 +14,7 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     var i = 0
     let arr = ["http://www.lyj210.cn/cwgj/pic/huli/huli.jpg","http://www.lyj210.cn/cwgj/pic/siyang/siyang.jpg","http://www.lyj210.cn/cwgj/pic/xunlian/xunlian.jpg"]
     let ss = ["网络图片1","网络图片2","网路图片3"]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         SDImageCache.sharedImageCache().cleanDisk()//清除硬盘中的缓存
