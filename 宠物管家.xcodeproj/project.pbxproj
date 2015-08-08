@@ -52,6 +52,10 @@
 		2C0276BA1B74E02C00F3C76F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */; };
 		2C0568BC1B75ED3000B4974A /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568BB1B75ED3000B4974A /* SweetAlert.swift */; };
 		2C0568BE1B75F0E000B4974A /* UpdateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568BD1B75F0E000B4974A /* UpdateTableViewController.swift */; };
+		2C0568C01B75F45800B4974A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568BF1B75F45800B4974A /* LoginViewController.swift */; };
+		2C0568C61B761B3A00B4974A /* UserRegTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */; };
+		2C0568CA1B761EDD00B4974A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568C91B761EDD00B4974A /* SwiftyJSON.swift */; };
+		2C0568CD1B761F5100B4974A /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568CC1B761F5100B4974A /* Pitaya.swift */; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
 		2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939D1B75E75100C1F598 /* Pets.storyboard */; };
 		2CA693A21B75E76100C1F598 /* Msg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A01B75E76100C1F598 /* Msg.storyboard */; };
@@ -140,6 +144,10 @@
 		2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		2C0568BB1B75ED3000B4974A /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
 		2C0568BD1B75F0E000B4974A /* UpdateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewController.swift; sourceTree = "<group>"; };
+		2C0568BF1B75F45800B4974A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegTableViewController.swift; sourceTree = "<group>"; };
+		2C0568C91B761EDD00B4974A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		2C0568CC1B761F5100B4974A /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitaya.swift; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
 		2CA693A11B75E76100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Msg.storyboard; sourceTree = "<group>"; };
@@ -190,6 +198,8 @@
 		2C0275C31B74491600F3C76F /* 宠物管家 */ = {
 			isa = PBXGroup;
 			children = (
+				2C0568CB1B761F5100B4974A /* HttpNet */,
+				2C0568C81B761EDD00B4974A /* SwiftyJson */,
 				2C0568BA1B75ECDA00B4974A /* SweetAlert */,
 				2C02765D1B745E3500F3C76F /* SDWebImage */,
 				2C0275D91B7449F400F3C76F /* MJRefresh */,
@@ -198,8 +208,10 @@
 				2C0275C41B74491600F3C76F /* AppDelegate.swift */,
 				2C0276141B74535800F3C76F /* PetsTableViewController.swift */,
 				2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */,
+				2C0568BF1B75F45800B4974A /* LoginViewController.swift */,
 				2C0568BD1B75F0E000B4974A /* UpdateTableViewController.swift */,
 				2C02765B1B745A7D00F3C76F /* WebViewController.swift */,
+				2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */,
 				2C0275C81B74491600F3C76F /* Main.storyboard */,
 				2CA6939A1B75E72A00C1F598 /* Home.storyboard */,
 				2CA6939D1B75E75100C1F598 /* Pets.storyboard */,
@@ -314,6 +326,22 @@
 				2C0568BB1B75ED3000B4974A /* SweetAlert.swift */,
 			);
 			path = SweetAlert;
+			sourceTree = "<group>";
+		};
+		2C0568C81B761EDD00B4974A /* SwiftyJson */ = {
+			isa = PBXGroup;
+			children = (
+				2C0568C91B761EDD00B4974A /* SwiftyJSON.swift */,
+			);
+			path = SwiftyJson;
+			sourceTree = "<group>";
+		};
+		2C0568CB1B761F5100B4974A /* HttpNet */ = {
+			isa = PBXGroup;
+			children = (
+				2C0568CC1B761F5100B4974A /* Pitaya.swift */,
+			);
+			path = HttpNet;
 			sourceTree = "<group>";
 		};
 		CBC0DB4D4670ABB3DFCA7EF5 /* Pods */ = {
@@ -447,6 +475,7 @@
 				2C0568BE1B75F0E000B4974A /* UpdateTableViewController.swift in Sources */,
 				2C0275F61B744A2D00F3C76F /* MJRefreshComponent.m in Sources */,
 				2C02768C1B745E3500F3C76F /* UIImageView+HighlightedWebCache.m in Sources */,
+				2C0568CD1B761F5100B4974A /* Pitaya.swift in Sources */,
 				2C02765C1B745A7D00F3C76F /* WebViewController.swift in Sources */,
 				2C0276831B745E3500F3C76F /* SDWebImageDecoder.m in Sources */,
 				2C0276801B745E3500F3C76F /* NSData+ImageContentType.m in Sources */,
@@ -459,9 +488,12 @@
 				2C0276861B745E3500F3C76F /* SDWebImageManager.m in Sources */,
 				2C02768E1B745E3500F3C76F /* UIView+WebCacheOperation.m in Sources */,
 				2C0275CD1B74491600F3C76F /* ____.xcdatamodeld in Sources */,
+				2C0568CA1B761EDD00B4974A /* SwiftyJSON.swift in Sources */,
 				2C0275FB1B744A2D00F3C76F /* MJRefreshHeader.m in Sources */,
+				2C0568C61B761B3A00B4974A /* UserRegTableViewController.swift in Sources */,
 				2C0276091B744A5500F3C76F /* XHWaterDropRefresh.m in Sources */,
 				2C0276841B745E3500F3C76F /* SDWebImageDownloader.m in Sources */,
+				2C0568C01B75F45800B4974A /* LoginViewController.swift in Sources */,
 				2C0276891B745E3500F3C76F /* UIImage+GIF.m in Sources */,
 				2C0275FA1B744A2D00F3C76F /* MJRefreshGifHeader.m in Sources */,
 				2C0276BA1B74E02C00F3C76F /* HomeTableViewController.swift in Sources */,
