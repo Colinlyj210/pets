@@ -55,25 +55,12 @@ class HomeTableViewController: UITableViewController {
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homecell", forIndexPath: indexPath)
-        switch indexPath.row {
-        case 0:
-            cell.contentView.addSubview(healthChart())
-        case 1:
-            cell.contentView.addSubview(eatChart())
-        case 2:
-            cell.textLabel?.text = "\(indexPath.row)"
-        case 3:
-            cell.textLabel?.text = "\(indexPath.row)"
-        case 4:
-            cell.textLabel?.text = "\(indexPath.row)"
-        default:
-            break
-        }
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("\(indexPath.row)")
     }
+/**
     func healthChart()->UIView{
         let items = [PNPieChartDataItem(value: 10 , color: UIColor.redColor()),PNPieChartDataItem(value: 20, color: UIColor.blueColor(), description: "abc"),PNPieChartDataItem(value: 40, color: UIColor.greenColor(), description: "123")]
         let pie = PNPieChart(frame: CGRectMake(self.view.bounds.width/2 - 100, 100, 200, 200), items: items)
@@ -100,6 +87,7 @@ class HomeTableViewController: UITableViewController {
         lineChart.strokeChart()
         return lineChart
     }
+*/
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

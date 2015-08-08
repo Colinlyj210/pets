@@ -11,4 +11,3 @@
 #import "PopMenu.h"
 #import "UIImageView+WebCache.h"
 #import "SDCycleScrollView.h"
-#import "PNChart.h"
