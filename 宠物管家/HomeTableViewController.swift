@@ -11,16 +11,32 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
 
+    @IBAction func updateBtn(sender: AnyObject) {
+        self.toUpdateView()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        SweetAlert().showAlert("是否更新宠物信息?", subTitle: "你将跳转到下个界面进行输入信息!", style: AlertStyle.Warning, buttonTitle:"取消!", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "确定", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
+            if isOtherButton == false {
+                self.toUpdateView()
+            }
+        }
+
+        
+        
         self.tableView.tableFooterView = UIView()
     }
-
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tabBarController?.tabBar.hidden = false
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    func toUpdateView(){
+        self.performSegueWithIdentifier("toUpdate", sender: self)
+    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -118,14 +134,17 @@ class HomeTableViewController: UITableViewController {
     }
     */
 
-    /*
+ 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "toUpdate"{
+            self.hidesBottomBarWhenPushed = true
+            self.tabBarController?.tabBar.hidden = true
+        }
+        
     }
-    */
+    
 
 }

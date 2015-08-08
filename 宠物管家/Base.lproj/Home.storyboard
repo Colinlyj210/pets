@@ -27,11 +27,48 @@
                             <outlet property="delegate" destination="f7z-Po-bM4" id="OJM-HS-cih"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="QDV-tf-QoD"/>
+                    <navigationItem key="navigationItem" id="QDV-tf-QoD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="C8L-jM-s36">
+                            <connections>
+                                <action selector="updateBtn:" destination="f7z-Po-bM4" id="ln2-6l-2Bf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="pHF-PK-gUD" kind="show" identifier="toUpdate" id="55L-vy-Sn6"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rGs-oS-vff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1148" y="-830"/>
+            <point key="canvasLocation" x="1113" y="-836"/>
+        </scene>
+        <!--Update Table View Controller-->
+        <scene sceneID="Hpc-qS-S0w">
+            <objects>
+                <tableViewController id="pHF-PK-gUD" customClass="UpdateTableViewController" customModule="宠物管家" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pz8-1N-XX0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pyM-9h-KUF">
+                                <rect key="frame" x="0.0" y="86" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pyM-9h-KUF" id="Mq8-8Y-1my">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pHF-PK-gUD" id="oo5-6I-WRU"/>
+                            <outlet property="delegate" destination="pHF-PK-gUD" id="OhV-lK-P8I"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GGM-ap-Yza" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1891" y="-831"/>
         </scene>
         <!--Home-->
         <scene sceneID="Suj-hJ-0GY">

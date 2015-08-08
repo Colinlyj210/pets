@@ -23,7 +23,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIr-Ah-Wvy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-616" y="308"/>
+            <point key="canvasLocation" x="-102" y="294"/>
         </scene>
         <!--Home-->
         <scene sceneID="Vk0-j4-fWV">
@@ -33,7 +33,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCD-Ne-fmZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3.5" y="40"/>
+            <point key="canvasLocation" x="515.5" y="32"/>
         </scene>
         <!--Pets-->
         <scene sceneID="taO-jE-B9b">
@@ -43,7 +43,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pz1-RU-EYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3" y="200"/>
+            <point key="canvasLocation" x="515" y="192"/>
         </scene>
         <!--Msg-->
         <scene sceneID="aZR-NS-xxN">
@@ -53,7 +53,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YO0-iq-hzw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="359"/>
+            <point key="canvasLocation" x="511" y="351"/>
         </scene>
         <!--Set-->
         <scene sceneID="M0b-73-jjB">
@@ -63,7 +63,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f7Q-vM-tVm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2" y="499"/>
+            <point key="canvasLocation" x="514" y="491"/>
         </scene>
     </scenes>
 </document>

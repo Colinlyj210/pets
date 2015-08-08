@@ -50,6 +50,8 @@
 		2C02768D1B745E3500F3C76F /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C02767C1B745E3500F3C76F /* UIImageView+WebCache.m */; };
 		2C02768E1B745E3500F3C76F /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C02767E1B745E3500F3C76F /* UIView+WebCacheOperation.m */; };
 		2C0276BA1B74E02C00F3C76F /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */; };
+		2C0568BC1B75ED3000B4974A /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568BB1B75ED3000B4974A /* SweetAlert.swift */; };
+		2C0568BE1B75F0E000B4974A /* UpdateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568BD1B75F0E000B4974A /* UpdateTableViewController.swift */; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
 		2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939D1B75E75100C1F598 /* Pets.storyboard */; };
 		2CA693A21B75E76100C1F598 /* Msg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A01B75E76100C1F598 /* Msg.storyboard */; };
@@ -136,6 +138,8 @@
 		2C02767D1B745E3500F3C76F /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		2C02767E1B745E3500F3C76F /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		2C0568BB1B75ED3000B4974A /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlert.swift; sourceTree = "<group>"; };
+		2C0568BD1B75F0E000B4974A /* UpdateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewController.swift; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
 		2CA693A11B75E76100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Msg.storyboard; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 		2C0275C31B74491600F3C76F /* 宠物管家 */ = {
 			isa = PBXGroup;
 			children = (
+				2C0568BA1B75ECDA00B4974A /* SweetAlert */,
 				2C02765D1B745E3500F3C76F /* SDWebImage */,
 				2C0275D91B7449F400F3C76F /* MJRefresh */,
 				2C0275DA1B7449F400F3C76F /* PathCover */,
@@ -193,6 +198,7 @@
 				2C0275C41B74491600F3C76F /* AppDelegate.swift */,
 				2C0276141B74535800F3C76F /* PetsTableViewController.swift */,
 				2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */,
+				2C0568BD1B75F0E000B4974A /* UpdateTableViewController.swift */,
 				2C02765B1B745A7D00F3C76F /* WebViewController.swift */,
 				2C0275C81B74491600F3C76F /* Main.storyboard */,
 				2CA6939A1B75E72A00C1F598 /* Home.storyboard */,
@@ -300,6 +306,14 @@
 				2C02767E1B745E3500F3C76F /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		2C0568BA1B75ECDA00B4974A /* SweetAlert */ = {
+			isa = PBXGroup;
+			children = (
+				2C0568BB1B75ED3000B4974A /* SweetAlert.swift */,
+			);
+			path = SweetAlert;
 			sourceTree = "<group>";
 		};
 		CBC0DB4D4670ABB3DFCA7EF5 /* Pods */ = {
@@ -430,11 +444,13 @@
 				2C02768B1B745E3500F3C76F /* UIImage+WebP.m in Sources */,
 				2C02768D1B745E3500F3C76F /* UIImageView+WebCache.m in Sources */,
 				2C0276851B745E3500F3C76F /* SDWebImageDownloaderOperation.m in Sources */,
+				2C0568BE1B75F0E000B4974A /* UpdateTableViewController.swift in Sources */,
 				2C0275F61B744A2D00F3C76F /* MJRefreshComponent.m in Sources */,
 				2C02768C1B745E3500F3C76F /* UIImageView+HighlightedWebCache.m in Sources */,
 				2C02765C1B745A7D00F3C76F /* WebViewController.swift in Sources */,
 				2C0276831B745E3500F3C76F /* SDWebImageDecoder.m in Sources */,
 				2C0276801B745E3500F3C76F /* NSData+ImageContentType.m in Sources */,
+				2C0568BC1B75ED3000B4974A /* SweetAlert.swift in Sources */,
 				2C0275F91B744A2D00F3C76F /* MJRefreshGifFooter.m in Sources */,
 				2C0276071B744A5500F3C76F /* XHPathCover.m in Sources */,
 				2C0276811B745E3500F3C76F /* SDImageCache.m in Sources */,
