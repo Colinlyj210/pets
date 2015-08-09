@@ -8,8 +8,8 @@
 //
 
 import UIKit
-
-class HomeTableViewController: UITableViewController {
+import Charts
+class HomeTableViewController: UITableViewController,ChartViewDelegate {
 
     @IBAction func updateBtn(sender: AnyObject) {
         self.toUpdateView()
@@ -55,21 +55,45 @@ class HomeTableViewController: UITableViewController {
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homecell", forIndexPath: indexPath)
+        cell.textLabel?.text = "这是第\(indexPath.row)行"
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("\(indexPath.row)")
     }
-/**
+    
+    
+    
+    
+
     func healthChart()->UIView{
-        let items = [PNPieChartDataItem(value: 10 , color: UIColor.redColor()),PNPieChartDataItem(value: 20, color: UIColor.blueColor(), description: "abc"),PNPieChartDataItem(value: 40, color: UIColor.greenColor(), description: "123")]
-        let pie = PNPieChart(frame: CGRectMake(self.view.bounds.width/2 - 100, 100, 200, 200), items: items)
-        pie.descriptionTextColor = UIColor.whiteColor()
-        pie.descriptionTextFont = UIFont(name: "Avenir-Medium", size: 14)
-        pie.strokeChart()
+        let pie = PieChartView()
+        pie.delegate = self
+        pie.usePercentValuesEnabled = true //使用百分比值
+        pie.holeTransparent = true //中心洞孔透明
+        pie.centerTextFont = UIFont(name: "HelveticaNeue-Light", size: 12)!  //设置字体
+        pie.holeRadiusPercent = 0.58//中心洞孔半径比例为0.58
+        pie.transparentCircleRadiusPercent = 0.61 //透明圆半径比例
+        pie.descriptionText = ""//描述
+        pie.drawCenterTextEnabled = true //画中心文字
+        pie.drawHoleEnabled = true
+        pie.rotationAngle = 0//旋转角度
+        pie.rotationEnabled = true //是否可旋转
+        pie.centerText = "宠物健康信息"
+        
+        let legend = pie.legend //图表标题
+        legend.position =  ChartLegend.ChartLegendPosition.RightOfChart//位置
+        legend.xEntrySpace = 7
+        legend.yEntrySpace = 0
+        legend.yOffset = 0
+        
+        pie.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: ChartEasingOption.EaseOutBack)
+        
         return pie
     }
-    func eatChart()->UIView{
+    
+    
+  /**  func eatChart()->UIView{
         let lineChart = PNLineChart(frame: CGRectMake(0, 0, self.view.frame.width , 200))
         let xlab = ["sep1","sep2","sep3","sep4","sep5"];
         lineChart.setXLabels(xlab, withWidth: 60)

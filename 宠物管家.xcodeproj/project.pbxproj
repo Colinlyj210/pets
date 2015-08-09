@@ -56,6 +56,8 @@
 		2C0568C61B761B3A00B4974A /* UserRegTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */; };
 		2C0568CA1B761EDD00B4974A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568C91B761EDD00B4974A /* SwiftyJSON.swift */; };
 		2C0568CD1B761F5100B4974A /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568CC1B761F5100B4974A /* Pitaya.swift */; };
+		2C060A4B1B777B0C0011E106 /* MsgTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C060A4A1B777B0C0011E106 /* MsgTableViewController.swift */; };
+		2C060A4F1B777DD10011E106 /* pullrefresh.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2C060A4E1B777DD10011E106 /* pullrefresh.aif */; };
 		2C89C20E1B76F58500EE4929 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89C20C1B76F57800EE4929 /* Charts.framework */; };
 		2C89C20F1B76F58500EE4929 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89C20C1B76F57800EE4929 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
@@ -205,6 +207,8 @@
 		2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegTableViewController.swift; sourceTree = "<group>"; };
 		2C0568C91B761EDD00B4974A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		2C0568CC1B761F5100B4974A /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitaya.swift; sourceTree = "<group>"; };
+		2C060A4A1B777B0C0011E106 /* MsgTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgTableViewController.swift; sourceTree = "<group>"; };
+		2C060A4E1B777DD10011E106 /* pullrefresh.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = pullrefresh.aif; sourceTree = "<group>"; };
 		2C89C2071B76F57800EE4929 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
@@ -270,6 +274,7 @@
 				2C0275DB1B7449F400F3C76F /* ProgressHUD */,
 				2C0275C41B74491600F3C76F /* AppDelegate.swift */,
 				2C0276141B74535800F3C76F /* PetsTableViewController.swift */,
+				2C060A4A1B777B0C0011E106 /* MsgTableViewController.swift */,
 				2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */,
 				2C0568BF1B75F45800B4974A /* LoginViewController.swift */,
 				2C0568BD1B75F0E000B4974A /* UpdateTableViewController.swift */,
@@ -323,6 +328,7 @@
 		2C0275DA1B7449F400F3C76F /* PathCover */ = {
 			isa = PBXGroup;
 			children = (
+				2C060A4D1B777DD10011E106 /* Resources */,
 				2C0276011B744A5500F3C76F /* XHPathCover.h */,
 				2C0276021B744A5500F3C76F /* XHPathCover.m */,
 				2C0276031B744A5500F3C76F /* XHSoundManager.h */,
@@ -405,6 +411,14 @@
 				2C0568CC1B761F5100B4974A /* Pitaya.swift */,
 			);
 			path = HttpNet;
+			sourceTree = "<group>";
+		};
+		2C060A4D1B777DD10011E106 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2C060A4E1B777DD10011E106 /* pullrefresh.aif */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		2C89C2081B76F57800EE4929 /* Products */ = {
@@ -533,6 +547,7 @@
 				2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */,
 				2CA693A21B75E76100C1F598 /* Msg.storyboard in Resources */,
 				2C0276101B744AB000F3C76F /* Podfile in Resources */,
+				2C060A4F1B777DD10011E106 /* pullrefresh.aif in Resources */,
 				2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */,
 				2C0275D21B74491600F3C76F /* LaunchScreen.storyboard in Resources */,
 				2C0275CF1B74491600F3C76F /* Assets.xcassets in Resources */,
@@ -618,6 +633,7 @@
 				2C02767F1B745E3500F3C76F /* MKAnnotationView+WebCache.m in Sources */,
 				2C0275FC1B744A2D00F3C76F /* MJRefreshLegendFooter.m in Sources */,
 				2C0276151B74535800F3C76F /* PetsTableViewController.swift in Sources */,
+				2C060A4B1B777B0C0011E106 /* MsgTableViewController.swift in Sources */,
 				2C02768A1B745E3500F3C76F /* UIImage+MultiFormat.m in Sources */,
 				2C0275C51B74491600F3C76F /* AppDelegate.swift in Sources */,
 				2C0276821B745E3500F3C76F /* SDWebImageCompat.m in Sources */,
