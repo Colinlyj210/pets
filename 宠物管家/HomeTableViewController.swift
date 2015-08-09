@@ -54,19 +54,17 @@ class HomeTableViewController: UITableViewController {
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homecell", forIndexPath: indexPath)
-        switch indexPath.row {
-        case 0:
+        for view in cell.contentView.subviews{
+            view.removeFromSuperview()
+        }
+        if indexPath.row == 0{
             cell.contentView.addSubview(healthChart())
-        case 1:
+        }else if indexPath.row == 1{
             cell.contentView.addSubview(eatChart())
-        case 2:
-            cell.textLabel?.text = "\(indexPath.row)"
-        case 3:
-            cell.textLabel?.text = "\(indexPath.row)"
-        case 4:
-            cell.textLabel?.text = "\(indexPath.row)"
-        default:
-            break
+        }else{
+            let lab = UILabel(frame: CGRectMake(0, 0, 100, 30))
+            lab.text = "\(indexPath.row)"
+            cell.contentView.addSubview(lab)
         }
         return cell
     }

@@ -56,32 +56,32 @@
 		2C0568C61B761B3A00B4974A /* UserRegTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */; };
 		2C0568CA1B761EDD00B4974A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568C91B761EDD00B4974A /* SwiftyJSON.swift */; };
 		2C0568CD1B761F5100B4974A /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568CC1B761F5100B4974A /* Pitaya.swift */; };
-		2C0568EC1B7627C300B4974A /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0568E91B7627BA00B4974A /* Pitaya.framework */; };
-		2C0568ED1B7627C300B4974A /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C0568E91B7627BA00B4974A /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
 		2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939D1B75E75100C1F598 /* Pets.storyboard */; };
 		2CA693A21B75E76100C1F598 /* Msg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A01B75E76100C1F598 /* Msg.storyboard */; };
 		2CA693A51B75E77900C1F598 /* Set.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A31B75E77900C1F598 /* Set.storyboard */; };
+		2CFB463E1B763FFF006C6F26 /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFB463B1B763FF6006C6F26 /* Pitaya.framework */; };
+		2CFB463F1B764000006C6F26 /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFB463B1B763FF6006C6F26 /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2C0568E81B7627BA00B4974A /* PBXContainerItemProxy */ = {
+		2CFB463A1B763FF6006C6F26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2C0568E31B7627BA00B4974A /* Pitaya.xcodeproj */;
+			containerPortal = 2CFB46351B763FF6006C6F26 /* Pitaya.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 463712051B04C2050019E1AB;
 			remoteInfo = Pitaya;
 		};
-		2C0568EA1B7627BA00B4974A /* PBXContainerItemProxy */ = {
+		2CFB463C1B763FF6006C6F26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2C0568E31B7627BA00B4974A /* Pitaya.xcodeproj */;
+			containerPortal = 2CFB46351B763FF6006C6F26 /* Pitaya.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 463712101B04C2050019E1AB;
 			remoteInfo = PitayaTests;
 		};
-		2C0568EE1B7627C300B4974A /* PBXContainerItemProxy */ = {
+		2CFB46401B764000006C6F26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 2C0568E31B7627BA00B4974A /* Pitaya.xcodeproj */;
+			containerPortal = 2CFB46351B763FF6006C6F26 /* Pitaya.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 463712041B04C2050019E1AB;
 			remoteInfo = Pitaya;
@@ -95,7 +95,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2C0568ED1B7627C300B4974A /* Pitaya.framework in Embed Frameworks */,
+				2CFB463F1B764000006C6F26 /* Pitaya.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,11 +188,11 @@
 		2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegTableViewController.swift; sourceTree = "<group>"; };
 		2C0568C91B761EDD00B4974A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		2C0568CC1B761F5100B4974A /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitaya.swift; sourceTree = "<group>"; };
-		2C0568E31B7627BA00B4974A /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pitaya.xcodeproj; path = "../../../宠物管家/chongwuguanjia/Pitaya.xcodeproj"; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
 		2CA693A11B75E76100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Msg.storyboard; sourceTree = "<group>"; };
 		2CA693A41B75E77900C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Set.storyboard; sourceTree = "<group>"; };
+		2CFB46351B763FF6006C6F26 /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pitaya.xcodeproj; sourceTree = "<group>"; };
 		783A068A18BC1994DE1A3387 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DB94B45EF30F4DFD451D36FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,7 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C0568EC1B7627C300B4974A /* Pitaya.framework in Frameworks */,
+				2CFB463E1B763FFF006C6F26 /* Pitaya.framework in Frameworks */,
 				05EEB7D42FFBD1BFC1E2422E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,7 +221,7 @@
 		2C0275B81B74491600F3C76F = {
 			isa = PBXGroup;
 			children = (
-				2C0568E31B7627BA00B4974A /* Pitaya.xcodeproj */,
+				2CFB46351B763FF6006C6F26 /* Pitaya.xcodeproj */,
 				2C02760F1B744AB000F3C76F /* Podfile */,
 				2C0275C31B74491600F3C76F /* 宠物管家 */,
 				2C0275C21B74491600F3C76F /* Products */,
@@ -259,11 +259,11 @@
 				2CA6939A1B75E72A00C1F598 /* Home.storyboard */,
 				2CA6939D1B75E75100C1F598 /* Pets.storyboard */,
 				2CA693A01B75E76100C1F598 /* Msg.storyboard */,
+				2C0275D31B74491600F3C76F /* Info.plist */,
 				2CA693A31B75E77900C1F598 /* Set.storyboard */,
 				2C0275CE1B74491600F3C76F /* Assets.xcassets */,
 				2C0275D01B74491600F3C76F /* LaunchScreen.storyboard */,
 				2C0276131B744B5400F3C76F /* Bridge.h */,
-				2C0275D31B74491600F3C76F /* Info.plist */,
 				2C0275CB1B74491600F3C76F /* ____.xcdatamodeld */,
 			);
 			path = "宠物管家";
@@ -387,11 +387,11 @@
 			path = HttpNet;
 			sourceTree = "<group>";
 		};
-		2C0568E41B7627BA00B4974A /* Products */ = {
+		2CFB46361B763FF6006C6F26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C0568E91B7627BA00B4974A /* Pitaya.framework */,
-				2C0568EB1B7627BA00B4974A /* PitayaTests.xctest */,
+				2CFB463B1B763FF6006C6F26 /* Pitaya.framework */,
+				2CFB463D1B763FF6006C6F26 /* PitayaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -422,7 +422,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				2C0568EF1B7627C300B4974A /* PBXTargetDependency */,
+				2CFB46411B764000006C6F26 /* PBXTargetDependency */,
 			);
 			name = "宠物管家";
 			productName = "宠物管家";
@@ -457,8 +457,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 2C0568E41B7627BA00B4974A /* Products */;
-					ProjectRef = 2C0568E31B7627BA00B4974A /* Pitaya.xcodeproj */;
+					ProductGroup = 2CFB46361B763FF6006C6F26 /* Products */;
+					ProjectRef = 2CFB46351B763FF6006C6F26 /* Pitaya.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -469,18 +469,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		2C0568E91B7627BA00B4974A /* Pitaya.framework */ = {
+		2CFB463B1B763FF6006C6F26 /* Pitaya.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Pitaya.framework;
-			remoteRef = 2C0568E81B7627BA00B4974A /* PBXContainerItemProxy */;
+			remoteRef = 2CFB463A1B763FF6006C6F26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		2C0568EB1B7627BA00B4974A /* PitayaTests.xctest */ = {
+		2CFB463D1B763FF6006C6F26 /* PitayaTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = PitayaTests.xctest;
-			remoteRef = 2C0568EA1B7627BA00B4974A /* PBXContainerItemProxy */;
+			remoteRef = 2CFB463C1B763FF6006C6F26 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -591,10 +591,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2C0568EF1B7627C300B4974A /* PBXTargetDependency */ = {
+		2CFB46411B764000006C6F26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Pitaya;
-			targetProxy = 2C0568EE1B7627C300B4974A /* PBXContainerItemProxy */;
+			targetProxy = 2CFB46401B764000006C6F26 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
