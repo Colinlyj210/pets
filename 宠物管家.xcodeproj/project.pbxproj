@@ -56,6 +56,8 @@
 		2C0568C61B761B3A00B4974A /* UserRegTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */; };
 		2C0568CA1B761EDD00B4974A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568C91B761EDD00B4974A /* SwiftyJSON.swift */; };
 		2C0568CD1B761F5100B4974A /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568CC1B761F5100B4974A /* Pitaya.swift */; };
+		2C89C20E1B76F58500EE4929 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89C20C1B76F57800EE4929 /* Charts.framework */; };
+		2C89C20F1B76F58500EE4929 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89C20C1B76F57800EE4929 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
 		2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939D1B75E75100C1F598 /* Pets.storyboard */; };
 		2CA693A21B75E76100C1F598 /* Msg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A01B75E76100C1F598 /* Msg.storyboard */; };
@@ -65,6 +67,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2C89C20B1B76F57800EE4929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C89C2071B76F57800EE4929 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
+		2C89C2101B76F58500EE4929 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2C89C2071B76F57800EE4929 /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5BA8EC3F1A9D14DC00CE82E1;
+			remoteInfo = Charts;
+		};
 		2CFB46491B764323006C6F26 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2CFB46441B764322006C6F26 /* Pitaya.xcodeproj */;
@@ -96,6 +112,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				2CFB464E1B76432A006C6F26 /* Pitaya.framework in Embed Frameworks */,
+				2C89C20F1B76F58500EE4929 /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +205,7 @@
 		2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRegTableViewController.swift; sourceTree = "<group>"; };
 		2C0568C91B761EDD00B4974A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		2C0568CC1B761F5100B4974A /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitaya.swift; sourceTree = "<group>"; };
+		2C89C2071B76F57800EE4929 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
 		2CA693A11B75E76100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Msg.storyboard; sourceTree = "<group>"; };
@@ -202,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C89C20E1B76F58500EE4929 /* Charts.framework in Frameworks */,
 				2CFB464D1B76432A006C6F26 /* Pitaya.framework in Frameworks */,
 				05EEB7D42FFBD1BFC1E2422E /* libPods.a in Frameworks */,
 			);
@@ -221,6 +240,7 @@
 		2C0275B81B74491600F3C76F = {
 			isa = PBXGroup;
 			children = (
+				2C89C2071B76F57800EE4929 /* Charts.xcodeproj */,
 				2CFB46441B764322006C6F26 /* Pitaya.xcodeproj */,
 				2C02760F1B744AB000F3C76F /* Podfile */,
 				2C0275C31B74491600F3C76F /* 宠物管家 */,
@@ -387,6 +407,14 @@
 			path = HttpNet;
 			sourceTree = "<group>";
 		};
+		2C89C2081B76F57800EE4929 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2C89C20C1B76F57800EE4929 /* Charts.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2CFB46451B764322006C6F26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +451,7 @@
 			);
 			dependencies = (
 				2CFB46501B76432A006C6F26 /* PBXTargetDependency */,
+				2C89C2111B76F58500EE4929 /* PBXTargetDependency */,
 			);
 			name = "宠物管家";
 			productName = "宠物管家";
@@ -457,6 +486,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 2C89C2081B76F57800EE4929 /* Products */;
+					ProjectRef = 2C89C2071B76F57800EE4929 /* Charts.xcodeproj */;
+				},
+				{
 					ProductGroup = 2CFB46451B764322006C6F26 /* Products */;
 					ProjectRef = 2CFB46441B764322006C6F26 /* Pitaya.xcodeproj */;
 				},
@@ -469,6 +502,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		2C89C20C1B76F57800EE4929 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 2C89C20B1B76F57800EE4929 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		2CFB464A1B764323006C6F26 /* Pitaya.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -591,6 +631,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2C89C2111B76F58500EE4929 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = 2C89C2101B76F58500EE4929 /* PBXContainerItemProxy */;
+		};
 		2CFB46501B76432A006C6F26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Pitaya;
