@@ -12,3 +12,4 @@
 #import "UIImageView+WebCache.h"
 #import "SDCycleScrollView.h"
 #import "PNChart.h"
+#import "EAIntroView.h"

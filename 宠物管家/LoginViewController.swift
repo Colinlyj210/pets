@@ -8,7 +8,7 @@
 
 import UIKit
 import Pitaya
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,EAIntroDelegate {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userPwd: UITextField!
     @IBAction func loginBtn(sender: AnyObject) {
@@ -31,7 +31,25 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = true
+        guideView()
+        
         // Do any additional setup after loading the view.
+    }
+    func guideView(){
+        var pages = [EAIntroPage]()
+        pages.append(setPage("image1", title: "第一个页面"))
+        pages.append(setPage("image2", title: "第二个页面"))
+        pages.append(setPage("image3", title: "第三个页面"))
+        let intro = EAIntroView(frame: self.view.frame, andPages: pages)
+        intro.delegate = self
+        intro.showInView(self.view)
+        
+    }
+    func setPage(img: String,title: String)->EAIntroPage{
+        let page = EAIntroPage()
+        page.bgImage = UIImage(named: img)
+        page.title = title
+        return page
     }
 
     override func didReceiveMemoryWarning() {

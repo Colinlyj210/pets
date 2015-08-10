@@ -58,6 +58,9 @@
 		2C0568CD1B761F5100B4974A /* Pitaya.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C0568CC1B761F5100B4974A /* Pitaya.swift */; };
 		2C060A661B77904A0011E106 /* MsgTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C060A651B77904A0011E106 /* MsgTableViewController.swift */; };
 		2C060A6B1B7791650011E106 /* pullrefresh.aif in Resources */ = {isa = PBXBuildFile; fileRef = 2C060A6A1B7791650011E106 /* pullrefresh.aif */; };
+		2C149B151B788594000B4FFF /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C149B101B788593000B4FFF /* EAIntroPage.m */; };
+		2C149B161B788594000B4FFF /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C149B121B788593000B4FFF /* EAIntroView.m */; };
+		2C149B171B788594000B4FFF /* EARestrictedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C149B141B788593000B4FFF /* EARestrictedScrollView.m */; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
 		2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939D1B75E75100C1F598 /* Pets.storyboard */; };
 		2CA693A21B75E76100C1F598 /* Msg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A01B75E76100C1F598 /* Msg.storyboard */; };
@@ -192,6 +195,12 @@
 		2C0568CC1B761F5100B4974A /* Pitaya.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pitaya.swift; sourceTree = "<group>"; };
 		2C060A651B77904A0011E106 /* MsgTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgTableViewController.swift; sourceTree = "<group>"; };
 		2C060A6A1B7791650011E106 /* pullrefresh.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = pullrefresh.aif; sourceTree = "<group>"; };
+		2C149B0F1B788593000B4FFF /* EAIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroPage.h; sourceTree = "<group>"; };
+		2C149B101B788593000B4FFF /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroPage.m; sourceTree = "<group>"; };
+		2C149B111B788593000B4FFF /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroView.h; sourceTree = "<group>"; };
+		2C149B121B788593000B4FFF /* EAIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroView.m; sourceTree = "<group>"; };
+		2C149B131B788593000B4FFF /* EARestrictedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EARestrictedScrollView.h; sourceTree = "<group>"; };
+		2C149B141B788593000B4FFF /* EARestrictedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EARestrictedScrollView.m; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
 		2CA693A11B75E76100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Msg.storyboard; sourceTree = "<group>"; };
@@ -245,6 +254,7 @@
 		2C0275C31B74491600F3C76F /* 宠物管家 */ = {
 			isa = PBXGroup;
 			children = (
+				2C149B0E1B788593000B4FFF /* EAIntroView */,
 				2C0568CB1B761F5100B4974A /* HttpNet */,
 				2C0568C81B761EDD00B4974A /* SwiftyJson */,
 				2C0568BA1B75ECDA00B4974A /* SweetAlert */,
@@ -264,8 +274,8 @@
 				2CA6939A1B75E72A00C1F598 /* Home.storyboard */,
 				2CA6939D1B75E75100C1F598 /* Pets.storyboard */,
 				2CA693A01B75E76100C1F598 /* Msg.storyboard */,
-				2C0275D31B74491600F3C76F /* Info.plist */,
 				2CA693A31B75E77900C1F598 /* Set.storyboard */,
+				2C0275D31B74491600F3C76F /* Info.plist */,
 				2C0275CE1B74491600F3C76F /* Assets.xcassets */,
 				2C0275D01B74491600F3C76F /* LaunchScreen.storyboard */,
 				2C0276131B744B5400F3C76F /* Bridge.h */,
@@ -399,6 +409,19 @@
 				2C060A6A1B7791650011E106 /* pullrefresh.aif */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2C149B0E1B788593000B4FFF /* EAIntroView */ = {
+			isa = PBXGroup;
+			children = (
+				2C149B0F1B788593000B4FFF /* EAIntroPage.h */,
+				2C149B101B788593000B4FFF /* EAIntroPage.m */,
+				2C149B111B788593000B4FFF /* EAIntroView.h */,
+				2C149B121B788593000B4FFF /* EAIntroView.m */,
+				2C149B131B788593000B4FFF /* EARestrictedScrollView.h */,
+				2C149B141B788593000B4FFF /* EARestrictedScrollView.m */,
+			);
+			path = EAIntroView;
 			sourceTree = "<group>";
 		};
 		2CFB46361B763FF6006C6F26 /* Products */ = {
@@ -569,6 +592,7 @@
 				2C02768C1B745E3500F3C76F /* UIImageView+HighlightedWebCache.m in Sources */,
 				2C0568CD1B761F5100B4974A /* Pitaya.swift in Sources */,
 				2C02765C1B745A7D00F3C76F /* WebViewController.swift in Sources */,
+				2C149B151B788594000B4FFF /* EAIntroPage.m in Sources */,
 				2C0276831B745E3500F3C76F /* SDWebImageDecoder.m in Sources */,
 				2C0276801B745E3500F3C76F /* NSData+ImageContentType.m in Sources */,
 				2C0568BC1B75ED3000B4974A /* SweetAlert.swift in Sources */,
@@ -586,12 +610,14 @@
 				2C0276091B744A5500F3C76F /* XHWaterDropRefresh.m in Sources */,
 				2C0276841B745E3500F3C76F /* SDWebImageDownloader.m in Sources */,
 				2C0568C01B75F45800B4974A /* LoginViewController.swift in Sources */,
+				2C149B161B788594000B4FFF /* EAIntroView.m in Sources */,
 				2C0276891B745E3500F3C76F /* UIImage+GIF.m in Sources */,
 				2C0275FA1B744A2D00F3C76F /* MJRefreshGifHeader.m in Sources */,
 				2C0276BA1B74E02C00F3C76F /* HomeTableViewController.swift in Sources */,
 				2C0275FF1B744A2D00F3C76F /* UIScrollView+MJRefresh.m in Sources */,
 				2C02767F1B745E3500F3C76F /* MKAnnotationView+WebCache.m in Sources */,
 				2C0275FC1B744A2D00F3C76F /* MJRefreshLegendFooter.m in Sources */,
+				2C149B171B788594000B4FFF /* EARestrictedScrollView.m in Sources */,
 				2C0276151B74535800F3C76F /* PetsTableViewController.swift in Sources */,
 				2C060A661B77904A0011E106 /* MsgTableViewController.swift in Sources */,
 				2C02768A1B745E3500F3C76F /* UIImage+MultiFormat.m in Sources */,

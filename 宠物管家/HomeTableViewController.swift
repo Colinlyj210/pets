@@ -89,6 +89,7 @@ class HomeTableViewController: UITableViewController {
     }
     func eatChart()->UIView{
         let lineChart = PNLineChart(frame: CGRectMake(0, 0, self.view.frame.width , 200))
+
         let xlab = ["sep1","sep2","sep3","sep4","sep5"];
         lineChart.setXLabels(xlab, withWidth: 60)
         let dataArr = [60.1,160.1,126.4,262.2,26.4]
