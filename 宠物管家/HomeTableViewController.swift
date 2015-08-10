@@ -16,19 +16,27 @@ class HomeTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "主页"
+        /**
         SweetAlert().showAlert("是否更新宠物信息?", subTitle: "你将跳转到下个界面进行输入信息!", style: AlertStyle.Warning, buttonTitle:"取消!", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "确定", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
             if isOtherButton == false {
                 self.toUpdateView()
             }
         }
-
+        */
         
         
         self.tableView.tableFooterView = UIView()
     }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.hidden = false
+    }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.tabBarController?.tabBar.hidden = false
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

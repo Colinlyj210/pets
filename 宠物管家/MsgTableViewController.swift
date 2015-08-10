@@ -9,26 +9,24 @@
 import UIKit
 
 class MsgTableViewController: UITableViewController {
-
-    let items = [
-        MenuItem(title: "face", iconName: "post_type_bubble_facebook", glowColor: UIColor.redColor(),index: 0),
-        MenuItem(title: "tsobao", iconName: "post_type_bubble_flickr", glowColor: UIColor.blueColor(),index: 1),
-        MenuItem(title: "sina", iconName: "post_type_bubble_googleplus", glowColor: UIColor.yellowColor(),index: 2)
-    ]
-    
+    var menu :PopMenu!
     @IBAction func addBtn(sender: AnyObject) {
-        self.tabBarController?.tabBar.hidden = true
+        let items = [
+            MenuItem(title: "face", iconName: "post_type_bubble_facebook", glowColor: UIColor.redColor(),index: 0),
+            MenuItem(title: "tsobao", iconName: "post_type_bubble_flickr", glowColor: UIColor.blueColor(),index: 1),
+            MenuItem(title: "sina", iconName: "post_type_bubble_googleplus", glowColor: UIColor.yellowColor(),index: 2)
+        ]
+        //self.tabBarController?.tabBar.hidden = true
         
-        let menu = PopMenu(frame: self.view.bounds, items: items)
+        menu = PopMenu(frame: self.view.bounds, items: items)
         menu.menuAnimationType = PopMenuAnimationType.Sina
         if menu.isShowed{
             menu.removeFromSuperview()
             return
         }
-        
         menu.didSelectedItemCompletion = { (selectitem :MenuItem!) -> Void in
             print(selectitem.title)
-            
+            self.tabBarController?.tabBar.hidden = false
             switch selectitem.index{
             case 0:
                 print(selectitem.index)
@@ -37,11 +35,11 @@ class MsgTableViewController: UITableViewController {
             case 2:
                 print(selectitem.index)
             default:
-                menu.removeFromSuperview()
                 break
-                
             }
+            
         }
+        //menu.removeFromSuperview()
         menu.showMenuAtView(self.view)
         
     }
@@ -50,6 +48,7 @@ class MsgTableViewController: UITableViewController {
     var head : XHPathCover!
     override func viewDidLoad() {
         super.viewDidLoad()
+
         for a in 0...9{
             self.i = a
             data.append("\(a)")
@@ -72,6 +71,7 @@ class MsgTableViewController: UITableViewController {
         self.tableView.tableHeaderView = head;
         
     }
+
     func headRefresh(){
         //ProgressHUD.show("亲爱的，别急嘛～～～")
         self.Delay(2, closure: { () -> () in
@@ -101,8 +101,17 @@ class MsgTableViewController: UITableViewController {
 //ProgressHUD.showSuccess("好了啦～～")
         })
     }
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         self.tabBarController?.tabBar.hidden = false
+        
+    }
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        if menu != nil{
+            self.menu.dismissMenu()
+        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

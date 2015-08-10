@@ -77,10 +77,14 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
         print("点击了第\(index)张")
     }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.hidden = false
+        
+    }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.tabBarController?.tabBar.hidden = false
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
