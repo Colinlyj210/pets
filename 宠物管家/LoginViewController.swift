@@ -32,8 +32,8 @@ class LoginViewController: UIViewController,EAIntroDelegate {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = true
         guideView()
-        
-        // Do any additional setup after loading the view.
+                
+
     }
     func guideView(){
         var pages = [EAIntroPage]()
@@ -58,7 +58,10 @@ class LoginViewController: UIViewController,EAIntroDelegate {
     }
     
 
-    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesEnded(touches, withEvent: event)
+        self.view.endEditing(true)
+    }
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

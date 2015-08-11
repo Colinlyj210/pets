@@ -10,17 +10,63 @@ import UIKit
 
 class UserRegTableViewController: UITableViewController {
 
+    @IBOutlet var requireTextFields: [UITextField]!
+    @IBOutlet weak var textUserName: UITextField!
+    @IBOutlet weak var textUserEmail: UITextField!
+    @IBOutlet weak var textUserPwd: UITextField!
+    @IBOutlet weak var textConfirmPwd: UITextField!
+    @IBOutlet weak var textPetName: UITextField!
+    @IBOutlet weak var textPetKinds: UITextField!
+    @IBOutlet weak var textUserSign: UITextField!
+    @IBOutlet weak var textPetBirthday: UITextField!
+    @IBOutlet weak var textPetSkill: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = false
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "userRegistered")
+
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: nil)
     }
+    func userRegistered(){
+        for textfield in requireTextFields{
+            if textfield.text!.isEmpty {
+                ProgressHUD.showError("\(textfield.placeholder!)不能为空!")
+                return
+            }
+        }
+        if textUserPwd.text != textConfirmPwd.text{
+            SweetAlert().showAlert("两次密码输入不一样!", subTitle: "请重新输入!", style: AlertStyle.Error)
+            return
+        }else{
+            print("用户注册")
+            let pet = Pet()
+            pet.hostID = 1
+            pet.petName = textPetName.text
+            pet.petKinds = textPetKinds.text
+            pet.petBirthday = textPetBirthday.text
+            pet.petSkill = textPetSkill.text
+            let user = User()
+            user.hostID = 1
+            user.userName = textUserName.text
+            user.userPwd = textUserPwd.text
+            user.userEmail = textUserEmail.text
+            user.userSign = textUserSign.text
+            user.pet = pet
+            User.save(user)
+        }
+        let aa = User.selectWhere(nil, groupBy: nil, orderBy: nil, limit: nil) as! [User]
+        //print("aa长度:\(aa.count)")
+        print("username:\(aa[0].userName)")
+        print("useremail\(aa[0].userEmail)")
+        print("userpwd:\(aa[0].userPwd)")
+        print("pet name\(aa[0].pet.petName)")
+        print("pet kinds\(aa[0].pet.petKinds)")
 
+
+    }
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

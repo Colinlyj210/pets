@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Set Table View Controller-->
         <scene sceneID="NDx-JN-fzT">
             <objects>
-                <tableViewController id="qWV-Gr-zVL" sceneMemberID="viewController">
+                <tableViewController id="qWV-Gr-zVL" customClass="SetTableViewController" customModule="宠物管家" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="JBP-VS-J2o">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,7 +175,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gr3-97-65E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="222" y="809"/>
+            <point key="canvasLocation" x="332" y="802"/>
         </scene>
         <!--Set-->
         <scene sceneID="9uB-5j-kYD">

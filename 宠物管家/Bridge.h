@@ -13,3 +13,4 @@
 #import "SDCycleScrollView.h"
 #import "PNChart.h"
 #import "EAIntroView.h"
+#import "BaseModel.h"

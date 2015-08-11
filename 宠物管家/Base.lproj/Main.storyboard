@@ -91,7 +91,7 @@
         <scene sceneID="7AG-PF-uct">
             <objects>
                 <tableViewController id="cLA-p2-lkx" customClass="UserRegTableViewController" customModule="宠物管家" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="BBg-Wa-xAE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="BBg-Wa-xAE">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -159,7 +159,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="1e7-B2-U9l"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -183,7 +183,7 @@
                                                         <constraint firstAttribute="height" constant="30" id="Grh-aV-SK6"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -253,7 +253,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="兴趣爱好" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y3V-rT-eSj">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="个性签名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y3V-rT-eSj">
                                                     <rect key="frame" x="48" y="7" width="504" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="Klb-JM-Zv8"/>
@@ -277,7 +277,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RHr-rN-dvw">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="宠物生日" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RHr-rN-dvw">
                                                     <rect key="frame" x="48" y="7" width="504" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="p4L-TC-JkW"/>
@@ -326,10 +326,25 @@
                             <outlet property="delegate" destination="cLA-p2-lkx" id="BU8-Xn-07s"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="Qia-EV-ho1"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textConfirmPwd" destination="F93-Zf-LUy" id="irf-RL-V9Z"/>
+                        <outlet property="textPetBirthday" destination="RHr-rN-dvw" id="Dlg-1V-H6i"/>
+                        <outlet property="textPetKinds" destination="Bza-9O-4nl" id="DVU-Ov-EOf"/>
+                        <outlet property="textPetName" destination="bwv-0Q-mfX" id="yto-Bi-Ugl"/>
+                        <outlet property="textPetSkill" destination="nEK-i0-Ush" id="uoK-Pi-LPz"/>
+                        <outlet property="textUserEmail" destination="fn0-OU-EvR" id="SUb-C4-jhH"/>
+                        <outlet property="textUserName" destination="hZv-MT-u2c" id="nvG-2J-jdm"/>
+                        <outlet property="textUserPwd" destination="Z0i-2x-nuD" id="j7M-SI-2Ag"/>
+                        <outlet property="textUserSign" destination="y3V-rT-eSj" id="3ju-eR-nvj"/>
+                        <outletCollection property="requireTextFields" destination="hZv-MT-u2c" id="EXw-qD-mEc"/>
+                        <outletCollection property="requireTextFields" destination="fn0-OU-EvR" id="sNJ-1N-3MB"/>
+                        <outletCollection property="requireTextFields" destination="Z0i-2x-nuD" id="7EK-PE-15k"/>
+                        <outletCollection property="requireTextFields" destination="F93-Zf-LUy" id="s0B-cK-FlX"/>
+                        <outletCollection property="requireTextFields" destination="bwv-0Q-mfX" id="yer-yy-mwv"/>
+                        <outletCollection property="requireTextFields" destination="Bza-9O-4nl" id="Gha-sV-q8X"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Voh-hb-ohD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
