@@ -143,6 +143,7 @@
 		2CA693A51B75E77900C1F598 /* Set.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A31B75E77900C1F598 /* Set.storyboard */; };
 		2CFB463E1B763FFF006C6F26 /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFB463B1B763FF6006C6F26 /* Pitaya.framework */; };
 		2CFB463F1B764000006C6F26 /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFB463B1B763FF6006C6F26 /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2CFD6A251B7A283800D1A003 /* M13Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFD6A241B7A283800D1A003 /* M13Checkbox.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -437,6 +438,8 @@
 		2CA693A11B75E76100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Msg.storyboard; sourceTree = "<group>"; };
 		2CA693A41B75E77900C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Set.storyboard; sourceTree = "<group>"; };
 		2CFB46351B763FF6006C6F26 /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pitaya.xcodeproj; sourceTree = "<group>"; };
+		2CFD6A231B7A283800D1A003 /* M13Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13Checkbox.h; sourceTree = "<group>"; };
+		2CFD6A241B7A283800D1A003 /* M13Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13Checkbox.m; sourceTree = "<group>"; };
 		783A068A18BC1994DE1A3387 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DB94B45EF30F4DFD451D36FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -487,6 +490,7 @@
 		2C0275C31B74491600F3C76F /* 宠物管家 */ = {
 			isa = PBXGroup;
 			children = (
+				2CFD6A221B7A282900D1A003 /* CheckBox */,
 				2C149DFE1B78BED8000B4FFF /* CoreClass */,
 				2C149E481B78BED9000B4FFF /* Frameworks */,
 				2C149B0E1B788593000B4FFF /* EAIntroView */,
@@ -499,19 +503,19 @@
 				2C0275DB1B7449F400F3C76F /* ProgressHUD */,
 				2C8AF0F51B78C3FF00C29939 /* SqliteData */,
 				2C0275C41B74491600F3C76F /* AppDelegate.swift */,
+				2C0275C81B74491600F3C76F /* Main.storyboard */,
 				2C0568BF1B75F45800B4974A /* LoginViewController.swift */,
 				2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */,
-				2C0275C81B74491600F3C76F /* Main.storyboard */,
+				2CA6939A1B75E72A00C1F598 /* Home.storyboard */,
 				2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */,
 				2C149F161B78C101000B4FFF /* UpdateTableViewController.swift */,
-				2CA6939A1B75E72A00C1F598 /* Home.storyboard */,
+				2CA6939D1B75E75100C1F598 /* Pets.storyboard */,
 				2C0276141B74535800F3C76F /* PetsTableViewController.swift */,
 				2C02765B1B745A7D00F3C76F /* WebViewController.swift */,
-				2CA6939D1B75E75100C1F598 /* Pets.storyboard */,
-				2C060A651B77904A0011E106 /* MsgTableViewController.swift */,
 				2CA693A01B75E76100C1F598 /* Msg.storyboard */,
-				2C149F181B78C13F000B4FFF /* SetTableViewController.swift */,
+				2C060A651B77904A0011E106 /* MsgTableViewController.swift */,
 				2CA693A31B75E77900C1F598 /* Set.storyboard */,
+				2C149F181B78C13F000B4FFF /* SetTableViewController.swift */,
 				2C0275D31B74491600F3C76F /* Info.plist */,
 				2C0275CE1B74491600F3C76F /* Assets.xcassets */,
 				2C0275D01B74491600F3C76F /* LaunchScreen.storyboard */,
@@ -1212,6 +1216,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		2CFD6A221B7A282900D1A003 /* CheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				2CFD6A231B7A283800D1A003 /* M13Checkbox.h */,
+				2CFD6A241B7A283800D1A003 /* M13Checkbox.m */,
+			);
+			path = CheckBox;
+			sourceTree = "<group>";
+		};
 		CBC0DB4D4670ABB3DFCA7EF5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1424,6 +1437,7 @@
 				2C0568CA1B761EDD00B4974A /* SwiftyJSON.swift in Sources */,
 				2C149ED91B78BED9000B4FFF /* NSString+Stackoverflow.m in Sources */,
 				2C149EEA1B78BED9000B4FFF /* UIFont+Extend.m in Sources */,
+				2CFD6A251B7A283800D1A003 /* M13Checkbox.m in Sources */,
 				2C149EE51B78BED9000B4FFF /* NSObject+Extend.m in Sources */,
 				2C0275FB1B744A2D00F3C76F /* MJRefreshHeader.m in Sources */,
 				2C149EE01B78BED9000B4FFF /* CoreArchive.m in Sources */,

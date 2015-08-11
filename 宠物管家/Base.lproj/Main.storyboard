@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sew-7T-zSz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3H8-W3-NV7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -46,15 +46,15 @@
                                     <segue destination="cLA-p2-lkx" kind="show" id="ATa-AK-C5X"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMw-sK-kzO">
-                                <rect key="frame" x="520" y="562" width="60" height="30"/>
-                                <state key="normal" title="忘记密码"/>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C1X-0E-nYm">
                                 <rect key="frame" x="0.0" y="314" width="600" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMw-sK-kzO">
+                                <rect key="frame" x="520" y="562" width="60" height="30"/>
+                                <state key="normal" title="忘记密码"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -338,12 +338,12 @@
                         <outlet property="textUserName" destination="hZv-MT-u2c" id="nvG-2J-jdm"/>
                         <outlet property="textUserPwd" destination="Z0i-2x-nuD" id="j7M-SI-2Ag"/>
                         <outlet property="textUserSign" destination="y3V-rT-eSj" id="3ju-eR-nvj"/>
-                        <outletCollection property="requireTextFields" destination="hZv-MT-u2c" id="EXw-qD-mEc"/>
-                        <outletCollection property="requireTextFields" destination="fn0-OU-EvR" id="sNJ-1N-3MB"/>
-                        <outletCollection property="requireTextFields" destination="Z0i-2x-nuD" id="7EK-PE-15k"/>
-                        <outletCollection property="requireTextFields" destination="F93-Zf-LUy" id="s0B-cK-FlX"/>
-                        <outletCollection property="requireTextFields" destination="bwv-0Q-mfX" id="yer-yy-mwv"/>
-                        <outletCollection property="requireTextFields" destination="Bza-9O-4nl" id="Gha-sV-q8X"/>
+                        <outletCollection property="requireTextFields" destination="hZv-MT-u2c" collectionClass="NSMutableArray" id="EXw-qD-mEc"/>
+                        <outletCollection property="requireTextFields" destination="fn0-OU-EvR" collectionClass="NSMutableArray" id="sNJ-1N-3MB"/>
+                        <outletCollection property="requireTextFields" destination="Z0i-2x-nuD" collectionClass="NSMutableArray" id="7EK-PE-15k"/>
+                        <outletCollection property="requireTextFields" destination="F93-Zf-LUy" collectionClass="NSMutableArray" id="s0B-cK-FlX"/>
+                        <outletCollection property="requireTextFields" destination="bwv-0Q-mfX" collectionClass="NSMutableArray" id="yer-yy-mwv"/>
+                        <outletCollection property="requireTextFields" destination="Bza-9O-4nl" collectionClass="NSMutableArray" id="Gha-sV-q8X"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Voh-hb-ohD" userLabel="First Responder" sceneMemberID="firstResponder"/>
