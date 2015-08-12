@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3H8-W3-NV7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sew-7T-zSz">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,28 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_0755" translatesAutoresizingMaskIntoConstraints="NO" id="yPI-at-vVh">
-                                <rect key="frame" x="260" y="144" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="TL1-R9-Rrj"/>
-                                    <constraint firstAttribute="width" constant="80" id="gNL-99-Sr1"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入邮箱账号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CWf-mx-kI7">
-                                <rect key="frame" x="0.0" y="284" width="600" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXX-xd-FWR">
-                                <rect key="frame" x="20" y="364" width="560" height="30"/>
-                                <color key="backgroundColor" red="0.55126146310000002" green="0.85236506069999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="登录">
-                                    <color key="titleColor" red="0.99484536079999997" green="0.98969072160000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginBtn:" destination="1tH-T7-EhU" eventType="touchUpInside" id="hvT-x9-ebi"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdW-V5-0gY">
                                 <rect key="frame" x="20" y="562" width="75" height="30"/>
                                 <state key="normal" title="注册新账户"/>
@@ -46,11 +24,6 @@
                                     <segue destination="cLA-p2-lkx" kind="show" id="ATa-AK-C5X"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C1X-0E-nYm">
-                                <rect key="frame" x="0.0" y="314" width="600" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMw-sK-kzO">
                                 <rect key="frame" x="520" y="562" width="60" height="30"/>
                                 <state key="normal" title="忘记密码"/>
@@ -59,27 +32,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="aMw-sK-kzO" secondAttribute="trailing" id="11G-Ms-G7C"/>
-                            <constraint firstItem="C1X-0E-nYm" firstAttribute="top" secondItem="CWf-mx-kI7" secondAttribute="bottom" id="25J-gf-M1o"/>
-                            <constraint firstItem="C1X-0E-nYm" firstAttribute="centerX" secondItem="IGm-LV-QNd" secondAttribute="centerX" id="4Fn-IL-2X6"/>
                             <constraint firstAttribute="leadingMargin" secondItem="MdW-V5-0gY" secondAttribute="leading" id="6Gg-k5-cLb"/>
-                            <constraint firstItem="yPI-at-vVh" firstAttribute="top" secondItem="9M9-FC-lQl" secondAttribute="bottom" constant="80" id="8UA-y4-QF3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wXX-xd-FWR" secondAttribute="trailing" id="MuW-aB-ERt"/>
-                            <constraint firstItem="CWf-mx-kI7" firstAttribute="width" secondItem="IGm-LV-QNd" secondAttribute="width" id="QIY-wl-b6m"/>
-                            <constraint firstItem="wXX-xd-FWR" firstAttribute="top" secondItem="C1X-0E-nYm" secondAttribute="bottom" constant="20" id="Qg9-2b-73s"/>
                             <constraint firstItem="VDw-x5-RFN" firstAttribute="top" secondItem="aMw-sK-kzO" secondAttribute="bottom" constant="8" id="VDZ-ff-JU3"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="wXX-xd-FWR" secondAttribute="leading" id="fNy-YH-LTD"/>
-                            <constraint firstItem="yPI-at-vVh" firstAttribute="centerX" secondItem="IGm-LV-QNd" secondAttribute="centerX" id="jTo-Bw-fwg"/>
                             <constraint firstItem="VDw-x5-RFN" firstAttribute="top" secondItem="MdW-V5-0gY" secondAttribute="bottom" constant="8" id="lsn-m7-GWE"/>
-                            <constraint firstItem="wXX-xd-FWR" firstAttribute="centerX" secondItem="IGm-LV-QNd" secondAttribute="centerX" id="m1O-bO-Zea"/>
-                            <constraint firstItem="C1X-0E-nYm" firstAttribute="width" secondItem="IGm-LV-QNd" secondAttribute="width" id="pgq-mF-bBN"/>
-                            <constraint firstItem="CWf-mx-kI7" firstAttribute="top" secondItem="yPI-at-vVh" secondAttribute="bottom" constant="60" id="rhW-3f-BUW"/>
-                            <constraint firstItem="CWf-mx-kI7" firstAttribute="centerX" secondItem="IGm-LV-QNd" secondAttribute="centerX" id="tqv-gI-enj"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GTX-Xy-Lll"/>
                     <connections>
-                        <outlet property="userName" destination="CWf-mx-kI7" id="liL-CX-Hqu"/>
-                        <outlet property="userPwd" destination="C1X-0E-nYm" id="V3K-tg-H9w"/>
                         <segue destination="3H8-W3-NV7" kind="show" identifier="login" id="sVv-tx-j8O"/>
                     </connections>
                 </viewController>
@@ -91,7 +50,7 @@
         <scene sceneID="7AG-PF-uct">
             <objects>
                 <tableViewController id="cLA-p2-lkx" customClass="UserRegTableViewController" customModule="宠物管家" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="BBg-Wa-xAE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="BBg-Wa-xAE" customClass="myTableView" customModule="宠物管家" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -430,7 +389,4 @@
             <point key="canvasLocation" x="267" y="254"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="IMG_0755" width="480" height="480"/>
-    </resources>
 </document>

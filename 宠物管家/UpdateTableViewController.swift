@@ -29,23 +29,30 @@ class UpdateTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 5
     }
 
-    /*
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        for view in cell.contentView.subviews{
+            view.removeFromSuperview()
+        }
+        let checkBox = M13Checkbox(frame: CGRectMake(20, 20, self.view.frame.width - 20, 50), title: "checkBox")
+        checkBox.checkAlignment = M13CheckboxAlignment.Left
 
-        // Configure the cell...
+        cell.addSubview(checkBox)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

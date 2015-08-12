@@ -20,16 +20,10 @@ class UserRegTableViewController: UITableViewController {
     @IBOutlet weak var textUserSign: UITextField!
     @IBOutlet weak var textPetBirthday: UITextField!
     @IBOutlet weak var textPetSkill: UITextField!
-    var tapGesture : UITapGestureRecognizer!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "userRegistered")
-        tapGesture = UITapGestureRecognizer(target: self, action: "cancelEdit")
-        self.view.addGestureRecognizer(tapGesture)
-    }
-    func cancelEdit(){
-        self.view.endEditing(true)
     }
     func userRegistered(){
         for textfield in requireTextFields{

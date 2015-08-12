@@ -51,7 +51,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="pyM-9h-KUF">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="pyM-9h-KUF">
                                 <rect key="frame" x="0.0" y="86" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pyM-9h-KUF" id="Mq8-8Y-1my">
@@ -61,8 +61,8 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="pHF-PK-gUD" id="oo5-6I-WRU"/>
-                            <outlet property="delegate" destination="pHF-PK-gUD" id="OhV-lK-P8I"/>
+                            <outlet property="dataSource" destination="pHF-PK-gUD" id="uBx-a1-cfv"/>
+                            <outlet property="delegate" destination="pHF-PK-gUD" id="S1r-ZF-eB5"/>
                         </connections>
                     </tableView>
                 </tableViewController>

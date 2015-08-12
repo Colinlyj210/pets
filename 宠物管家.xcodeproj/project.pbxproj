@@ -135,6 +135,7 @@
 		2C149F0F1B78BF05000B4FFF /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C149F0E1B78BF05000B4FFF /* libsqlite3.0.tbd */; };
 		2C149F171B78C101000B4FFF /* UpdateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149F161B78C101000B4FFF /* UpdateTableViewController.swift */; };
 		2C149F191B78C13F000B4FFF /* SetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149F181B78C13F000B4FFF /* SetTableViewController.swift */; };
+		2C7028E21B7AEFBF00824B1E /* myTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7028E11B7AEFBF00824B1E /* myTableView.swift */; };
 		2C8AF0F71B78C41C00C29939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F61B78C41C00C29939 /* User.swift */; };
 		2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F81B78C57100C29939 /* Pet.swift */; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
@@ -431,6 +432,7 @@
 		2C149F0E1B78BF05000B4FFF /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		2C149F161B78C101000B4FFF /* UpdateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewController.swift; sourceTree = "<group>"; };
 		2C149F181B78C13F000B4FFF /* SetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTableViewController.swift; sourceTree = "<group>"; };
+		2C7028E11B7AEFBF00824B1E /* myTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTableView.swift; sourceTree = "<group>"; };
 		2C8AF0F61B78C41C00C29939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C8AF0F81B78C57100C29939 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 				2C0275DB1B7449F400F3C76F /* ProgressHUD */,
 				2C8AF0F51B78C3FF00C29939 /* SqliteData */,
 				2C0275C41B74491600F3C76F /* AppDelegate.swift */,
+				2C7028E11B7AEFBF00824B1E /* myTableView.swift */,
 				2C0275C81B74491600F3C76F /* Main.storyboard */,
 				2C0568BF1B75F45800B4974A /* LoginViewController.swift */,
 				2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */,
@@ -1437,6 +1440,7 @@
 				2C0568CA1B761EDD00B4974A /* SwiftyJSON.swift in Sources */,
 				2C149ED91B78BED9000B4FFF /* NSString+Stackoverflow.m in Sources */,
 				2C149EEA1B78BED9000B4FFF /* UIFont+Extend.m in Sources */,
+				2C7028E21B7AEFBF00824B1E /* myTableView.swift in Sources */,
 				2CFD6A251B7A283800D1A003 /* M13Checkbox.m in Sources */,
 				2C149EE51B78BED9000B4FFF /* NSObject+Extend.m in Sources */,
 				2C0275FB1B744A2D00F3C76F /* MJRefreshHeader.m in Sources */,
