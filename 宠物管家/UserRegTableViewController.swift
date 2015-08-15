@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Pitaya
 class UserRegTableViewController: UITableViewController {
 
     @IBOutlet var requireTextFields: [UITextField]!
@@ -51,6 +51,24 @@ class UserRegTableViewController: UITableViewController {
             user.userSign = textUserSign.text
             user.pet = pet
             User.save(user)
+            
+            let param = ["uname":textUserName.text, "upwd":textUserPwd.text,"uemail":textUserEmail.text, "usign":textUserSign.text,"pname": textPetName.text,"pkinds":textPetKinds.text,"pbirthday":textPetBirthday.text,"pskill":textPetSkill.text]
+            Pitaya.request(HTTPMethod.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Index/addUser", params: param, errorCallback: { (error) -> Void in
+                print("出错了")
+                }, callback: { (data, response, error) -> Void in
+                    let json = JSON(data: data!)
+                    if json["state"] == 1{
+                        print("注册成功")
+                        self.performSegueWithIdentifier("login", sender: self)
+                    }else if json["state"] == 2{
+                        print("该邮箱已注册")
+                    }else{
+                        print("注册失败")
+                    }
+
+            })
+            
+            
         }
         let aa = User.selectWhere(nil, groupBy: nil, orderBy: nil, limit: nil) as! [User]
         //print("aa长度:\(aa.count)")

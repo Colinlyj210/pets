@@ -135,6 +135,7 @@
 		2C149F0F1B78BF05000B4FFF /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C149F0E1B78BF05000B4FFF /* libsqlite3.0.tbd */; };
 		2C149F171B78C101000B4FFF /* UpdateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149F161B78C101000B4FFF /* UpdateTableViewController.swift */; };
 		2C149F191B78C13F000B4FFF /* SetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149F181B78C13F000B4FFF /* SetTableViewController.swift */; };
+		2C576FEF1B7B4C87000D105F /* UITextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C576FEE1B7B4C87000D105F /* UITextBox.swift */; };
 		2C7028E21B7AEFBF00824B1E /* myTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7028E11B7AEFBF00824B1E /* myTableView.swift */; };
 		2C8AF0F71B78C41C00C29939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F61B78C41C00C29939 /* User.swift */; };
 		2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F81B78C57100C29939 /* Pet.swift */; };
@@ -432,6 +433,7 @@
 		2C149F0E1B78BF05000B4FFF /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		2C149F161B78C101000B4FFF /* UpdateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewController.swift; sourceTree = "<group>"; };
 		2C149F181B78C13F000B4FFF /* SetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTableViewController.swift; sourceTree = "<group>"; };
+		2C576FEE1B7B4C87000D105F /* UITextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextBox.swift; sourceTree = "<group>"; };
 		2C7028E11B7AEFBF00824B1E /* myTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTableView.swift; sourceTree = "<group>"; };
 		2C8AF0F61B78C41C00C29939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C8AF0F81B78C57100C29939 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 		2C0275C31B74491600F3C76F /* 宠物管家 */ = {
 			isa = PBXGroup;
 			children = (
+				2C576FED1B7B4C87000D105F /* UITextBox */,
 				2CFD6A221B7A282900D1A003 /* CheckBox */,
 				2C149DFE1B78BED8000B4FFF /* CoreClass */,
 				2C149E481B78BED9000B4FFF /* Frameworks */,
@@ -1201,6 +1204,14 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		2C576FED1B7B4C87000D105F /* UITextBox */ = {
+			isa = PBXGroup;
+			children = (
+				2C576FEE1B7B4C87000D105F /* UITextBox.swift */,
+			);
+			path = UITextBox;
+			sourceTree = "<group>";
+		};
 		2C8AF0F51B78C3FF00C29939 /* SqliteData */ = {
 			isa = PBXGroup;
 			children = (
@@ -1412,6 +1423,7 @@
 				2C149EED1B78BED9000B4FFF /* UIImage+Extend.m in Sources */,
 				2C0568BC1B75ED3000B4974A /* SweetAlert.swift in Sources */,
 				2C149ECF1B78BED9000B4FFF /* BaseMoelConst.m in Sources */,
+				2C576FEF1B7B4C87000D105F /* UITextBox.swift in Sources */,
 				2C149ECD1B78BED9000B4FFF /* UINavigationController+Appearance.m in Sources */,
 				2C0275F91B744A2D00F3C76F /* MJRefreshGifFooter.m in Sources */,
 				2C149EEE1B78BED9000B4FFF /* UIImage+FixOrientation.m in Sources */,

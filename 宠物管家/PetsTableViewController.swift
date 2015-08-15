@@ -26,6 +26,7 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
         //添加下拉刷新
         self.tableView.addLegendHeaderWithRefreshingTarget(self, refreshingAction: "headRefresh")
         //添加下拉加载
+
         self.tableView.addGifFooterWithRefreshingTarget(self, refreshingAction: "footRefresh")
         
         
