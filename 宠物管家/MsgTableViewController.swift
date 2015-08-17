@@ -10,6 +10,8 @@ import UIKit
 
 class MsgTableViewController: UITableViewController {
     var menu :PopMenu!
+    let msgdata = MsgData()
+    var head : XHPathCover!
     @IBAction func addBtn(sender: AnyObject) {
         let items = [
             MenuItem(title: "face", iconName: "post_type_bubble_facebook", glowColor: UIColor.redColor(),index: 0),
@@ -41,18 +43,11 @@ class MsgTableViewController: UITableViewController {
         }
         //menu.removeFromSuperview()
         menu.showMenuAtView(self.view)
-        
     }
-    var data = [String]()
-    var i = 0
-    var head : XHPathCover!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        for a in 0...9{
-            self.i = a
-            data.append("\(a)")
-        }
         self.tableView.tableFooterView = UIView()
         //上拉加载更多
         self.tableView.addGifFooterWithRefreshingTarget(self, refreshingAction: "footRefresh")
@@ -69,11 +64,13 @@ class MsgTableViewController: UITableViewController {
             self.headRefresh()
         }
         self.tableView.tableHeaderView = head;
+        self.tableView.rowHeight = UITableViewAutomaticDimension//自适应行高
+        self.tableView.estimatedRowHeight = 100//给自适应行高初始值
         
     }
 
     func headRefresh(){
-        //ProgressHUD.show("亲爱的，别急嘛～～～")
+        /**ProgressHUD.show("亲爱的，别急嘛～～～")
         self.Delay(2, closure: { () -> () in
             self.data.removeAll(keepCapacity: false)
             self.i = 0
@@ -85,12 +82,13 @@ class MsgTableViewController: UITableViewController {
             //ProgressHUD.showSuccess("人家准备好了！")
             self.head.stopRefresh()
         })
+        */
     }
     func Delay(time:Double,closure:()->()){
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(time * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
     }
     func footRefresh(){
-        //ProgressHUD.show("还有更多内容")
+        /**ProgressHUD.show("还有更多内容")
         self.Delay(2, closure: { () -> () in
             let j = self.i + 10
             for self.i ; self.i < j ; self.i++ {
@@ -100,6 +98,7 @@ class MsgTableViewController: UITableViewController {
             self.tableView.reloadData()
 //ProgressHUD.showSuccess("好了啦～～")
         })
+*/
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -122,23 +121,25 @@ class MsgTableViewController: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return msgdata.datas.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return data.count
+        return 1
     }
     
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("msgcell", forIndexPath: indexPath)
-        cell.textLabel?.text = "\(indexPath.row)"
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCellWithIdentifier("msgcell", forIndexPath: indexPath) as! MsgTableViewCell
         
+        let data = msgdata.datas[indexPath.row]
+        cell.msgInfo = data
         return cell
     }
+    
+    
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         head.scrollViewDidScroll(scrollView)
@@ -153,60 +154,5 @@ class MsgTableViewController: UITableViewController {
         head.scrollViewWillBeginDragging(scrollView)
     }
 
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -27,7 +27,8 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
         print("dianji")
         let Id = textUser.text!
         let Pwd = txtPwd.text!
-        Pitaya.request(.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Index/selectUser", params: ["uid":Id, "upwd":Pwd], errorCallback: { (error) -> Void in
+        
+        Pitaya.request(.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Index/selectUser", params: ["uemail":Id, "upwd":Pwd], errorCallback: { (error) -> Void in
             print("出错了")
             }) { (data, response, error) -> Void in
                 let json = JSON(data: data!)
@@ -48,6 +49,8 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
         
         showType = LoginShowType.NONE
         guideView()
+        
+        
     }
 
     func guideView(){
@@ -79,22 +82,21 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
         imgRightHand = UIImageView(frame: CGRectMake(imgLogin.frame.size.width / 2 + 60, 90, 40, 65))
         imgRightHand.image = UIImage(named: "owl-login-arm-right")
         imgLogin.addSubview(imgRightHand)
-        
         let vLogin = UIView(frame: CGRectMake(25, 160, self.view.frame.width - 50, 185))
         vLogin.layer.borderWidth = 0.5
         vLogin.layer.borderColor = UIColor.lightGrayColor().CGColor
         vLogin.backgroundColor = UIColor.whiteColor()
         self.view.addSubview(vLogin)
-        
-        imgLeftHandGone = UIImageView(frame: CGRectMake(self.view.frame.width / 2 - 100, vLogin.frame.origin.y - 22, 40, 40))
+
+        imgLeftHandGone = UIImageView(frame: CGRectMake(self.view.frame.width / 2 - 100, /*vLogin.frame.origin.y*/160 - 22, 40, 40))
         imgLeftHandGone.image = UIImage(named: "icon_hand")
         self.view.addSubview(imgLeftHandGone)
-        imgRightHandGone = UIImageView(frame: CGRectMake(self.view.frame.width / 2 + 62, vLogin.frame.origin.y - 22, 40, 40))
+        imgRightHandGone = UIImageView(frame: CGRectMake(self.view.frame.width / 2 + 62, /*vLogin.frame.origin.y*/160 - 22, 40, 40))
         imgRightHandGone.image = UIImage(named: "icon_hand")
         self.view.addSubview(imgRightHandGone)
-        
+
         textUser = UITextField(frame: CGRectMake(25, 20, vLogin.frame.size.width - 50, 38))
-        textUser.placeholder = "请输入账号"
+        textUser.placeholder = "请输入邮箱账号"
         textUser.delegate = self
         textUser.layer.cornerRadius = 5;
         textUser.layer.borderWidth = 0.5

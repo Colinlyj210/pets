@@ -28,57 +28,46 @@ class UserRegTableViewController: UITableViewController {
     func userRegistered(){
         for textfield in requireTextFields{
             if textfield.text!.isEmpty {
-                ProgressHUD.showError("\(textfield.placeholder!)不能为空!")
+                ProgressHUD.showError("\(textfield.placeholder!)不能为空!", interaction: false)
                 return
             }
         }
         if textUserPwd.text != textConfirmPwd.text{
-            SweetAlert().showAlert("两次密码输入不一样!", subTitle: "请重新输入!", style: AlertStyle.Error)
+            ProgressHUD.showError("两次密码输入不一样\n请重新输入!", interaction: false)
             return
         }else{
-            print("用户注册")
-            let pet = Pet()
-            pet.hostID = 1
-            pet.petName = textPetName.text
-            pet.petKinds = textPetKinds.text
-            pet.petBirthday = textPetBirthday.text
-            pet.petSkill = textPetSkill.text
-            let user = User()
-            user.hostID = 1
-            user.userName = textUserName.text
-            user.userPwd = textUserPwd.text
-            user.userEmail = textUserEmail.text
-            user.userSign = textUserSign.text
-            user.pet = pet
-            User.save(user)
-            
-            let param = ["uname":textUserName.text, "upwd":textUserPwd.text,"uemail":textUserEmail.text, "usign":textUserSign.text,"pname": textPetName.text,"pkinds":textPetKinds.text,"pbirthday":textPetBirthday.text,"pskill":textPetSkill.text]
-            Pitaya.request(HTTPMethod.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Index/addUser", params: param, errorCallback: { (error) -> Void in
+            let param = ["uname":textUserName.text!, "upwd":textUserPwd.text!,"uemail":textUserEmail.text!, "usign":textUserSign.text! ,"pname": textPetName.text!,"pkinds":textPetKinds.text!,"pbirthday":textPetBirthday.text!,"pskill":textPetSkill.text!]
+            Pitaya.request(.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Index/addUser", params: param, errorCallback: { (error) -> Void in
                 print("出错了")
-                }, callback: { (data, response, error) -> Void in
+                }) { (data, response, error) -> Void in
                     let json = JSON(data: data!)
                     if json["state"] == 1{
-                        print("注册成功")
-                        self.performSegueWithIdentifier("login", sender: self)
+                        ProgressHUD.showSuccess("注册成功", interaction: false)
+                        self.writeSqlite()
+                        
                     }else if json["state"] == 2{
-                        print("该邮箱已注册")
+                        ProgressHUD.showError("该邮箱已注册", interaction: false)
                     }else{
-                        print("注册失败")
+                        ProgressHUD.showError("注册失败", interaction: false)
                     }
-
-            })
-            
-            
+            }
         }
-        let aa = User.selectWhere(nil, groupBy: nil, orderBy: nil, limit: nil) as! [User]
-        //print("aa长度:\(aa.count)")
-        print("username:\(aa[0].userName)")
-        print("useremail\(aa[0].userEmail)")
-        print("userpwd:\(aa[0].userPwd)")
-        print("pet name\(aa[0].pet.petName)")
-        print("pet kinds\(aa[0].pet.petKinds)")
-
-
+    }
+    func writeSqlite(){
+        let pet = Pet()
+        pet.hostID = 1
+        pet.petName = textPetName.text
+        pet.petKinds = textPetKinds.text
+        pet.petBirthday = textPetBirthday.text
+        pet.petSkill = textPetSkill.text
+        let user = User()
+        user.hostID = 1
+        user.userName = textUserName.text
+        user.userPwd = textUserPwd.text
+        user.userEmail = textUserEmail.text
+        user.userSign = textUserSign.text
+        user.pet = pet
+        User.save(user)
     }
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)

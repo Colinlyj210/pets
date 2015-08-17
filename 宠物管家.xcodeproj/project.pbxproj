@@ -143,6 +143,9 @@
 		2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939D1B75E75100C1F598 /* Pets.storyboard */; };
 		2CA693A21B75E76100C1F598 /* Msg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A01B75E76100C1F598 /* Msg.storyboard */; };
 		2CA693A51B75E77900C1F598 /* Set.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A31B75E77900C1F598 /* Set.storyboard */; };
+		2CC195CC1B8176060079DF8D /* MsgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC195CB1B8176060079DF8D /* MsgTableViewCell.swift */; };
+		2CC195CF1B8178240079DF8D /* MsgInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC195CE1B8178240079DF8D /* MsgInfo.swift */; };
+		2CC195D11B817DD80079DF8D /* MsgData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC195D01B817DD80079DF8D /* MsgData.swift */; };
 		2CFB463E1B763FFF006C6F26 /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFB463B1B763FF6006C6F26 /* Pitaya.framework */; };
 		2CFB463F1B764000006C6F26 /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFB463B1B763FF6006C6F26 /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CFD6A251B7A283800D1A003 /* M13Checkbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFD6A241B7A283800D1A003 /* M13Checkbox.m */; };
@@ -441,6 +444,9 @@
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
 		2CA693A11B75E76100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Msg.storyboard; sourceTree = "<group>"; };
 		2CA693A41B75E77900C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Set.storyboard; sourceTree = "<group>"; };
+		2CC195CB1B8176060079DF8D /* MsgTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgTableViewCell.swift; sourceTree = "<group>"; };
+		2CC195CE1B8178240079DF8D /* MsgInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgInfo.swift; sourceTree = "<group>"; };
+		2CC195D01B817DD80079DF8D /* MsgData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgData.swift; sourceTree = "<group>"; };
 		2CFB46351B763FF6006C6F26 /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pitaya.xcodeproj; sourceTree = "<group>"; };
 		2CFD6A231B7A283800D1A003 /* M13Checkbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M13Checkbox.h; sourceTree = "<group>"; };
 		2CFD6A241B7A283800D1A003 /* M13Checkbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M13Checkbox.m; sourceTree = "<group>"; };
@@ -519,6 +525,9 @@
 				2C0276141B74535800F3C76F /* PetsTableViewController.swift */,
 				2C02765B1B745A7D00F3C76F /* WebViewController.swift */,
 				2CA693A01B75E76100C1F598 /* Msg.storyboard */,
+				2CC195CB1B8176060079DF8D /* MsgTableViewCell.swift */,
+				2CC195CE1B8178240079DF8D /* MsgInfo.swift */,
+				2CC195D01B817DD80079DF8D /* MsgData.swift */,
 				2C060A651B77904A0011E106 /* MsgTableViewController.swift */,
 				2CA693A31B75E77900C1F598 /* Set.storyboard */,
 				2C149F181B78C13F000B4FFF /* SetTableViewController.swift */,
@@ -1451,6 +1460,7 @@
 				2C149F061B78BED9000B4FFF /* MJFoundation.m in Sources */,
 				2C0568CA1B761EDD00B4974A /* SwiftyJSON.swift in Sources */,
 				2C149ED91B78BED9000B4FFF /* NSString+Stackoverflow.m in Sources */,
+				2CC195D11B817DD80079DF8D /* MsgData.swift in Sources */,
 				2C149EEA1B78BED9000B4FFF /* UIFont+Extend.m in Sources */,
 				2C7028E21B7AEFBF00824B1E /* myTableView.swift in Sources */,
 				2CFD6A251B7A283800D1A003 /* M13Checkbox.m in Sources */,
@@ -1475,6 +1485,7 @@
 				2C0276BA1B74E02C00F3C76F /* HomeTableViewController.swift in Sources */,
 				2C149EEB1B78BED9000B4FFF /* UIImage+Color.m in Sources */,
 				2C149EF11B78BED9000B4FFF /* UIView+Extend.m in Sources */,
+				2CC195CF1B8178240079DF8D /* MsgInfo.swift in Sources */,
 				2C149EC81B78BED9000B4FFF /* ToolNetWorkSolveVC.m in Sources */,
 				2C149ED61B78BED9000B4FFF /* NSObject+Save.m in Sources */,
 				2C149ED21B78BED9000B4FFF /* NSObject+Contrast.m in Sources */,
@@ -1497,6 +1508,7 @@
 				2C149ED01B78BED9000B4FFF /* NSDictionary+Sqlite.m in Sources */,
 				2C149EE61B78BED9000B4FFF /* NSString+Extend.m in Sources */,
 				2C149F191B78C13F000B4FFF /* SetTableViewController.swift in Sources */,
+				2CC195CC1B8176060079DF8D /* MsgTableViewCell.swift in Sources */,
 				2C149F021B78BED9000B4FFF /* Reachability.m in Sources */,
 				2C8AF0F71B78C41C00C29939 /* User.swift in Sources */,
 				2C149EF81B78BED9000B4FFF /* FMDatabaseQueue.m in Sources */,
