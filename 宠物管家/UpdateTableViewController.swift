@@ -9,36 +9,44 @@
 import UIKit
 
 class UpdateTableViewController: UITableViewController {
-    var selectTag = [Int]()
     var cells = [updateTableViewCell]()
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tableView.rowHeight = UITableViewAutomaticDimension
-//        self.tableView.estimatedRowHeight = 100
-        
-        for _ in 0..<10{
-            selectTag.append(1)
+        //定义每个cell并放到cells数组中,因为重用会发生不可知的错误,所以只能先定义好
+        for _ in 0..<UpdateData.titiles.count{
             let cell = tableView.dequeueReusableCellWithIdentifier("updatecell") as! updateTableViewCell
             cells.append(cell)
         }
+        //定义右按钮
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target:self, action: "doneClick")
         
-
+    }
+    //右按钮点击事件
+    func doneClick(){
+        for var i = 0 ; i < cells.count; i++ {
+            for b in cells[i].btn {
+                if b.selected{
+                    //遍历每个按钮,如果被选择了,就取它的tag放到数据数组中
+                    UpdateData.fenshu[i] = b.tag
+                }
+            }
+        }
+        /**待写入数据库sqlite*/
+        for a in UpdateData.fenshu{
+             print(a)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return UpdateData.titiles.count
     }
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -46,14 +54,13 @@ class UpdateTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        //定义每个cell中的标题
         cells[indexPath.row].title.text = UpdateData.titiles[indexPath.row]
         for var i = 0 ;i < 3; i++ {
+            //定义每个按钮的标题
             cells[indexPath.row].btn[i].setTitle(UpdateData.btnTitles[indexPath.row][i], forState: UIControlState.Normal)
         }
-        
-        
         return cells[indexPath.row]
     }
     
-
 }
