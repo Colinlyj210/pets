@@ -7,11 +7,12 @@
 //
 
 import UIKit
-
+import Pitaya
 class MsgTableViewController: UITableViewController {
     var menu :PopMenu!
-    let msgdata = MsgData()
     var head : XHPathCover!
+    var cells = [MsgTableViewCell]()
+    var msgData = [MsgInfo]()    // 一开始默认是空数组
     @IBAction func addBtn(sender: AnyObject) {
         let items = [
             MenuItem(title: "face", iconName: "post_type_bubble_facebook", glowColor: UIColor.redColor(),index: 0),
@@ -41,7 +42,6 @@ class MsgTableViewController: UITableViewController {
             }
             
         }
-        //menu.removeFromSuperview()
         menu.showMenuAtView(self.view)
     }
     
@@ -57,21 +57,20 @@ class MsgTableViewController: UITableViewController {
         head.setAvatarImage(UIImage(named: "IMG_0755"))
         head.isZoomingEffect = true//下拉模糊设置
         head.setInfo(NSDictionary(objects: ["落幕","ios工程师"], forKeys: [XHUserNameKey,XHBirthdayKey]) as [NSObject : AnyObject])
-        
         head.avatarButton.layer.cornerRadius = 33;
         head.avatarButton.layer.masksToBounds = true
         head.handleRefreshEvent = {
             self.headRefresh()
         }
-        
         self.tableView.tableHeaderView = head;
         
-        
-        self.tableView.rowHeight = UITableViewAutomaticDimension//自适应行高
-        self.tableView.estimatedRowHeight = 100//给自适应行高初始值
-        
+        for _ in 0..<5{
+            let cell = tableView.dequeueReusableCellWithIdentifier("msgcell") as! MsgTableViewCell
+            cells.append(cell)
+        }
+//        self.tableView.rowHeight = UITableViewAutomaticDimension//自适应行高
+//        self.tableView.estimatedRowHeight = 100//给自适应行高初始值
     }
-
     func headRefresh(){
         /**ProgressHUD.show("亲爱的，别急嘛～～～")
         self.Delay(2, closure: { () -> () in
@@ -108,39 +107,59 @@ class MsgTableViewController: UITableViewController {
         self.tabBarController?.tabBar.hidden = false
         
     }
+    //界面出现之后开始获取数据
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // 因为异步调用 所以 可以直接写
+        Pitaya.request(.GET, url: "http://www.lyj210.cn/cwgj/index.php/Home/Msg/selectMsg", errorCallback: { (error) -> Void in
+            print("数据获取失败")
+            }) { (data, response, error) -> Void in
+                let json = JSON(data: data!)
+                //print(json)
+                for var i = 0 ; i < json.count ; i++ {
+                    let userimg = json[i]["userimg"]
+                    let username = json[i]["username"]
+                    let time = json[i]["time"]
+                    let msg = json[i]["msg"]
+                    self.msgData.append(MsgInfo(userImg: "IMG_0755", userName: "\(username)", time: "\(time)", contentText: "\(msg)"))
+                    
+                    //获取到数据 主线程更新UI
+                    dispatch_async(dispatch_get_main_queue()){
+                        self.tableView.reloadData()
+                    }
+                }
+        }
+    }
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
         if menu != nil{
             self.menu.dismissMenu()
         }
-        
     }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    // MARK: - Table view data source
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return msgdata.datas.count
-    }
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 1
     }
     
-    
-    
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("msgcell", forIndexPath: indexPath) as! MsgTableViewCell
-        
-        let data = msgdata.datas[indexPath.row]
-        cell.msgInfo = data
-        return cell
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return msgData.count
     }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let info = self.msgData[indexPath.row]
+        self.cells[indexPath.row].msgInfo = info
+        return cells[indexPath.row]
+    }
+    
+    
+    
+    
+    
     
     
     
