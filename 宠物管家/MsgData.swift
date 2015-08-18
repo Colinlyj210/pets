@@ -8,6 +8,24 @@
 //
 
 import Foundation
+import Pitaya
 class MsgData {
-    var datas = [MsgInfo]()
+    private(set) var datas = [MsgInfo]()
+    init(){
+        datas = loadData()
+    }
+    private func loadData()->[MsgInfo]{
+        var msgInfo = [MsgInfo]()
+        //        Pitaya.request(.GET, url: "http:www.lyj210.cn", errorCallback: { (error) -> Void in
+        //            print("获取失败")
+        //            }) { (data, response, error) -> Void in
+        //                let json = JSON(data: data!)
+        //                msgInfo.append(MsgInfo(userImg: "", userName: "", time: "", contentText: ""))
+        //        }
+        
+        
+        
+        return msgInfo
+    }
+    
 }

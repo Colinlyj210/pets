@@ -135,10 +135,15 @@
 		2C149F0F1B78BF05000B4FFF /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C149F0E1B78BF05000B4FFF /* libsqlite3.0.tbd */; };
 		2C149F171B78C101000B4FFF /* UpdateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149F161B78C101000B4FFF /* UpdateTableViewController.swift */; };
 		2C149F191B78C13F000B4FFF /* SetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C149F181B78C13F000B4FFF /* SetTableViewController.swift */; };
+		2C181A681B81BE1B0002F5F6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 2C181A641B81BE1B0002F5F6 /* LICENSE */; };
+		2C181A691B81BE1B0002F5F6 /* RadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C181A661B81BE1B0002F5F6 /* RadioButton.m */; };
+		2C181A6A1B81BE1B0002F5F6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2C181A671B81BE1B0002F5F6 /* README.md */; };
+		2C181A6D1B81BE6A0002F5F6 /* updateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C181A6C1B81BE6A0002F5F6 /* updateTableViewCell.swift */; };
 		2C576FEF1B7B4C87000D105F /* UITextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C576FEE1B7B4C87000D105F /* UITextBox.swift */; };
 		2C7028E21B7AEFBF00824B1E /* myTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7028E11B7AEFBF00824B1E /* myTableView.swift */; };
 		2C8AF0F71B78C41C00C29939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F61B78C41C00C29939 /* User.swift */; };
 		2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F81B78C57100C29939 /* Pet.swift */; };
+		2CA107FB1B83288C009695C1 /* UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA107FA1B83288C009695C1 /* UpdateData.swift */; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
 		2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939D1B75E75100C1F598 /* Pets.storyboard */; };
 		2CA693A21B75E76100C1F598 /* Msg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A01B75E76100C1F598 /* Msg.storyboard */; };
@@ -436,10 +441,16 @@
 		2C149F0E1B78BF05000B4FFF /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		2C149F161B78C101000B4FFF /* UpdateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateTableViewController.swift; sourceTree = "<group>"; };
 		2C149F181B78C13F000B4FFF /* SetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetTableViewController.swift; sourceTree = "<group>"; };
+		2C181A641B81BE1B0002F5F6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2C181A651B81BE1B0002F5F6 /* RadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadioButton.h; sourceTree = "<group>"; };
+		2C181A661B81BE1B0002F5F6 /* RadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadioButton.m; sourceTree = "<group>"; };
+		2C181A671B81BE1B0002F5F6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2C181A6C1B81BE6A0002F5F6 /* updateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updateTableViewCell.swift; sourceTree = "<group>"; };
 		2C576FEE1B7B4C87000D105F /* UITextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextBox.swift; sourceTree = "<group>"; };
 		2C7028E11B7AEFBF00824B1E /* myTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTableView.swift; sourceTree = "<group>"; };
 		2C8AF0F61B78C41C00C29939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C8AF0F81B78C57100C29939 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		2CA107FA1B83288C009695C1 /* UpdateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateData.swift; path = ../../test/UpdateData.swift; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
 		2CA693A11B75E76100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Msg.storyboard; sourceTree = "<group>"; };
@@ -500,6 +511,7 @@
 		2C0275C31B74491600F3C76F /* 宠物管家 */ = {
 			isa = PBXGroup;
 			children = (
+				2C181A631B81BE1B0002F5F6 /* RadioButton */,
 				2C576FED1B7B4C87000D105F /* UITextBox */,
 				2CFD6A221B7A282900D1A003 /* CheckBox */,
 				2C149DFE1B78BED8000B4FFF /* CoreClass */,
@@ -520,6 +532,8 @@
 				2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */,
 				2CA6939A1B75E72A00C1F598 /* Home.storyboard */,
 				2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */,
+				2C181A6C1B81BE6A0002F5F6 /* updateTableViewCell.swift */,
+				2CA107FA1B83288C009695C1 /* UpdateData.swift */,
 				2C149F161B78C101000B4FFF /* UpdateTableViewController.swift */,
 				2CA6939D1B75E75100C1F598 /* Pets.storyboard */,
 				2C0276141B74535800F3C76F /* PetsTableViewController.swift */,
@@ -1213,6 +1227,17 @@
 			path = MJExtension;
 			sourceTree = "<group>";
 		};
+		2C181A631B81BE1B0002F5F6 /* RadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				2C181A641B81BE1B0002F5F6 /* LICENSE */,
+				2C181A651B81BE1B0002F5F6 /* RadioButton.h */,
+				2C181A661B81BE1B0002F5F6 /* RadioButton.m */,
+				2C181A671B81BE1B0002F5F6 /* README.md */,
+			);
+			path = RadioButton;
+			sourceTree = "<group>";
+		};
 		2C576FED1B7B4C87000D105F /* UITextBox */ = {
 			isa = PBXGroup;
 			children = (
@@ -1351,6 +1376,7 @@
 				2C0275D21B74491600F3C76F /* LaunchScreen.storyboard in Resources */,
 				2C0275CF1B74491600F3C76F /* Assets.xcassets in Resources */,
 				2C0275F51B744A2D00F3C76F /* MJRefresh.bundle in Resources */,
+				2C181A681B81BE1B0002F5F6 /* LICENSE in Resources */,
 				2C149ECB1B78BED9000B4FFF /* ToolNetWorkView.xib in Resources */,
 				2C149EC91B78BED9000B4FFF /* ToolNetWorkSolveVC.xib in Resources */,
 				2CA693A51B75E77900C1F598 /* Set.storyboard in Resources */,
@@ -1404,6 +1430,7 @@
 				2C149ED81B78BED9000B4FFF /* NSObject+Update.m in Sources */,
 				2C149ED31B78BED9000B4FFF /* NSObject+Create.m in Sources */,
 				2C149EFF1B78BED9000B4FFF /* NSURL+File.m in Sources */,
+				2C181A691B81BE1B0002F5F6 /* RadioButton.m in Sources */,
 				2C0276871B745E3500F3C76F /* SDWebImagePrefetcher.m in Sources */,
 				2C149EF61B78BED9000B4FFF /* FMDatabaseAdditions.m in Sources */,
 				2C149EF91B78BED9000B4FFF /* FMResultSet.m in Sources */,
@@ -1422,6 +1449,7 @@
 				2C0275F61B744A2D00F3C76F /* MJRefreshComponent.m in Sources */,
 				2C02768C1B745E3500F3C76F /* UIImageView+HighlightedWebCache.m in Sources */,
 				2C149EE31B78BED9000B4FFF /* NSArray+Extend.m in Sources */,
+				2C181A6A1B81BE1B0002F5F6 /* README.md in Sources */,
 				2C0568CD1B761F5100B4974A /* Pitaya.swift in Sources */,
 				2C02765C1B745A7D00F3C76F /* WebViewController.swift in Sources */,
 				2C149EDD1B78BED9000B4FFF /* BaseTF.m in Sources */,
@@ -1432,6 +1460,7 @@
 				2C149EED1B78BED9000B4FFF /* UIImage+Extend.m in Sources */,
 				2C0568BC1B75ED3000B4974A /* SweetAlert.swift in Sources */,
 				2C149ECF1B78BED9000B4FFF /* BaseMoelConst.m in Sources */,
+				2C181A6D1B81BE6A0002F5F6 /* updateTableViewCell.swift in Sources */,
 				2C576FEF1B7B4C87000D105F /* UITextBox.swift in Sources */,
 				2C149ECD1B78BED9000B4FFF /* UINavigationController+Appearance.m in Sources */,
 				2C0275F91B744A2D00F3C76F /* MJRefreshGifFooter.m in Sources */,
@@ -1500,6 +1529,7 @@
 				2C149EFD1B78BED9000B4FFF /* NSData+Param.m in Sources */,
 				2C149EF31B78BED9000B4FFF /* CoreFMDB.m in Sources */,
 				2C149B171B788594000B4FFF /* EARestrictedScrollView.m in Sources */,
+				2CA107FB1B83288C009695C1 /* UpdateData.swift in Sources */,
 				2C149ED11B78BED9000B4FFF /* NSObject+BaseModelCommon.m in Sources */,
 				2C0276151B74535800F3C76F /* PetsTableViewController.swift in Sources */,
 				2C060A661B77904A0011E106 /* MsgTableViewController.swift in Sources */,

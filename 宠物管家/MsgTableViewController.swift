@@ -63,7 +63,10 @@ class MsgTableViewController: UITableViewController {
         head.handleRefreshEvent = {
             self.headRefresh()
         }
+        
         self.tableView.tableHeaderView = head;
+        
+        
         self.tableView.rowHeight = UITableViewAutomaticDimension//自适应行高
         self.tableView.estimatedRowHeight = 100//给自适应行高初始值
         
