@@ -15,9 +15,9 @@ class MsgTableViewController: UITableViewController {
     var msgData = [MsgInfo]()    // 一开始默认是空数组
     @IBAction func addBtn(sender: AnyObject) {
         let items = [
-            MenuItem(title: "face", iconName: "post_type_bubble_facebook", glowColor: UIColor.redColor(),index: 0),
-            MenuItem(title: "tsobao", iconName: "post_type_bubble_flickr", glowColor: UIColor.blueColor(),index: 1),
-            MenuItem(title: "sina", iconName: "post_type_bubble_googleplus", glowColor: UIColor.yellowColor(),index: 2)
+            MenuItem(title: "文字", iconName: "edit", glowColor: UIColor(hex: "FA386C"),index: 0),
+            MenuItem(title: "相册", iconName: "photo", glowColor: UIColor.orangeColor(),index: 1),
+            MenuItem(title: "照片", iconName: "camera", glowColor: UIColor.yellowColor(),index: 2)
         ]
         //self.tabBarController?.tabBar.hidden = true
         
@@ -52,7 +52,7 @@ class MsgTableViewController: UITableViewController {
         //上拉加载更多
         self.tableView.addGifFooterWithRefreshingTarget(self, refreshingAction: "footRefresh")
         //下拉刷新
-        head = XHPathCover(frame: CGRectMake(0, 0, self.view.frame.width , 240))
+        head = XHPathCover(frame: CGRectMake(0, 0, self.view.frame.width , 220))
         head.setBackgroundImage(UIImage(named: "BG"))
         head.setAvatarImage(UIImage(named: "IMG_0755"))
         head.isZoomingEffect = true//下拉模糊设置

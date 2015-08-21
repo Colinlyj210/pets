@@ -55,9 +55,9 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
 
     func guideView(){
         var pages = [EAIntroPage]()
-        pages.append(setPage("image1", title: "第一个页面"))
-        pages.append(setPage("image2", title: "第二个页面"))
-        pages.append(setPage("image3", title: "第三个页面"))
+        pages.append(setPage("b1", title: "第一个页面"))
+        pages.append(setPage("b2", title: "第二个页面"))
+        pages.append(setPage("b3", title: "第三个页面"))
         let intro = EAIntroView(frame: self.view.frame, andPages: pages)
         intro.delegate = self
         intro.showInView(self.view) 

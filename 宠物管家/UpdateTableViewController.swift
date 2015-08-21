@@ -32,9 +32,12 @@ class UpdateTableViewController: UITableViewController {
             }
         }
         /**待写入数据库sqlite*/
+        var sum = 0
         for a in UpdateData.fenshu{
-             print(a)
+             sum += a
         }
+        print(sum)
+        
     }
 
     override func didReceiveMemoryWarning() {
