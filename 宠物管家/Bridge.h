@@ -15,3 +15,5 @@
 #import "EAIntroView.h"
 #import "BaseModel.h"
 #import "RadioButton.h"
+#import "CoreFMDB.h"
+#import "BTSpiderPlotterView.h"

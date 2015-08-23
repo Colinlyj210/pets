@@ -140,7 +140,9 @@
 		2C181A6A1B81BE1B0002F5F6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2C181A671B81BE1B0002F5F6 /* README.md */; };
 		2C181A6D1B81BE6A0002F5F6 /* updateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C181A6C1B81BE6A0002F5F6 /* updateTableViewCell.swift */; };
 		2C576FEF1B7B4C87000D105F /* UITextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C576FEE1B7B4C87000D105F /* UITextBox.swift */; };
+		2C6329A21B8721E000BD0A5C /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6329A11B8721E000BD0A5C /* Score.swift */; };
 		2C7028E21B7AEFBF00824B1E /* myTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7028E11B7AEFBF00824B1E /* myTableView.swift */; };
+		2C83251F1B899F690094F081 /* BTSpiderPlotterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C83251E1B899F690094F081 /* BTSpiderPlotterView.m */; };
 		2C8AF0F71B78C41C00C29939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F61B78C41C00C29939 /* User.swift */; };
 		2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F81B78C57100C29939 /* Pet.swift */; };
 		2CA107FB1B83288C009695C1 /* UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA107FA1B83288C009695C1 /* UpdateData.swift */; };
@@ -445,7 +447,10 @@
 		2C181A671B81BE1B0002F5F6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2C181A6C1B81BE6A0002F5F6 /* updateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updateTableViewCell.swift; sourceTree = "<group>"; };
 		2C576FEE1B7B4C87000D105F /* UITextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextBox.swift; sourceTree = "<group>"; };
+		2C6329A11B8721E000BD0A5C /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		2C7028E11B7AEFBF00824B1E /* myTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTableView.swift; sourceTree = "<group>"; };
+		2C83251D1B899F690094F081 /* BTSpiderPlotterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSpiderPlotterView.h; sourceTree = "<group>"; };
+		2C83251E1B899F690094F081 /* BTSpiderPlotterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSpiderPlotterView.m; sourceTree = "<group>"; };
 		2C8AF0F61B78C41C00C29939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C8AF0F81B78C57100C29939 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		2CA107FA1B83288C009695C1 /* UpdateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateData.swift; path = ../../test/UpdateData.swift; sourceTree = "<group>"; };
@@ -506,6 +511,7 @@
 		2C0275C31B74491600F3C76F /* 宠物管家 */ = {
 			isa = PBXGroup;
 			children = (
+				2C83251C1B899F690094F081 /* BTSpiderPlotterView */,
 				2C181A631B81BE1B0002F5F6 /* RadioButton */,
 				2C576FED1B7B4C87000D105F /* UITextBox */,
 				2C149DFE1B78BED8000B4FFF /* CoreClass */,
@@ -1239,11 +1245,21 @@
 			path = UITextBox;
 			sourceTree = "<group>";
 		};
+		2C83251C1B899F690094F081 /* BTSpiderPlotterView */ = {
+			isa = PBXGroup;
+			children = (
+				2C83251D1B899F690094F081 /* BTSpiderPlotterView.h */,
+				2C83251E1B899F690094F081 /* BTSpiderPlotterView.m */,
+			);
+			path = BTSpiderPlotterView;
+			sourceTree = "<group>";
+		};
 		2C8AF0F51B78C3FF00C29939 /* SqliteData */ = {
 			isa = PBXGroup;
 			children = (
 				2C8AF0F61B78C41C00C29939 /* User.swift */,
 				2C8AF0F81B78C57100C29939 /* Pet.swift */,
+				2C6329A11B8721E000BD0A5C /* Score.swift */,
 			);
 			path = SqliteData;
 			sourceTree = "<group>";
@@ -1427,6 +1443,7 @@
 				2C02768D1B745E3500F3C76F /* UIImageView+WebCache.m in Sources */,
 				2C149F031B78BED9000B4FFF /* FBShimmeringLayer.m in Sources */,
 				2C149EDA1B78BED9000B4FFF /* BaseGradientView.m in Sources */,
+				2C6329A21B8721E000BD0A5C /* Score.swift in Sources */,
 				2C149F041B78BED9000B4FFF /* FBShimmeringView.m in Sources */,
 				2C0276851B745E3500F3C76F /* SDWebImageDownloaderOperation.m in Sources */,
 				2C149EF21B78BED9000B4FFF /* UIWindow+Launch.m in Sources */,
@@ -1458,6 +1475,7 @@
 				2C0276811B745E3500F3C76F /* SDImageCache.m in Sources */,
 				2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */,
 				2C149EE71B78BED9000B4FFF /* NSString+Password.m in Sources */,
+				2C83251F1B899F690094F081 /* BTSpiderPlotterView.m in Sources */,
 				2C149F071B78BED9000B4FFF /* MJProperty.m in Sources */,
 				2C149EC61B78BED9000B4FFF /* CoreNavigationController.m in Sources */,
 				2C0276001B744A2D00F3C76F /* UIView+MJExtension.m in Sources */,

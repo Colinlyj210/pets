@@ -17,6 +17,8 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "主页"
+        self.view.backgroundColor = UIColor(hex: "8CA2C2")
+        //self.tableView.backgroundColor = UIColor(hex: "8CA2C2")
         /**
         SweetAlert().showAlert("是否更新宠物信息?", subTitle: "你将跳转到下个界面进行输入信息!", style: AlertStyle.Warning, buttonTitle:"取消!", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "确定", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
             if isOtherButton == false {
@@ -36,7 +38,7 @@ class HomeTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.tabBarController?.tabBar.hidden = false
-
+        self.tableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -58,45 +60,106 @@ class HomeTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 400
+        return 450
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homecell", forIndexPath: indexPath)
         for view in cell.contentView.subviews{
             view.removeFromSuperview()
         }
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
         if indexPath.row == 0{
             cell.contentView.addSubview(healthChart())
         }else if indexPath.row == 1{
-            cell.contentView.addSubview(eatChart())
-        }else{
+            cell.contentView.addSubview(cleanChart())
+        }else if indexPath.row == 2{
+            cell.contentView.addSubview(spiderChart())
+        }else if indexPath.row == 3{
+            cell.contentView.addSubview(petSkill())
+        }
+        
+        
+        else{
             let lab = UILabel(frame: CGRectMake(0, 0, 100, 30))
             lab.text = "\(indexPath.row)"
             cell.contentView.addSubview(lab)
         }
+        cell.backgroundColor = UIColor(hex: "8CA2C2")
         return cell
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("\(indexPath.row)")
     }
-    func healthChart()->UIView{
-        let items = [PNPieChartDataItem(value: 10 , color: UIColor.redColor()),PNPieChartDataItem(value: 20, color: UIColor.blueColor(), description: "abc"),PNPieChartDataItem(value: 40, color: UIColor.greenColor(), description: "123")]
-        let pie = PNPieChart(frame: CGRectMake(self.view.bounds.width/2 - 100, 100, 200, 200), items: items)
-        pie.descriptionTextColor = UIColor.whiteColor()
-        pie.descriptionTextFont = UIFont(name: "Avenir-Medium", size: 14)
-        pie.strokeChart()
-        return pie
+    func petSkill()->UIView{
+        let uiview = UIView(frame: CGRectMake(50, 50, self.view.frame.width - 100, 400))
+        let btn = UIButton(frame: CGRectMake(0, 0, 100, 30))
+        btn.setTitle("自己吃饭", forState: UIControlState.Normal)
+        btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Selected)
+        btn.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        btn.backgroundColor = UIColor.lightGrayColor()
+        btn.addTarget(self, action: "petskillclick:", forControlEvents: UIControlEvents.TouchUpInside)
+        uiview.addSubview(btn)
+        
+        
+        return uiview
     }
-    func eatChart()->UIView{
-        let lineChart = PNLineChart(frame: CGRectMake(0, 0, self.view.frame.width , 200))
+    func petskillclick(btn: UIButton){
+        if btn.selected{
+            btn.selected = false
+            btn.backgroundColor = UIColor.lightGrayColor()
+        }else{
+            btn.selected = true
+            btn.backgroundColor = UIColor.blueColor()
+        }
+        
+        
+        
+    }
+    func spiderChart()->UIView{
+        let value = ["健康": "3.3","清洁": "5.0","不饥饿": "4.5","技能": "2.2","综合得分": "4.0"]
+        let width = self.view.frame.width - 100
+        let spide = BTSpiderPlotterView(frame: CGRectMake(50, 50, width, width), valueDictionary: value)
+        spide.maxValue = 5
+        spide.drawboardColor = UIColor.whiteColor()
+        spide.plotColor = UIColor(red: 227/256, green: 166/256, blue: 167/256, alpha: 0.85)
+        spide.animateWithDuration(1, valueDictionary: value)
+        return spide
+        
+    }
+    
+    func cleanChart()->UIView{
+        let width = self.view.frame.width - 150
+        let cicleChart = PNCircleChart(frame: CGRectMake(75, 50, width, width), total: 100, current: 80, clockwise: false, shadow: false, shadowColor: UIColor.lightGrayColor())
+        cicleChart.backgroundColor = UIColor.clearColor()
+        cicleChart.strokeColor = UIColor.greenColor()
+        cicleChart.lineWidth = width/15
+        cicleChart.strokeChart()
+        return cicleChart
+        
+    }
 
-        let xlab = ["sep1","sep2","sep3","sep4","sep5"];
-        lineChart.setXLabels(xlab, withWidth: 60)
-        let dataArr = [60.1,160.1,126.4,262.2,26.4]
+    func healthChart()->UIView{
+        let uiview = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 400))
+        //uiview.backgroundColor = UIColor(hex: "8CA2C2")
+        var xlab = [String]()
+        var dataArr = [1,1,1,1,1]
+        let scArr = Score.selectWhere(nil, groupBy: nil, orderBy: "hostID desc", limit: "5") as! [Score]
+        print(scArr.count)
+        if scArr.count == 0{
+            return UIView(frame: CGRectMake(0, 0, self.view.frame.width , 300))
+        }
+        for var i = 0 ; i < scArr.count; i++ {
+            dataArr[i] = Int(scArr[scArr.count - i - 1].feshu)!
+            xlab.append("第\(i + 1)天")
+        }
+
+        let lineChart = PNLineChart(frame: CGRectMake(0, 25, self.view.frame.width , 300))
+
+        lineChart.setXLabels(xlab, withWidth: self.view.frame.width/5 - 15)
         let data = PNLineChartData()
         data.color = UIColor.greenColor()
         data.itemCount = UInt(xlab.count)
-        //data.getData = {()->()}
         
         data.getData = {(index: UInt) -> PNLineChartDataItem in
             let yValue: CGFloat = CGFloat(dataArr[Int(index)])
@@ -104,47 +167,19 @@ class HomeTableViewController: UITableViewController {
         }
         lineChart.chartData = [data]
         lineChart.strokeChart()
-        return lineChart
+        lineChart.backgroundColor = UIColor.clearColor()
+        uiview.addSubview(lineChart)
+        let label = UILabel(frame: CGRectMake(30, 350, self.view.frame.width - 60, 70))
+        label.text = UpdateData.description[1]
+        label.textColor  = UIColor.whiteColor()
+        label.lineBreakMode = NSLineBreakMode.ByWordWrapping//这两行实现label换行
+        label.numberOfLines = 0
+        label.sizeToFit()
+        uiview.addSubview(label)
+        return uiview
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
- 
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toUpdate"{
             self.hidesBottomBarWhenPushed = true

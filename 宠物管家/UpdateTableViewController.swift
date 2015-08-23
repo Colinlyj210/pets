@@ -37,6 +37,15 @@ class UpdateTableViewController: UITableViewController {
              sum += a
         }
         print(sum)
+        let s = Score()
+        s.hostID = Int(CoreFMDB.countTable("Score")) + 1
+        s.feshu = "\(sum)"
+        Score.save(s)
+        let b = Score.selectWhere("hostID=1", groupBy: nil, orderBy: nil, limit: nil) as! [Score]
+        for bb in b{
+            print(bb.hostID)
+            print(bb.feshu)
+        }
         
     }
 

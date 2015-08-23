@@ -9,7 +9,8 @@
 import UIKit
 
 class MsgTableViewCell: UITableViewCell {
-    @IBOutlet weak var contentText: UITextView!
+
+    @IBOutlet weak var contentText: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var userImg: UIImageView!
@@ -20,6 +21,8 @@ class MsgTableViewCell: UITableViewCell {
     }
     private func configCell(){
         contentText.text = msgInfo?.contentText
+        contentText.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        contentText.numberOfLines = 0
         time.text = msgInfo?.time
         userName.text = msgInfo?.userName
         userImg.image = UIImage(named: (msgInfo?.userImg)!)
