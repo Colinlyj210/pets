@@ -143,6 +143,7 @@
 		2C6329A21B8721E000BD0A5C /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6329A11B8721E000BD0A5C /* Score.swift */; };
 		2C7028E21B7AEFBF00824B1E /* myTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7028E11B7AEFBF00824B1E /* myTableView.swift */; };
 		2C83251F1B899F690094F081 /* BTSpiderPlotterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C83251E1B899F690094F081 /* BTSpiderPlotterView.m */; };
+		2C8325221B89B08F0094F081 /* BtnCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8325211B89B08F0094F081 /* BtnCellView.swift */; };
 		2C8AF0F71B78C41C00C29939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F61B78C41C00C29939 /* User.swift */; };
 		2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F81B78C57100C29939 /* Pet.swift */; };
 		2CA107FB1B83288C009695C1 /* UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA107FA1B83288C009695C1 /* UpdateData.swift */; };
@@ -451,6 +452,7 @@
 		2C7028E11B7AEFBF00824B1E /* myTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTableView.swift; sourceTree = "<group>"; };
 		2C83251D1B899F690094F081 /* BTSpiderPlotterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSpiderPlotterView.h; sourceTree = "<group>"; };
 		2C83251E1B899F690094F081 /* BTSpiderPlotterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSpiderPlotterView.m; sourceTree = "<group>"; };
+		2C8325211B89B08F0094F081 /* BtnCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnCellView.swift; sourceTree = "<group>"; };
 		2C8AF0F61B78C41C00C29939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C8AF0F81B78C57100C29939 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		2CA107FA1B83288C009695C1 /* UpdateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateData.swift; path = ../../test/UpdateData.swift; sourceTree = "<group>"; };
@@ -532,6 +534,7 @@
 				2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */,
 				2CA6939A1B75E72A00C1F598 /* Home.storyboard */,
 				2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */,
+				2C8325211B89B08F0094F081 /* BtnCellView.swift */,
 				2C181A6C1B81BE6A0002F5F6 /* updateTableViewCell.swift */,
 				2CA107FA1B83288C009695C1 /* UpdateData.swift */,
 				2C149F161B78C101000B4FFF /* UpdateTableViewController.swift */,
@@ -1454,6 +1457,7 @@
 				2C0568CD1B761F5100B4974A /* Pitaya.swift in Sources */,
 				2C02765C1B745A7D00F3C76F /* WebViewController.swift in Sources */,
 				2C149EDD1B78BED9000B4FFF /* BaseTF.m in Sources */,
+				2C8325221B89B08F0094F081 /* BtnCellView.swift in Sources */,
 				2C149B151B788594000B4FFF /* EAIntroPage.m in Sources */,
 				2C0276831B745E3500F3C76F /* SDWebImageDecoder.m in Sources */,
 				2C149F091B78BED9000B4FFF /* NSObject+MJCoding.m in Sources */,

@@ -14,6 +14,8 @@ class HomeTableViewController: UITableViewController {
     @IBAction func updateBtn(sender: AnyObject) {
         self.toUpdateView()
     }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "主页"
@@ -42,25 +44,31 @@ class HomeTableViewController: UITableViewController {
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     func toUpdateView(){
         self.performSegueWithIdentifier("toUpdate", sender: self)
     }
-    // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 4
     }
-
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 450
+        switch indexPath.row{
+        case 0:
+            return self.view.frame.width + 200
+        case 1:
+            return 430
+        case 2:
+            return 400
+        case 3:
+            return 300
+        default:
+            return 400
+        }
+        
+        
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homecell", forIndexPath: indexPath)
@@ -68,19 +76,30 @@ class HomeTableViewController: UITableViewController {
             view.removeFromSuperview()
         }
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
-        if indexPath.row == 0{
-            cell.contentView.addSubview(healthChart())
-        }else if indexPath.row == 1{
-            cell.contentView.addSubview(cleanChart())
-        }else if indexPath.row == 2{
-            cell.contentView.addSubview(spiderChart())
-        }else if indexPath.row == 3{
-            cell.contentView.addSubview(petSkill())
-        }
-        
-        
-        else{
+        switch indexPath.row{
+        case 0:
+            let tlab = UILabel(frame: CGRectMake(50, 40, 200, 30))
+            tlab.text = "宠物综合得分"
+            tlab.textColor = UIColor.whiteColor()
+            cell.contentView.addSubview(tlab)
+            let lab = UILabel(frame: CGRectMake(self.view.frame.width/2 - 100, 50, 200, 200))
+            lab.text = "85"
+            lab.textColor = UIColor.whiteColor()
+            lab.textAlignment = NSTextAlignment.Center
+            lab.font = UIFont(name: "Arial", size: 100)
+            cell.contentView.addSubview(lab)
+            cell.contentView.addSubview(spiderChart(CGRectMake(50, 250, self.view.frame.width - 100, self.view.frame.width - 100)))
+        case 1:
+            cell.contentView.addSubview(healthChart(CGRectMake(0, 0, self.view.frame.width, 400)))
+        case 2:
+            let w = self.view.frame.width - 150
+            cell.contentView.addSubview(cleanChart(CGRectMake(0, 0,self.view.frame.width ,400),w: w))
+        case 3:
+            let s = BtnCellView()
+            s.frame = CGRectMake(50, 50, self.view.frame.width - 100, 250)
+            s.backgroundColor = UIColor.clearColor()
+            cell.contentView.addSubview(s)
+        default:
             let lab = UILabel(frame: CGRectMake(0, 0, 100, 30))
             lab.text = "\(indexPath.row)"
             cell.contentView.addSubview(lab)
@@ -88,60 +107,40 @@ class HomeTableViewController: UITableViewController {
         cell.backgroundColor = UIColor(hex: "8CA2C2")
         return cell
     }
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("\(indexPath.row)")
-    }
-    func petSkill()->UIView{
-        let uiview = UIView(frame: CGRectMake(50, 50, self.view.frame.width - 100, 400))
-        let btn = UIButton(frame: CGRectMake(0, 0, 100, 30))
-        btn.setTitle("自己吃饭", forState: UIControlState.Normal)
-        btn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Selected)
-        btn.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        btn.backgroundColor = UIColor.lightGrayColor()
-        btn.addTarget(self, action: "petskillclick:", forControlEvents: UIControlEvents.TouchUpInside)
-        uiview.addSubview(btn)
-        
-        
-        return uiview
-    }
-    func petskillclick(btn: UIButton){
-        if btn.selected{
-            btn.selected = false
-            btn.backgroundColor = UIColor.lightGrayColor()
-        }else{
-            btn.selected = true
-            btn.backgroundColor = UIColor.blueColor()
-        }
-        
-        
-        
-    }
-    func spiderChart()->UIView{
+    
+    func spiderChart(frame: CGRect)->UIView{
         let value = ["健康": "3.3","清洁": "5.0","不饥饿": "4.5","技能": "2.2","综合得分": "4.0"]
-        let width = self.view.frame.width - 100
-        let spide = BTSpiderPlotterView(frame: CGRectMake(50, 50, width, width), valueDictionary: value)
+        let spide = BTSpiderPlotterView(frame: frame, valueDictionary: value)
         spide.maxValue = 5
         spide.drawboardColor = UIColor.whiteColor()
         spide.plotColor = UIColor(red: 227/256, green: 166/256, blue: 167/256, alpha: 0.85)
         spide.animateWithDuration(1, valueDictionary: value)
         return spide
-        
     }
     
-    func cleanChart()->UIView{
-        let width = self.view.frame.width - 150
-        let cicleChart = PNCircleChart(frame: CGRectMake(75, 50, width, width), total: 100, current: 80, clockwise: false, shadow: false, shadowColor: UIColor.lightGrayColor())
+    func cleanChart(frame: CGRect,w: CGFloat)->UIView{
+        let uiview  = UIView(frame: frame)
+        let cicleChart = PNCircleChart(frame: CGRectMake(75, 50,w ,w), total: 100, current: 80, clockwise: false, shadow: false, shadowColor: UIColor.lightGrayColor())
         cicleChart.backgroundColor = UIColor.clearColor()
         cicleChart.strokeColor = UIColor.greenColor()
-        cicleChart.lineWidth = width/15
+        cicleChart.lineWidth = w/15
         cicleChart.strokeChart()
-        return cicleChart
+        uiview.addSubview(cicleChart)
+
+        let lab = UILabel(frame: CGRectMake(30, 330, self.view.frame.width - 60, 50))
+        lab.text = "您的宠物已经很久没洗澡了,都长虫子了"
+        lab.textColor  = UIColor.whiteColor()
+        lab.lineBreakMode = NSLineBreakMode.ByWordWrapping//这两行实现label换行
+        lab.numberOfLines = 0
+        lab.sizeToFit()
+        uiview.addSubview(lab)
+        
+        return uiview
         
     }
 
-    func healthChart()->UIView{
-        let uiview = UIView(frame: CGRectMake(0, 0, self.view.frame.width, 400))
-        //uiview.backgroundColor = UIColor(hex: "8CA2C2")
+    func healthChart(frame: CGRect)->UIView{
+        let uiview = UIView(frame: frame)
         var xlab = [String]()
         var dataArr = [1,1,1,1,1]
         let scArr = Score.selectWhere(nil, groupBy: nil, orderBy: "hostID desc", limit: "5") as! [Score]
