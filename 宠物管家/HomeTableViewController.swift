@@ -63,7 +63,7 @@ class HomeTableViewController: UITableViewController {
         case 2:
             return 400
         case 3:
-            return 300
+            return 350
         default:
             return 400
         }
