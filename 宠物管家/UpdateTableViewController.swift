@@ -21,8 +21,9 @@ class UpdateTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target:self, action: "doneClick")
         
     }
-    //右按钮点击事件
+    //右按钮点击事件  2456
     func doneClick(){
+
         for var i = 0 ; i < cells.count; i++ {
             for b in cells[i].btn {
                 if b.selected{

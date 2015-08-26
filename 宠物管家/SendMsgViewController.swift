@@ -10,6 +10,9 @@ import UIKit
 
 class SendMsgViewController: UIViewController {
 
+    @IBAction func sendBtn(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +23,9 @@ class SendMsgViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation

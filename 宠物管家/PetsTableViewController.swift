@@ -142,9 +142,6 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
         let web = segue.destinationViewController as! WebViewController
         web.url = self.urlStr
         
-        
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     
 
