@@ -13,12 +13,5 @@ class myTableView: UITableView {
         super.touchesEnded(touches, withEvent: event)
         endEditing(true)
     }
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }

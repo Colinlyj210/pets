@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
     </dependencies>
     <scenes>
-        <!--Set Table View Controller-->
+        <!--设置-->
         <scene sceneID="NDx-JN-fzT">
             <objects>
                 <tableViewController id="qWV-Gr-zVL" customClass="SetTableViewController" customModule="宠物管家" customModuleProvider="target" sceneMemberID="viewController">
@@ -171,7 +171,7 @@
                             <outlet property="delegate" destination="qWV-Gr-zVL" id="44U-cm-b6F"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="bFp-r0-y1L"/>
+                    <navigationItem key="navigationItem" title="设置" id="bFp-r0-y1L"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gr3-97-65E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

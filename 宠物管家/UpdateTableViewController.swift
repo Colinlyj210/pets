@@ -46,7 +46,7 @@ class UpdateTableViewController: UITableViewController {
             print(bb.hostID)
             print(bb.feshu)
         }
-        
+        self.navigationController?.popViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {

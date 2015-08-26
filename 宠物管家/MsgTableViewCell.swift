@@ -26,5 +26,6 @@ class MsgTableViewCell: UITableViewCell {
         time.text = msgInfo?.time
         userName.text = msgInfo?.userName
         userImg.image = UIImage(named: (msgInfo?.userImg)!)
+        
     }
 }

@@ -154,6 +154,7 @@
 		2CA693A51B75E77900C1F598 /* Set.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A31B75E77900C1F598 /* Set.storyboard */; };
 		2CC195CC1B8176060079DF8D /* MsgTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC195CB1B8176060079DF8D /* MsgTableViewCell.swift */; };
 		2CC195CF1B8178240079DF8D /* MsgInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC195CE1B8178240079DF8D /* MsgInfo.swift */; };
+		2CF166DC1B8D8E4D004A3F37 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF166DB1B8D8E4D004A3F37 /* RoundImageView.swift */; };
 		2CFB463E1B763FFF006C6F26 /* Pitaya.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFB463B1B763FF6006C6F26 /* Pitaya.framework */; };
 		2CFB463F1B764000006C6F26 /* Pitaya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFB463B1B763FF6006C6F26 /* Pitaya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -464,6 +465,7 @@
 		2CA693A41B75E77900C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Set.storyboard; sourceTree = "<group>"; };
 		2CC195CB1B8176060079DF8D /* MsgTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgTableViewCell.swift; sourceTree = "<group>"; };
 		2CC195CE1B8178240079DF8D /* MsgInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MsgInfo.swift; sourceTree = "<group>"; };
+		2CF166DB1B8D8E4D004A3F37 /* RoundImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		2CFB46351B763FF6006C6F26 /* Pitaya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Pitaya.xcodeproj; sourceTree = "<group>"; };
 		783A068A18BC1994DE1A3387 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DB94B45EF30F4DFD451D36FB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 				2C02765B1B745A7D00F3C76F /* WebViewController.swift */,
 				2CA693A01B75E76100C1F598 /* Msg.storyboard */,
 				2CC195CB1B8176060079DF8D /* MsgTableViewCell.swift */,
+				2CF166DB1B8D8E4D004A3F37 /* RoundImageView.swift */,
 				2CC195CE1B8178240079DF8D /* MsgInfo.swift */,
 				2C060A651B77904A0011E106 /* MsgTableViewController.swift */,
 				2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */,
@@ -1334,6 +1337,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 2C0275B81B74491600F3C76F;
 			productRefGroup = 2C0275C21B74491600F3C76F /* Products */;
@@ -1527,6 +1531,7 @@
 				2C149ED21B78BED9000B4FFF /* NSObject+Contrast.m in Sources */,
 				2C149ECE1B78BED9000B4FFF /* BaseModel.m in Sources */,
 				2C149F0A1B78BED9000B4FFF /* NSObject+MJKeyValue.m in Sources */,
+				2CF166DC1B8D8E4D004A3F37 /* RoundImageView.swift in Sources */,
 				2C0275FF1B744A2D00F3C76F /* UIScrollView+MJRefresh.m in Sources */,
 				2C149F0C1B78BED9000B4FFF /* NSString+MJExtension.m in Sources */,
 				2C149EE91B78BED9000B4FFF /* UIDevice+Extend.m in Sources */,

@@ -11,7 +11,7 @@ import UIKit
 class WebViewController: UIViewController {
 
     @IBOutlet weak var web: UIWebView!
-    let url = "http://m.taobao.com"
+    var url = "http://m.taobao.com"
     override func viewDidLoad() {
         super.viewDidLoad()
         let urls = NSURL(string: url)

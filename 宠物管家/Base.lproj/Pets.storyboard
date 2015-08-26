@@ -25,9 +25,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="3Ml-uI-CuP" kind="show" identifier="cellToweb" id="MgX-Zb-Y39"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -38,6 +35,7 @@
                     <navigationItem key="navigationItem" id="4rQ-Pt-RN0"/>
                     <connections>
                         <outlet property="uiscview" destination="Etg-Qs-TmH" id="bWD-7s-KDv"/>
+                        <segue destination="3Ml-uI-CuP" kind="show" identifier="cellToweb" id="3ll-Ry-05V"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvm-G3-iWf" userLabel="First Responder" sceneMemberID="firstResponder"/>

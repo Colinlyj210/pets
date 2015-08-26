@@ -23,8 +23,10 @@ class UserRegTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = false
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "userRegistered")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "userRegistereds")
     }
+
+    
     func userRegistered(){
         for textfield in requireTextFields{
             if textfield.text!.isEmpty {
@@ -52,6 +54,7 @@ class UserRegTableViewController: UITableViewController {
                     }
             }
         }
+        self.navigationController?.popViewControllerAnimated(true)//返回到前一个界面
     }
     func writeSqlite(){
         let pet = Pet()

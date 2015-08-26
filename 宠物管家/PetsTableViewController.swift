@@ -10,10 +10,14 @@ import UIKit
 
 class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     @IBOutlet weak var uiscview: UIView!
+    var urlStr = ""
     var objArray = [String]()
     var i = 0
     let arr = ["http://www.lyj210.cn/cwgj/pic/huli/huli.jpg","http://www.lyj210.cn/cwgj/pic/siyang/siyang.jpg","http://www.lyj210.cn/cwgj/pic/xunlian/xunlian.jpg"]
-    let ss = ["网络图片1","网络图片2","网路图片3"]
+    let urls = ["http://v.xiumi.us/board/v3/25PvV/3524920","http://v.xiumi.us/board/v3/25PvV/3525027","http://v.xiumi.us/board/v3/25PvV/3525407","","","","","","",""]
+    
+    
+    let ss = ["宠物疾病篇","宠物吃饭篇","宠物训练篇"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,7 +80,17 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(time * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
     }
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
-        print("点击了第\(index)张")
+        switch index {
+        case 0:
+            self.urlStr = "http://v.xiumi.us/board/v3/25PvV/2750964"
+        case 1:
+            self.urlStr = "http://v.xiumi.us/board/v3/25PvV/2760872"
+        case 2:
+            self.urlStr = "http://v.xiumi.us/board/v3/25PvV/2760848"
+        default:
+            break
+        }
+        performSegueWithIdentifier("cellToweb", sender: self)
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -95,19 +109,20 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return objArray.count
     }
 
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.urlStr = urls[indexPath.row]
+        performSegueWithIdentifier("cellToweb", sender: self)
+    }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-
+        //self.urlStr = urls[indexPath.row]
         cell.textLabel?.text = self.objArray[indexPath.row]
         return cell
     }
@@ -124,6 +139,10 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         self.hidesBottomBarWhenPushed = true
         self.tabBarController?.tabBar.hidden = true
+        let web = segue.destinationViewController as! WebViewController
+        web.url = self.urlStr
+        
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
