@@ -87,10 +87,49 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="put-fy-Q9n" kind="show" identifier="tosendmsg" id="QAe-GW-mex"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dZ-Xw-Xq1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1099" y="475"/>
+        </scene>
+        <!--发消息-->
+        <scene sceneID="NpJ-ch-4b7">
+            <objects>
+                <viewController id="put-fy-Q9n" customClass="SendMsgViewController" customModule="宠物管家" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g7E-ar-53q"/>
+                        <viewControllerLayoutGuide type="bottom" id="uHO-i6-XFg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7Nw-Ss-rXj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" placeholder="分享新鲜事..." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EX2-WH-MHm">
+                                <rect key="frame" x="20" y="74" width="560" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="QWp-SE-94X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EX2-WH-MHm" firstAttribute="leading" secondItem="7Nw-Ss-rXj" secondAttribute="leadingMargin" id="1df-g0-MO1"/>
+                            <constraint firstItem="EX2-WH-MHm" firstAttribute="top" secondItem="g7E-ar-53q" secondAttribute="bottom" constant="10" id="4y2-vj-TaC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EX2-WH-MHm" secondAttribute="trailing" id="DjM-F3-K7K"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="发消息" id="g2u-lN-VHc">
+                        <barButtonItem key="rightBarButtonItem" title="发送" id="zn2-X2-9SA"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SXE-P7-aEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1909" y="834"/>
         </scene>
         <!--Msg-->
         <scene sceneID="vX9-AH-bIh">

@@ -147,6 +147,7 @@
 		2C8AF0F71B78C41C00C29939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F61B78C41C00C29939 /* User.swift */; };
 		2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F81B78C57100C29939 /* Pet.swift */; };
 		2CA107FB1B83288C009695C1 /* UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA107FA1B83288C009695C1 /* UpdateData.swift */; };
+		2CA423F91B8ABC0D00105A85 /* SendMsgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
 		2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939D1B75E75100C1F598 /* Pets.storyboard */; };
 		2CA693A21B75E76100C1F598 /* Msg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA693A01B75E76100C1F598 /* Msg.storyboard */; };
@@ -456,6 +457,7 @@
 		2C8AF0F61B78C41C00C29939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C8AF0F81B78C57100C29939 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		2CA107FA1B83288C009695C1 /* UpdateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateData.swift; path = ../../test/UpdateData.swift; sourceTree = "<group>"; };
+		2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMsgViewController.swift; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
 		2CA693A11B75E76100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Msg.storyboard; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 				2CC195CB1B8176060079DF8D /* MsgTableViewCell.swift */,
 				2CC195CE1B8178240079DF8D /* MsgInfo.swift */,
 				2C060A651B77904A0011E106 /* MsgTableViewController.swift */,
+				2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */,
 				2CA693A31B75E77900C1F598 /* Set.storyboard */,
 				2C149F181B78C13F000B4FFF /* SetTableViewController.swift */,
 				2C0275D31B74491600F3C76F /* Info.plist */,
@@ -1530,6 +1533,7 @@
 				2C02767F1B745E3500F3C76F /* MKAnnotationView+WebCache.m in Sources */,
 				2C0275FC1B744A2D00F3C76F /* MJRefreshLegendFooter.m in Sources */,
 				2C149EF01B78BED9000B4FFF /* UITableViewCell+Extend.m in Sources */,
+				2CA423F91B8ABC0D00105A85 /* SendMsgViewController.swift in Sources */,
 				2C149EFD1B78BED9000B4FFF /* NSData+Param.m in Sources */,
 				2C149EF31B78BED9000B4FFF /* CoreFMDB.m in Sources */,
 				2C149B171B788594000B4FFF /* EARestrictedScrollView.m in Sources */,

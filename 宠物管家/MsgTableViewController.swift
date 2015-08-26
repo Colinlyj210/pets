@@ -13,25 +13,34 @@ class MsgTableViewController: UITableViewController {
     var head : XHPathCover!
     var cells = [MsgTableViewCell]()
     var msgData = [MsgInfo]()    // 一开始默认是空数组
-    @IBAction func addBtn(sender: AnyObject) {
+    @IBAction func addBtn(sender: UIBarButtonItem) {
         let items = [
             MenuItem(title: "文字", iconName: "edit", glowColor: UIColor(hex: "FA386C"),index: 0),
             MenuItem(title: "相册", iconName: "photo", glowColor: UIColor.orangeColor(),index: 1),
             MenuItem(title: "照片", iconName: "camera", glowColor: UIColor.yellowColor(),index: 2)
         ]
+        if menu != nil&&menu.isShowed{
+            print("menu is showed")
+            menu.dismissMenu()
+            return
+        }
         //self.tabBarController?.tabBar.hidden = true
         
         menu = PopMenu(frame: self.view.bounds, items: items)
         menu.menuAnimationType = PopMenuAnimationType.Sina
-        if menu.isShowed{
-            menu.removeFromSuperview()
-            return
-        }
+//        if menu.isShowed{
+//            menu.removeFromSuperview()
+//            return
+//        }
         menu.didSelectedItemCompletion = { (selectitem :MenuItem!) -> Void in
             print(selectitem.title)
             self.tabBarController?.tabBar.hidden = false
             switch selectitem.index{
             case 0:
+//                let conv = SendMsgViewController()
+//                self.navigationController?.pushViewController(conv, animated: true)
+//                self.tabBarController?.tabBar.hidden = true
+                self.performSegueWithIdentifier("tosendmsg", sender: self)
                 print(selectitem.index)
             case 1:
                 print(selectitem.index)
@@ -156,12 +165,7 @@ class MsgTableViewController: UITableViewController {
         return cells[indexPath.row]
     }
     
-    
-    
-    
-    
-    
-    
+
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         head.scrollViewDidScroll(scrollView)
@@ -175,6 +179,11 @@ class MsgTableViewController: UITableViewController {
     override func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         head.scrollViewWillBeginDragging(scrollView)
     }
-
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        self.hidesBottomBarWhenPushed = true
+        self.tabBarController?.tabBar.hidden = true
+    }
 
 }
