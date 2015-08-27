@@ -66,8 +66,6 @@ class HomeTableViewController: UITableViewController {
         default:
             return 400
         }
-        
-        
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homecell", forIndexPath: indexPath)

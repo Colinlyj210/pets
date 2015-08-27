@@ -157,7 +157,7 @@
         <scene sceneID="vX9-AH-bIh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i3J-Hy-Mjo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Msg" id="cf1-NE-KCh"/>
+                    <tabBarItem key="tabBarItem" title="Msg" image="msg" id="cf1-NE-KCh"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gCw-Le-K5P">
@@ -176,5 +176,6 @@
     </scenes>
     <resources>
         <image name="IMG_0755" width="480" height="480"/>
+        <image name="msg" width="21" height="15"/>
     </resources>
 </document>

@@ -79,7 +79,7 @@
         <scene sceneID="sIe-Ms-5Vc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bno-e3-wZc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pets" id="DBs-6y-c1s"/>
+                    <tabBarItem key="tabBarItem" title="Pets" image="read" id="DBs-6y-c1s"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w4s-TZ-pMf">
@@ -96,4 +96,7 @@
             <point key="canvasLocation" x="-46" y="-154"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="read" width="17" height="15"/>
+    </resources>
 </document>

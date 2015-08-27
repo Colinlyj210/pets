@@ -10,6 +10,7 @@ import UIKit
 
 class UpdateTableViewController: UITableViewController {
     var cells = [updateTableViewCell]()
+    var fenshu = [1,1,1,1,1,1,1]
     override func viewDidLoad() {
         super.viewDidLoad()
         //定义每个cell并放到cells数组中,因为重用会发生不可知的错误,所以只能先定义好
@@ -21,32 +22,36 @@ class UpdateTableViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target:self, action: "doneClick")
         
     }
-    //右按钮点击事件  2456
+    //右按钮点击事件
     func doneClick(){
 
         for var i = 0 ; i < cells.count; i++ {
             for b in cells[i].btn {
                 if b.selected{
-                    //遍历每个按钮,如果被选择了,就取它的tag放到数据数组中
-                    UpdateData.fenshu[i] = b.tag
+                    //遍历每个按钮,如果被选择了,就取它的tag放到数据数组中,并存入数据库
+                    self.fenshu[i] = b.tag
                 }
             }
         }
         /**待写入数据库sqlite*/
         var sum = 0
-        for a in UpdateData.fenshu{
+        for a in self.fenshu{
              sum += a
         }
         print(sum)
         let s = Score()
         s.hostID = Int(CoreFMDB.countTable("Score")) + 1
+        s.num1 = "\(self.fenshu[0])"
+        s.num2 = "\(self.fenshu[1])"
+        s.num3 = "\(self.fenshu[2])"
+        s.num4 = "\(self.fenshu[3])"
+        s.num5 = "\(self.fenshu[4])"
+        s.num6 = "\(self.fenshu[5])"
+        s.num7 = "\(self.fenshu[6])"
         s.feshu = "\(sum)"
         Score.save(s)
-        let b = Score.selectWhere("hostID=1", groupBy: nil, orderBy: nil, limit: nil) as! [Score]
-        for bb in b{
-            print(bb.hostID)
-            print(bb.feshu)
-        }
+
+        
         self.navigationController?.popViewControllerAnimated(true)
     }
 

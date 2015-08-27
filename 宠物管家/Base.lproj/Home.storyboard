@@ -138,7 +138,7 @@
         <scene sceneID="Suj-hJ-0GY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gMi-oN-9U3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="fHy-pi-1sC"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="fHy-pi-1sC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hd9-QQ-Yv7">
@@ -156,6 +156,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="home" width="16" height="15"/>
         <image name="radio_unchecked" width="15" height="15"/>
     </resources>
 </document>
