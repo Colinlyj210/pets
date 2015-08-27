@@ -20,7 +20,18 @@ class BtnCellView: UIView {
             frame.origin.y += 40
             
         }
+        for i in 0..<skillStr.count{
+            btns[i].tag = i
+        }
+        for var j = 0 ; j < UpdateData.skill.count ; j++ {
+            if UpdateData.skill[j] == 0 {
+                btns[j].selected = false
+            }else if UpdateData.skill[j] == 1 {
+                btns[j].selected = true
+            }
+        }
     }
+    
     func createBtns(frame: CGRect, str: String) -> UIButton{
         let btn = UIButton(frame: frame)
         btn.layer.cornerRadius = 5
@@ -36,9 +47,11 @@ class BtnCellView: UIView {
     func btnclick(btn: UIButton){
         if btn.selected{
             btn.selected = false
+            UpdateData.skill[btn.tag] = 0
             btn.backgroundColor = UIColor.clearColor()
         }else{
             btn.selected = true
+            UpdateData.skill[btn.tag] = 1
             btn.backgroundColor = UIColor.blueColor()
         }
     }

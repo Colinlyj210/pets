@@ -13,6 +13,9 @@ class HomeTableViewController: UITableViewController {
 
     @IBAction func updateBtn(sender: AnyObject) {
         self.toUpdateView()
+        for i in UpdateData.skill{
+            print(i)
+        }
     }
 
     override func viewDidLoad() {
@@ -103,8 +106,8 @@ class HomeTableViewController: UITableViewController {
     }
     
     func spiderChart(frame: CGRect)->UIView{
-        
-        let value = ["健康": "3.3","清洁": "5.0","不饥饿": "4.5","技能": "2.2","综合得分": "4.0"]
+        let va = UpdateData.queryspiderData()
+        let value = ["健康": "\(va[0])","清洁": "\(va[1])","不饥饿": "\(va[2])","技能": "\(va[3])","综合得分": "\(va[4])"]
         let spide = BTSpiderPlotterView(frame: frame, valueDictionary: value)
         spide.maxValue = 5
         spide.drawboardColor = UIColor.whiteColor()
