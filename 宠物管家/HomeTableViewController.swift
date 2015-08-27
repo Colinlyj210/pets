@@ -15,14 +15,11 @@ class HomeTableViewController: UITableViewController {
         self.toUpdateView()
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "主页"
         self.view.backgroundColor = UIColor(hex: "8CA2C2")
 
-        
-        
         SweetAlert().showAlert("是否更新宠物信息?", subTitle: "你将跳转到下个界面进行输入信息!", style: AlertStyle.Warning, buttonTitle:"取消!", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "确定", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
             if isOtherButton == false {
                 self.toUpdateView()
@@ -80,7 +77,7 @@ class HomeTableViewController: UITableViewController {
             tlab.textColor = UIColor.whiteColor()
             cell.contentView.addSubview(tlab)
             let lab = UILabel(frame: CGRectMake(self.view.frame.width/2 - 100, 50, 200, 200))
-            lab.text = "85"
+            lab.text = "\(UpdateData.queryAllScoreData())"
             lab.textColor = UIColor.whiteColor()
             lab.textAlignment = NSTextAlignment.Center
             lab.font = UIFont(name: "Arial", size: 100)
@@ -106,6 +103,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     func spiderChart(frame: CGRect)->UIView{
+        
         let value = ["健康": "3.3","清洁": "5.0","不饥饿": "4.5","技能": "2.2","综合得分": "4.0"]
         let spide = BTSpiderPlotterView(frame: frame, valueDictionary: value)
         spide.maxValue = 5
@@ -117,7 +115,7 @@ class HomeTableViewController: UITableViewController {
     
     func cleanChart(frame: CGRect,w: CGFloat)->UIView{
         let uiview  = UIView(frame: frame)
-        let cicleChart = PNCircleChart(frame: CGRectMake(75, 50,w ,w), total: 100, current: 80, clockwise: false, shadow: false, shadowColor: UIColor.lightGrayColor())
+        let cicleChart = PNCircleChart(frame: CGRectMake(75, 50,w ,w), total: 100, current: UpdateData.querycleanData(), clockwise: false, shadow: false, shadowColor: UIColor.lightGrayColor())
         cicleChart.backgroundColor = UIColor.clearColor()
         cicleChart.strokeColor = UIColor.greenColor()
         cicleChart.lineWidth = w/15
@@ -139,14 +137,12 @@ class HomeTableViewController: UITableViewController {
     func healthChart(frame: CGRect)->UIView{
         let uiview = UIView(frame: frame)
         var xlab = [String]()
-        var dataArr = [1,1,1,1,1]
-        let scArr = Score.selectWhere(nil, groupBy: nil, orderBy: "hostID desc", limit: "5") as! [Score]
-        print(scArr.count)
-        if scArr.count == 0{
-            return UIView(frame: CGRectMake(0, 0, self.view.frame.width , 300))
+        var dataArr = [Int]()
+        let da = UpdateData.queryhealthData()
+        for var i = da.count; i > 0 ; i-- {
+            dataArr.append(da[i-1])
         }
-        for var i = 0 ; i < scArr.count; i++ {
-            dataArr[i] = Int(scArr[scArr.count - i - 1].feshu)!
+        for var i = 0 ; i < dataArr.count; i++ {
             xlab.append("第\(i + 1)天")
         }
 
@@ -165,6 +161,7 @@ class HomeTableViewController: UITableViewController {
         lineChart.strokeChart()
         lineChart.backgroundColor = UIColor.clearColor()
         uiview.addSubview(lineChart)
+        
         let label = UILabel(frame: CGRectMake(30, 350, self.view.frame.width - 60, 70))
         label.text = UpdateData.description[1]
         label.textColor  = UIColor.whiteColor()

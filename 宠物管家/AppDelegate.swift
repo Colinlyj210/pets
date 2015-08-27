@@ -16,6 +16,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        for i in 1..<6{
+            let score = Score()
+            score.hostID = i
+            score.feshu = "27"
+            score.num1 = "5"
+            score.num2 = "3"
+            score.num3 = "3"
+            score.num4 = "5"
+            score.num5 = "3"
+            score.num6 = "5"
+            score.num7 = "3"
+            Score.save(score)
+        }
+        
+        
+        
+        
+        
         // Override point for customization after application launch.
         return true
     }
