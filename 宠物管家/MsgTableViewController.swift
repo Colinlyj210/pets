@@ -8,10 +8,61 @@
 
 import UIKit
 import Pitaya
+extension String {
+    
+    var lastPathComponent: String {
+        
+        get {
+            return (self as NSString).lastPathComponent
+        }
+    }
+    var pathExtension: String {
+        
+        get {
+            
+            return (self as NSString).pathExtension
+        }
+    }
+    var stringByDeletingLastPathComponent: String {
+        
+        get {
+            
+            return (self as NSString).stringByDeletingLastPathComponent
+        }
+    }
+    var stringByDeletingPathExtension: String {
+        
+        get {
+            
+            return (self as NSString).stringByDeletingPathExtension
+        }
+    }
+    var pathComponents: [String] {
+        
+        get {
+            
+            return (self as NSString).pathComponents
+        }
+    }
+    
+    func stringByAppendingPathComponent(path: String) -> String {
+        
+        let nsSt = self as NSString
+        
+        return nsSt.stringByAppendingPathComponent(path)
+    }
+    
+    func stringByAppendingPathExtension(ext: String) -> String? {
+        
+        let nsSt = self as NSString
+        
+        return nsSt.stringByAppendingPathExtension(ext)
+    }
+}
 class MsgTableViewController: UITableViewController {
     var menu :PopMenu!
     var head : XHPathCover!
-    var cells = [MsgTableViewCell]()
+    var page = 2
     var msgData = [MsgInfo]()    // 一开始默认是空数组
     @IBAction func addBtn(sender: UIBarButtonItem) {
         let items = [
@@ -67,41 +118,24 @@ class MsgTableViewController: UITableViewController {
             self.headRefresh()
         }
         self.tableView.tableHeaderView = head;
-        
-        for _ in 0..<5{
-            let cell = tableView.dequeueReusableCellWithIdentifier("msgcell") as! MsgTableViewCell
-            cells.append(cell)
-        }
-
+    }
+    func Delay(time:Double,closure:()->()){
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(time * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
     }
     func headRefresh(){
-        /**ProgressHUD.show("亲爱的，别急嘛～～～")
-        self.Delay(2, closure: { () -> () in
-            self.data.removeAll(keepCapacity: false)
-            self.i = 0
-            for self.i ; self.i < 10 ; self.i++ {
-                self.data.append("\(self.i)")
-            }
-            //self.tableView.header.endRefreshing()
-            self.tableView.reloadData()
-            //ProgressHUD.showSuccess("人家准备好了！")
+        ProgressHUD.show("亲爱的，别急嘛～～～")
+        self.Delay(1) { () -> () in
+            self.refresh(1)
             self.head.stopRefresh()
-        })
-        */
+            ProgressHUD.showSuccess("人家准备好了！")
+        }
     }
 
     func footRefresh(){
-//        ProgressHUD.show("还有更多内容")
-//        self.Delay(2, closure: { () -> () in
-//            let j = self.i + 10
-//            for self.i ; self.i < j ; self.i++ {
-//                self.data.append("\(self.i)")
-//            }
-//            self.tableView.footer.endRefreshing()
-//            self.tableView.reloadData()
-//            ProgressHUD.showSuccess("好了啦～～")
-//        })
-
+        ProgressHUD.show("还有更多内容")
+        refresh(page)
+        page++
+        ProgressHUD.showSuccess("好了啦～～")
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -111,13 +145,15 @@ class MsgTableViewController: UITableViewController {
     //界面出现之后开始获取数据
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
+        refresh(1)
+            }
+    func refresh(pageNum: Int){
         // 因为异步调用 所以 可以直接写
-        Pitaya.request(.GET, url: "http://www.lyj210.cn/cwgj/index.php/Home/Msg/selectMsg", errorCallback: { (error) -> Void in
+        Pitaya.request(.GET, url: "http://www.lyj210.cn/cwgj/index.php/Home/Msg/selectMsg",params: ["page":pageNum] , errorCallback: { (error) -> Void in
             print("数据获取失败")
             }) { (data, response, error) -> Void in
                 let json = JSON(data: data!)
-                //print(json)
+                print(json)
                 for var i = 0 ; i < json.count ; i++ {
                     let userimg = json[i]["userimg"]
                     let username = json[i]["username"]
@@ -131,6 +167,7 @@ class MsgTableViewController: UITableViewController {
                     }
                 }
         }
+
     }
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
@@ -149,9 +186,10 @@ class MsgTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("msgcell", forIndexPath: indexPath) as! MsgTableViewCell
         let info = self.msgData[indexPath.row]
-        self.cells[indexPath.row].msgInfo = info
-        return cells[indexPath.row]
+        cell.msgInfo = info
+        return cell
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {

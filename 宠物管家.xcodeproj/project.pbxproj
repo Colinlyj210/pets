@@ -142,11 +142,11 @@
 		2C576FEF1B7B4C87000D105F /* UITextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C576FEE1B7B4C87000D105F /* UITextBox.swift */; };
 		2C6329A21B8721E000BD0A5C /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6329A11B8721E000BD0A5C /* Score.swift */; };
 		2C7028E21B7AEFBF00824B1E /* myTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7028E11B7AEFBF00824B1E /* myTableView.swift */; };
+		2C79BE5D1B8F1C7600567424 /* UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79BE5C1B8F1C7600567424 /* UpdateData.swift */; };
 		2C83251F1B899F690094F081 /* BTSpiderPlotterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C83251E1B899F690094F081 /* BTSpiderPlotterView.m */; };
 		2C8325221B89B08F0094F081 /* BtnCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8325211B89B08F0094F081 /* BtnCellView.swift */; };
 		2C8AF0F71B78C41C00C29939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F61B78C41C00C29939 /* User.swift */; };
 		2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F81B78C57100C29939 /* Pet.swift */; };
-		2CA107FB1B83288C009695C1 /* UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA107FA1B83288C009695C1 /* UpdateData.swift */; };
 		2CA423F91B8ABC0D00105A85 /* SendMsgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
 		2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939D1B75E75100C1F598 /* Pets.storyboard */; };
@@ -452,12 +452,12 @@
 		2C576FEE1B7B4C87000D105F /* UITextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextBox.swift; sourceTree = "<group>"; };
 		2C6329A11B8721E000BD0A5C /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		2C7028E11B7AEFBF00824B1E /* myTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTableView.swift; sourceTree = "<group>"; };
+		2C79BE5C1B8F1C7600567424 /* UpdateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateData.swift; sourceTree = "<group>"; };
 		2C83251D1B899F690094F081 /* BTSpiderPlotterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSpiderPlotterView.h; sourceTree = "<group>"; };
 		2C83251E1B899F690094F081 /* BTSpiderPlotterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSpiderPlotterView.m; sourceTree = "<group>"; };
 		2C8325211B89B08F0094F081 /* BtnCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnCellView.swift; sourceTree = "<group>"; };
 		2C8AF0F61B78C41C00C29939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C8AF0F81B78C57100C29939 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
-		2CA107FA1B83288C009695C1 /* UpdateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpdateData.swift; path = ../../test/UpdateData.swift; sourceTree = "<group>"; };
 		2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMsgViewController.swift; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
@@ -540,14 +540,14 @@
 				2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */,
 				2C8325211B89B08F0094F081 /* BtnCellView.swift */,
 				2C181A6C1B81BE6A0002F5F6 /* updateTableViewCell.swift */,
-				2CA107FA1B83288C009695C1 /* UpdateData.swift */,
 				2C149F161B78C101000B4FFF /* UpdateTableViewController.swift */,
+				2C79BE5C1B8F1C7600567424 /* UpdateData.swift */,
 				2CA6939D1B75E75100C1F598 /* Pets.storyboard */,
 				2C0276141B74535800F3C76F /* PetsTableViewController.swift */,
 				2C02765B1B745A7D00F3C76F /* WebViewController.swift */,
 				2CA693A01B75E76100C1F598 /* Msg.storyboard */,
-				2CC195CB1B8176060079DF8D /* MsgTableViewCell.swift */,
 				2CF166DB1B8D8E4D004A3F37 /* RoundImageView.swift */,
+				2CC195CB1B8176060079DF8D /* MsgTableViewCell.swift */,
 				2CC195CE1B8178240079DF8D /* MsgInfo.swift */,
 				2C060A651B77904A0011E106 /* MsgTableViewController.swift */,
 				2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */,
@@ -1540,9 +1540,9 @@
 				2C149EF01B78BED9000B4FFF /* UITableViewCell+Extend.m in Sources */,
 				2CA423F91B8ABC0D00105A85 /* SendMsgViewController.swift in Sources */,
 				2C149EFD1B78BED9000B4FFF /* NSData+Param.m in Sources */,
+				2C79BE5D1B8F1C7600567424 /* UpdateData.swift in Sources */,
 				2C149EF31B78BED9000B4FFF /* CoreFMDB.m in Sources */,
 				2C149B171B788594000B4FFF /* EARestrictedScrollView.m in Sources */,
-				2CA107FB1B83288C009695C1 /* UpdateData.swift in Sources */,
 				2C149ED11B78BED9000B4FFF /* NSObject+BaseModelCommon.m in Sources */,
 				2C0276151B74535800F3C76F /* PetsTableViewController.swift in Sources */,
 				2C060A661B77904A0011E106 /* MsgTableViewController.swift in Sources */,
