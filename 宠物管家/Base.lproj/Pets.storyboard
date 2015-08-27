@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
     </dependencies>
     <scenes>
-        <!--Pets Table View Controller-->
+        <!--养宠阅读-->
         <scene sceneID="EAV-hz-Za7">
             <objects>
                 <tableViewController id="Egk-Ln-V0T" customClass="PetsTableViewController" customModule="宠物管家" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="Egk-Ln-V0T" id="uA8-pm-WZW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="4rQ-Pt-RN0"/>
+                    <navigationItem key="navigationItem" title="养宠阅读" id="4rQ-Pt-RN0"/>
                     <connections>
                         <outlet property="uiscview" destination="Etg-Qs-TmH" id="bWD-7s-KDv"/>
                         <segue destination="3Ml-uI-CuP" kind="show" identifier="cellToweb" id="3ll-Ry-05V"/>
@@ -75,11 +75,11 @@
             </objects>
             <point key="canvasLocation" x="1453" y="-154"/>
         </scene>
-        <!--Pets-->
+        <!--阅读-->
         <scene sceneID="sIe-Ms-5Vc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bno-e3-wZc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pets" image="read" id="DBs-6y-c1s"/>
+                    <tabBarItem key="tabBarItem" title="阅读" image="read" id="DBs-6y-c1s"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="w4s-TZ-pMf">

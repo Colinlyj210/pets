@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Msg Table View Controller-->
+        <!--消息中心-->
         <scene sceneID="nvb-AI-zi2">
             <objects>
                 <tableViewController id="h1e-CG-EZk" customClass="MsgTableViewController" customModule="宠物管家" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,7 +98,7 @@
                             <outlet property="delegate" destination="h1e-CG-EZk" id="38S-j8-Pe8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1Iz-Di-7YU">
+                    <navigationItem key="navigationItem" title="消息中心" id="1Iz-Di-7YU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aMl-aX-bXq">
                             <connections>
                                 <action selector="addBtn:" destination="h1e-CG-EZk" id="ORa-FO-2dP"/>
@@ -153,11 +153,11 @@
             </objects>
             <point key="canvasLocation" x="1825" y="483"/>
         </scene>
-        <!--Msg-->
+        <!--消息-->
         <scene sceneID="vX9-AH-bIh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i3J-Hy-Mjo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Msg" image="msg" id="cf1-NE-KCh"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="msg" id="cf1-NE-KCh"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gCw-Le-K5P">

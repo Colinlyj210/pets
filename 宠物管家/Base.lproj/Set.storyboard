@@ -177,11 +177,11 @@
             </objects>
             <point key="canvasLocation" x="332" y="802"/>
         </scene>
-        <!--Set-->
+        <!--设置-->
         <scene sceneID="9uB-5j-kYD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="RB6-j2-o93" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Set" image="set" id="7ck-QL-baT"/>
+                    <tabBarItem key="tabBarItem" title="设置" image="set" id="7ck-QL-baT"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I7g-zE-ZK3">
@@ -199,6 +199,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="set" width="42" height="42"/>
+        <image name="set" width="16" height="16"/>
     </resources>
 </document>

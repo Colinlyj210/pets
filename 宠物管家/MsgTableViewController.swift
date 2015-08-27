@@ -24,22 +24,17 @@ class MsgTableViewController: UITableViewController {
             menu.dismissMenu()
             return
         }
-        //self.tabBarController?.tabBar.hidden = true
+
         
         menu = PopMenu(frame: self.view.bounds, items: items)
         menu.menuAnimationType = PopMenuAnimationType.Sina
-//        if menu.isShowed{
-//            menu.removeFromSuperview()
-//            return
-//        }
+
         menu.didSelectedItemCompletion = { (selectitem :MenuItem!) -> Void in
             print(selectitem.title)
             self.tabBarController?.tabBar.hidden = false
             switch selectitem.index{
             case 0:
-//                let conv = SendMsgViewController()
-//                self.navigationController?.pushViewController(conv, animated: true)
-//                self.tabBarController?.tabBar.hidden = true
+
                 self.performSegueWithIdentifier("tosendmsg", sender: self)
                 print(selectitem.index)
             case 1:
@@ -77,8 +72,7 @@ class MsgTableViewController: UITableViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("msgcell") as! MsgTableViewCell
             cells.append(cell)
         }
-//        self.tableView.rowHeight = UITableViewAutomaticDimension//自适应行高
-//        self.tableView.estimatedRowHeight = 100//给自适应行高初始值
+
     }
     func headRefresh(){
         /**ProgressHUD.show("亲爱的，别急嘛～～～")
@@ -95,21 +89,19 @@ class MsgTableViewController: UITableViewController {
         })
         */
     }
-    func Delay(time:Double,closure:()->()){
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(time * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
-    }
+
     func footRefresh(){
-        /**ProgressHUD.show("还有更多内容")
-        self.Delay(2, closure: { () -> () in
-            let j = self.i + 10
-            for self.i ; self.i < j ; self.i++ {
-                self.data.append("\(self.i)")
-            }
-            self.tableView.footer.endRefreshing()
-            self.tableView.reloadData()
-//ProgressHUD.showSuccess("好了啦～～")
-        })
-*/
+//        ProgressHUD.show("还有更多内容")
+//        self.Delay(2, closure: { () -> () in
+//            let j = self.i + 10
+//            for self.i ; self.i < j ; self.i++ {
+//                self.data.append("\(self.i)")
+//            }
+//            self.tableView.footer.endRefreshing()
+//            self.tableView.reloadData()
+//            ProgressHUD.showSuccess("好了啦～～")
+//        })
+
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -146,15 +138,12 @@ class MsgTableViewController: UITableViewController {
             self.menu.dismissMenu()
         }
     }
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return msgData.count
     }
@@ -164,8 +153,6 @@ class MsgTableViewController: UITableViewController {
         self.cells[indexPath.row].msgInfo = info
         return cells[indexPath.row]
     }
-    
-
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         head.scrollViewDidScroll(scrollView)

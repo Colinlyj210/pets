@@ -11,13 +11,7 @@ import UIKit
 @IBDesignable
 class RoundImageView: UIImageView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+    /**圆角图片*/
     
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet{

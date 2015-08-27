@@ -134,11 +134,11 @@
             </objects>
             <point key="canvasLocation" x="1891" y="-831"/>
         </scene>
-        <!--Home-->
+        <!--宠物-->
         <scene sceneID="Suj-hJ-0GY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gMi-oN-9U3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="fHy-pi-1sC"/>
+                    <tabBarItem key="tabBarItem" title="宠物" image="home" id="fHy-pi-1sC"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hd9-QQ-Yv7">
