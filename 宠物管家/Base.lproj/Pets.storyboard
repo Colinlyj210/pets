@@ -97,6 +97,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="read" width="17" height="15"/>
+        <image name="read" width="19" height="17"/>
     </resources>
 </document>
