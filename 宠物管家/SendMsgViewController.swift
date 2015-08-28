@@ -7,16 +7,24 @@
 //
 
 import UIKit
-
+import Pitaya
 class SendMsgViewController: UIViewController {
+    @IBOutlet weak var contentTxt: UITextField!
 
     @IBAction func sendBtn(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+        Pitaya.request(.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Msg/addMsg", params: ["userName":"zxvv","content":contentTxt.text!], errorCallback: { (error) -> Void in
+            print("出错了")
+            }) { (data, response, error) -> Void in
+                
+                if data != nil{
+                    
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

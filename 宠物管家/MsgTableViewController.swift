@@ -144,17 +144,18 @@ class MsgTableViewController: UITableViewController {
         }
         
     }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.hidden = false
-        
-    }
+
     //界面出现之后开始获取数据
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         refresh(1)
-            }
+        self.tabBarController?.tabBar.hidden = false
+    }
     func refresh(pageNum: Int){
+        //如果是刷新状态置空空msgData数组
+        if pageNum == 1{
+            self.msgData = []
+        }
         // 因为异步调用 所以 可以直接写
         Pitaya.request(.GET, url: "http://www.lyj210.cn/cwgj/index.php/Home/Msg/selectMsg",params: ["page":pageNum] , errorCallback: { (error) -> Void in
             print("数据获取失败")

@@ -148,6 +148,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contentTxt" destination="EX2-WH-MHm" id="fUo-QC-8jD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SXE-P7-aEO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
