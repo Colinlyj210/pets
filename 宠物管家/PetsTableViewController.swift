@@ -48,6 +48,7 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
         Delay(0.5) { () -> () in
             self.getData2(1)
             self.page = 2//属性状态下重置page
+            self.flag = false
             self.tableView.header.endRefreshing()
             ProgressHUD.showSuccess("人家准备好了～～")
         }
@@ -133,21 +134,21 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
                 }
                 for var i = 0; i < json.count ; i++ {
                     let imgurl = json[i]["imgurl"]
-                    let celltitle = json[i]["id"]
+                    let celltitle = json[i]["celltitle"]
                     let urlstr = json[i]["urlstr"]
                     //json解析并添加到数据源数组
                     self.readData.append(ReadInfo(cellImgUrl: "\(imgurl)", cellTitle: "\(celltitle)", cellUrl: "\(urlstr)"))
-                    dispatch_async(dispatch_get_main_queue()){
-                        self.tableView.reloadData()
                     }
-
+                dispatch_async(dispatch_get_main_queue()){
+                    self.tableView.reloadData()
                 }
+
             }
-        
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ReadTableViewCell
+        print("---------\(indexPath.row)")
         let info = readData[indexPath.row]
         cell.readInfo = info//cell内容赋值
         return cell

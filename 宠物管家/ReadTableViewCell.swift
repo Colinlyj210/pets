@@ -16,6 +16,8 @@ class ReadTableViewCell: UITableViewCell {
         didSet{
             self.img.sd_setImageWithURL(NSURL(string: readInfo!.cellImgUrl), placeholderImage: UIImage(named: "dog"))
             self.lab.text = readInfo!.cellTitle
+            self.lab.lineBreakMode = NSLineBreakMode.ByWordWrapping
+            self.lab.numberOfLines = 0
             self.cellUrl = readInfo!.cellUrl
         }
     }
