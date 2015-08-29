@@ -179,6 +179,6 @@
     </scenes>
     <resources>
         <image name="IMG_0755" width="480" height="480"/>
-        <image name="msg" width="21" height="15"/>
+        <image name="msg" width="19" height="14"/>
     </resources>
 </document>

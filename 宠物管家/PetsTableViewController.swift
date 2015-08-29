@@ -7,9 +7,14 @@
 //
 
 import UIKit
-
+import Pitaya
 class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     @IBOutlet weak var uiscview: UIView!
+    var readData = [ReadInfo]()
+    
+    
+    
+    
     var urlStr = ""
     var objArray = [String]()
     var i = 0
@@ -21,6 +26,10 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData2()
+        
+        
+        
         SDImageCache.sharedImageCache().cleanDisk()//清除硬盘中的缓存
         SDImageCache.sharedImageCache().clearMemory()//清除内存中的缓存
         for i; i < 10;i++ {
@@ -113,17 +122,40 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objArray.count
+        return readData.count
     }
-
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 60
+    }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.urlStr = urls[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ReadTableViewCell
+        self.urlStr = cell.cellUrl
         performSegueWithIdentifier("cellToweb", sender: self)
     }
+    func getData2(){
+        Pitaya.request(.GET, url: "http://www.lyj210.cn/cwgj/index.php/Home/Read/selectRead2", params: ["page":1], errorCallback: { (error) -> Void in
+            print("出错了")
+            }) { (data, response, error) -> Void in
+                let json = JSON(data: data!)
+                for var i = 0; i < json.count ; i++ {
+                    let imgurl = json[i]["imgurl"]
+                    let celltitle = json[i]["id"]
+                    let urlstr = json[i]["urlstr"]
+                    self.readData.append(ReadInfo(cellImgUrl: "\(imgurl)", cellTitle: "\(celltitle)", cellUrl: "\(urlstr)"))
+                    dispatch_async(dispatch_get_main_queue()){
+                        self.tableView.reloadData()
+                    }
+
+                }
+            }
+        
+    }
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        //self.urlStr = urls[indexPath.row]
-        cell.textLabel?.text = self.objArray[indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ReadTableViewCell
+        let info = readData[indexPath.row]
+        cell.readInfo = info
+
         return cell
     }
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {

@@ -159,6 +159,8 @@
 		2C898A521B914F890059422D /* AJWValidatorRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A441B914F890059422D /* AJWValidatorRule.m */; };
 		2C898A531B914F890059422D /* UIView+AJWValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A461B914F890059422D /* UIView+AJWValidator.m */; };
 		2C898A561B9153FC0059422D /* Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A551B9153FB0059422D /* Inputs.swift */; };
+		2C898A5F1B918FF50059422D /* ReadInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A5E1B918FF50059422D /* ReadInfo.swift */; };
+		2C898A611B9190020059422D /* ReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A601B9190020059422D /* ReadTableViewCell.swift */; };
 		2C8AF0F71B78C41C00C29939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F61B78C41C00C29939 /* User.swift */; };
 		2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F81B78C57100C29939 /* Pet.swift */; };
 		2CA423F91B8ABC0D00105A85 /* SendMsgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */; };
@@ -498,6 +500,8 @@
 		2C898A451B914F890059422D /* UIView+AJWValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AJWValidator.h"; sourceTree = "<group>"; };
 		2C898A461B914F890059422D /* UIView+AJWValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AJWValidator.m"; sourceTree = "<group>"; };
 		2C898A551B9153FB0059422D /* Inputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inputs.swift; sourceTree = "<group>"; };
+		2C898A5E1B918FF50059422D /* ReadInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadInfo.swift; sourceTree = "<group>"; };
+		2C898A601B9190020059422D /* ReadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadTableViewCell.swift; sourceTree = "<group>"; };
 		2C8AF0F61B78C41C00C29939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C8AF0F81B78C57100C29939 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMsgViewController.swift; sourceTree = "<group>"; };
@@ -587,6 +591,8 @@
 				2C149F161B78C101000B4FFF /* UpdateTableViewController.swift */,
 				2C79BE5C1B8F1C7600567424 /* UpdateData.swift */,
 				2CA6939D1B75E75100C1F598 /* Pets.storyboard */,
+				2C898A5E1B918FF50059422D /* ReadInfo.swift */,
+				2C898A601B9190020059422D /* ReadTableViewCell.swift */,
 				2C0276141B74535800F3C76F /* PetsTableViewController.swift */,
 				2C02765B1B745A7D00F3C76F /* WebViewController.swift */,
 				2CA693A01B75E76100C1F598 /* Msg.storyboard */,
@@ -1517,6 +1523,7 @@
 				2C02760D1B744A6C00F3C76F /* ProgressHUD.m in Sources */,
 				2C149ED81B78BED9000B4FFF /* NSObject+Update.m in Sources */,
 				2C149ED31B78BED9000B4FFF /* NSObject+Create.m in Sources */,
+				2C898A611B9190020059422D /* ReadTableViewCell.swift in Sources */,
 				2C149EFF1B78BED9000B4FFF /* NSURL+File.m in Sources */,
 				2C181A691B81BE1B0002F5F6 /* RadioButton.m in Sources */,
 				2C0276871B745E3500F3C76F /* SDWebImagePrefetcher.m in Sources */,
@@ -1530,6 +1537,7 @@
 				2C149F0B1B78BED9000B4FFF /* NSObject+MJProperty.m in Sources */,
 				2C02768D1B745E3500F3C76F /* UIImageView+WebCache.m in Sources */,
 				2C149F031B78BED9000B4FFF /* FBShimmeringLayer.m in Sources */,
+				2C898A5F1B918FF50059422D /* ReadInfo.swift in Sources */,
 				2C149EDA1B78BED9000B4FFF /* BaseGradientView.m in Sources */,
 				2C6329A21B8721E000BD0A5C /* Score.swift in Sources */,
 				2C149F041B78BED9000B4FFF /* FBShimmeringView.m in Sources */,

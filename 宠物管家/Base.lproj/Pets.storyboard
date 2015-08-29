@@ -2,13 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bno-e3-wZc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--养宠阅读-->
         <scene sceneID="EAV-hz-Za7">
             <objects>
                 <tableViewController id="Egk-Ln-V0T" customClass="PetsTableViewController" customModule="宠物管家" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mzw-tN-uJ0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="mzw-tN-uJ0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -18,13 +19,40 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3S8-Cf-G2m">
-                                <rect key="frame" x="0.0" y="312" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="60" id="3S8-Cf-G2m" customClass="ReadTableViewCell" customModule="宠物管家" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="312" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3S8-Cf-G2m" id="lha-p3-xIj">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dog" translatesAutoresizingMaskIntoConstraints="NO" id="A7s-Rf-ifZ">
+                                            <rect key="frame" x="18" y="8" width="60" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="QJr-Eb-Id5"/>
+                                                <constraint firstAttribute="height" constant="40" id="Vpt-Wb-aZ8"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ub-Wq-DNJ">
+                                            <rect key="frame" x="98" y="8" width="494" height="40"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="A7s-Rf-ifZ" firstAttribute="top" secondItem="lha-p3-xIj" secondAttribute="topMargin" id="FvI-gu-Rd4"/>
+                                        <constraint firstItem="1ub-Wq-DNJ" firstAttribute="leading" secondItem="A7s-Rf-ifZ" secondAttribute="trailing" constant="20" id="HAa-kk-Xr6"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="1ub-Wq-DNJ" secondAttribute="trailing" id="RrC-2p-ssq"/>
+                                        <constraint firstItem="1ub-Wq-DNJ" firstAttribute="centerY" secondItem="A7s-Rf-ifZ" secondAttribute="centerY" id="eJC-cS-103"/>
+                                        <constraint firstItem="A7s-Rf-ifZ" firstAttribute="leading" secondItem="lha-p3-xIj" secondAttribute="leadingMargin" constant="10" id="fQn-6J-PKK"/>
+                                        <constraint firstItem="1ub-Wq-DNJ" firstAttribute="height" secondItem="A7s-Rf-ifZ" secondAttribute="height" id="siG-IO-fkB"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="img" destination="A7s-Rf-ifZ" id="9jj-HZ-ztt"/>
+                                    <outlet property="lab" destination="1ub-Wq-DNJ" id="hUN-nV-Mr9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -40,7 +68,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vvm-G3-iWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="691" y="-154"/>
+            <point key="canvasLocation" x="731" y="-154"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="zya-qH-U8g">
@@ -97,6 +125,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dog" width="375" height="265"/>
         <image name="read" width="19" height="17"/>
     </resources>
 </document>
