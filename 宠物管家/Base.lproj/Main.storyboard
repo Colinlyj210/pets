@@ -297,12 +297,6 @@
                         <outlet property="textUserName" destination="hZv-MT-u2c" id="nvG-2J-jdm"/>
                         <outlet property="textUserPwd" destination="Z0i-2x-nuD" id="j7M-SI-2Ag"/>
                         <outlet property="textUserSign" destination="y3V-rT-eSj" id="3ju-eR-nvj"/>
-                        <outletCollection property="requireTextFields" destination="hZv-MT-u2c" collectionClass="NSMutableArray" id="EXw-qD-mEc"/>
-                        <outletCollection property="requireTextFields" destination="fn0-OU-EvR" collectionClass="NSMutableArray" id="sNJ-1N-3MB"/>
-                        <outletCollection property="requireTextFields" destination="Z0i-2x-nuD" collectionClass="NSMutableArray" id="7EK-PE-15k"/>
-                        <outletCollection property="requireTextFields" destination="F93-Zf-LUy" collectionClass="NSMutableArray" id="s0B-cK-FlX"/>
-                        <outletCollection property="requireTextFields" destination="bwv-0Q-mfX" collectionClass="NSMutableArray" id="yer-yy-mwv"/>
-                        <outletCollection property="requireTextFields" destination="Bza-9O-4nl" collectionClass="NSMutableArray" id="Gha-sV-q8X"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Voh-hb-ohD" userLabel="First Responder" sceneMemberID="firstResponder"/>

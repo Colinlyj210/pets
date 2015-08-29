@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//构建技能图
 class BtnCellView: UIView {
     let skillStr = ["游泳","上厕所","玩球","拿东西","看电视"]
     var btns = [UIButton]()

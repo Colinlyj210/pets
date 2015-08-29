@@ -19,7 +19,7 @@ class updateTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //定义没个按钮的tag
+        //定义每个按钮的tag
         btn[0].tag = 5
         btn[1].tag = 3
         btn[2].tag = 1

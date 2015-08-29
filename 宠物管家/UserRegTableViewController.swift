@@ -10,7 +10,7 @@ import UIKit
 import Pitaya
 class UserRegTableViewController: UITableViewController {
 
-    @IBOutlet var requireTextFields: [UITextField]!
+
     @IBOutlet weak var textUserName: UITextBox!
     @IBOutlet weak var textUserEmail: UITextBox!
     @IBOutlet weak var textUserPwd: UITextBox!
@@ -25,8 +25,9 @@ class UserRegTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = false
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "userRegistered")
+        //没输入时不然点击完成按钮
         self.navigationItem.rightBarButtonItem?.enabled = true
-
+        //校验必选项
         check(.String, textf: textUserName, max: 10, maxStr: "昵称最多10位", min: 2, minStr: "昵称至少2位", inputsType: Inputs.userName,isemail: false)
         check(.String, textf: textUserEmail, max: 10, maxStr: "2", min: 2, minStr: "2", inputsType: Inputs.userEmail, isemail: true)
         check(.String, textf: textUserPwd, max: 16, maxStr: "密码最多16位", min: 6, minStr: "密码至少6位", inputsType: Inputs.userPwd, isemail: false)
@@ -36,7 +37,7 @@ class UserRegTableViewController: UITableViewController {
 
     
     }
-
+    //采用AJWValidator进行校验,并封装方法
     func check(vtype: AJWValidatorType, textf: UITextBox, max: UInt,maxStr: String,min: UInt, minStr: String ,inputsType: Inputs,isemail: Bool){
         let v = AJWValidator(type: vtype)
         if isemail{
@@ -114,62 +115,5 @@ class UserRegTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-        /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

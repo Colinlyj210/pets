@@ -13,9 +13,6 @@ class HomeTableViewController: UITableViewController {
 
     @IBAction func updateBtn(sender: AnyObject) {
         self.toUpdateView()
-        for i in UpdateData.skill{
-            print(i)
-        }
     }
 
     override func viewDidLoad() {
@@ -67,6 +64,7 @@ class HomeTableViewController: UITableViewController {
             return 400
         }
     }
+    //构建每一个cell内容
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("homecell", forIndexPath: indexPath)
         for view in cell.contentView.subviews{
@@ -104,7 +102,7 @@ class HomeTableViewController: UITableViewController {
         cell.backgroundColor = UIColor(hex: "8CA2C2")
         return cell
     }
-    
+    //构建蜘蛛网图
     func spiderChart(frame: CGRect)->UIView{
         let va = UpdateData.queryspiderData()
         let value = ["健康": "\(va[0])","清洁": "\(va[1])","不饥饿": "\(va[2])","技能": "\(va[3])","综合得分": "\(va[4])"]
@@ -115,7 +113,7 @@ class HomeTableViewController: UITableViewController {
         spide.animateWithDuration(1, valueDictionary: value)
         return spide
     }
-    
+    //构建清洁度环形图
     func cleanChart(frame: CGRect,w: CGFloat)->UIView{
         let uiview  = UIView(frame: frame)
         let cicleChart = PNCircleChart(frame: CGRectMake(75, 50,w ,w), total: 100, current: UpdateData.querycleanData(), clockwise: false, shadow: false, shadowColor: UIColor.lightGrayColor())
@@ -136,7 +134,7 @@ class HomeTableViewController: UITableViewController {
         return uiview
         
     }
-
+    //构建健康度折线图
     func healthChart(frame: CGRect)->UIView{
         let uiview = UIView(frame: frame)
         var xlab = [String]()

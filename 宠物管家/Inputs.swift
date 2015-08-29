@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//对注册时输入的各项进行校验
 struct Inputs: OptionSetType {
     let rawValue: Int
     

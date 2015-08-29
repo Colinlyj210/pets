@@ -199,6 +199,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="set" width="16" height="16"/>
+        <image name="set" width="19" height="19"/>
     </resources>
 </document>

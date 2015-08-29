@@ -52,7 +52,7 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
         
         
     }
-
+    //引导界面
     func guideView(){
         var pages = [EAIntroPage]()
         pages.append(setPage("b1", title: "第一个页面"))
@@ -68,7 +68,7 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
         page.title = title
         return page
     }
-
+    //登陆见面用代码进行初始化
     func viewLoginInit(){
         let imgLogin = UIImageView(frame: CGRectMake(self.view.frame.width / 2 - 211 / 2, 60, 211, 109))
         imgLogin.image = UIImage(named: "owl-login")
@@ -136,14 +136,19 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.hidden = true
+    }
 
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
         self.view.endEditing(true)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
     }
+    //点击输入框执行动画
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField.isEqual(textUser){
             if showType != LoginShowType.PWD{
