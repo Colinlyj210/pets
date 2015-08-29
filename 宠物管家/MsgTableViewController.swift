@@ -152,10 +152,6 @@ class MsgTableViewController: UITableViewController {
         self.tabBarController?.tabBar.hidden = false
     }
     func refresh(pageNum: Int){
-        //如果是刷新状态置空空msgData数组
-        if pageNum == 1{
-            self.msgData = []
-        }
         // 因为异步调用 所以 可以直接写
         Pitaya.request(.GET, url: "http://www.lyj210.cn/cwgj/index.php/Home/Msg/selectMsg",params: ["page":pageNum] , errorCallback: { (error) -> Void in
             print("数据获取失败")
@@ -167,6 +163,9 @@ class MsgTableViewController: UITableViewController {
                     return
                 }
                 print(json)
+                if pageNum == 1{//如果是刷新状态置空空msgData数组
+                    self.msgData = []
+                }
                 //解析json数据
                 for var i = 0 ; i < json.count ; i++ {
                     let username = json[i]["username"]

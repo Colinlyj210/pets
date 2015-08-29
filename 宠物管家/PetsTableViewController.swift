@@ -118,9 +118,7 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
         performSegueWithIdentifier("cellToweb", sender: self)
     }
     func getData2(numPage: Int){
-        if numPage == 1 {
-            self.readData = []//刷新状态置空数据源数组
-        }
+        
         //获取网络数据
         Pitaya.request(.GET, url: "http://www.lyj210.cn/cwgj/index.php/Home/Read/selectRead2", params: ["page":numPage], errorCallback: { (error) -> Void in
             print("出错了")
@@ -132,17 +130,21 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
                     self.flag = true
                     return
                 }
+                if numPage == 1 {
+                    self.readData = []//刷新状态置空数据源数组
+                }
                 for var i = 0; i < json.count ; i++ {
                     let imgurl = json[i]["imgurl"]
                     let celltitle = json[i]["celltitle"]
                     let urlstr = json[i]["urlstr"]
                     //json解析并添加到数据源数组
                     self.readData.append(ReadInfo(cellImgUrl: "\(imgurl)", cellTitle: "\(celltitle)", cellUrl: "\(urlstr)"))
+                    dispatch_async(dispatch_get_main_queue()){
+                        self.tableView.reloadData()
                     }
-                dispatch_async(dispatch_get_main_queue()){
-                    self.tableView.reloadData()
+                
                 }
-
+                
             }
     }
     
