@@ -14,10 +14,10 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     var page = 2//控制下拉第几页
     var urlStr = ""//定义传到web界面的值
 
-    let arr = ["http://www.lyj210.cn/cwgj/pic/huli/huli.jpg","http://www.lyj210.cn/cwgj/pic/siyang/siyang.jpg","http://www.lyj210.cn/cwgj/pic/xunlian/xunlian.jpg"]
-
-    let ss = ["宠物疾病篇","宠物吃饭篇","宠物训练篇"]
-
+    var arrImg = ["http://www.lyj210.cn/cwgj/pic/huli/huli.jpg","http://www.lyj210.cn/cwgj/pic/siyang/siyang.jpg","http://www.lyj210.cn/cwgj/pic/xunlian/xunlian.jpg"]
+    var arrStr = ["宠物疾病篇","宠物吃饭篇","宠物训练篇"]
+    var arrUrl = ["http://v.xiumi.us/board/v3/25PvV/2750964","http://v.xiumi.us/board/v3/25PvV/2760872","http://v.xiumi.us/board/v3/25PvV/2760848"]
+    var sc: SDCycleScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,22 +30,23 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
         //添加上拉加载
         self.tableView.addGifFooterWithRefreshingTarget(self, refreshingAction: "footRefresh")
         //定义滚动条
-        let sc = SDCycleScrollView(frame:uiscview.frame, imageURLStringsGroup: nil)
+        sc = SDCycleScrollView(frame:uiscview.frame, imageURLStringsGroup: nil)
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            sc.imageURLStringsGroup = self.arr//异步获取图片数组
+            self.sc.imageURLStringsGroup = self.arrImg//异步获取图片数组
         }
         sc.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
-        sc.titlesGroup = ss
+        sc.titlesGroup = arrStr
         sc.delegate = self
         sc.autoScrollTimeInterval = 2
         //cycleScrollView2.dotColor = [UIColor yellowColor]; // 自定义分页控件小圆标颜色
-        sc.placeholderImage = UIImage(named: "h1")//网络图片未加载时显示图片h1
+        sc.placeholderImage = UIImage(named: "dog")//网络图片未加载时显示图片h1
         self.uiscview.addSubview(sc)
     }
     func headRefresh(){
         //下拉刷新
         ProgressHUD.show("亲爱的别着急~~")
         Delay(0.5) { () -> () in
+            self.getData1()
             self.getData2(1)
             self.page = 2//属性状态下重置page
             self.flag = false
@@ -80,16 +81,8 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     }
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
         //滚动条点击的图片,并执行相应的动作
-        switch index {
-        case 0:
-            self.urlStr = "http://v.xiumi.us/board/v3/25PvV/2750964"
-        case 1:
-            self.urlStr = "http://v.xiumi.us/board/v3/25PvV/2760872"
-        case 2:
-            self.urlStr = "http://v.xiumi.us/board/v3/25PvV/2760848"
-        default:
-            break
-        }
+        self.urlStr = self.arrUrl[index]
+        print("---------\(self.urlStr)")
         performSegueWithIdentifier("cellToweb", sender: self)
     }
     override func viewWillAppear(animated: Bool) {
@@ -98,6 +91,8 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.tabBarController?.tabBar.hidden = false
+        getData1()
         getData2(1)
     }
     override func didReceiveMemoryWarning() {
@@ -117,8 +112,27 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
         self.urlStr = readData[indexPath.row].cellUrl
         performSegueWithIdentifier("cellToweb", sender: self)
     }
+    func getData1(){
+        Pitaya.request(.GET, url: "http://www.lyj210.cn/cwgj/index.php/Home/Read/selectRead1", errorCallback: { (error) -> Void in
+            print("出错了")
+            }) { (data, response, error) -> Void in
+                let json = JSON(data: data!)
+                print(json)
+                for i in 0..<json.count{
+                    let imgurl = json[i]["imgurl"]
+                    let urlstr = json[i]["urlstr"]
+                    let title = json[i]["title"]
+                    self.arrImg[i] = "\(imgurl)"
+                    self.arrUrl[i] = "\(urlstr)"
+                    self.arrStr[i] = "\(title)"
+                    dispatch_async(dispatch_get_main_queue()) { () -> Void in
+                        self.sc.imageURLStringsGroup = self.arrImg//异步获取图片数组
+                        self.sc.titlesGroup = self.arrStr
+                    }
+                }
+        }
+    }
     func getData2(numPage: Int){
-        
         //获取网络数据
         Pitaya.request(.GET, url: "http://www.lyj210.cn/cwgj/index.php/Home/Read/selectRead2", params: ["page":numPage], errorCallback: { (error) -> Void in
             print("出错了")
