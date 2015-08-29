@@ -125,9 +125,9 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
         loginBtn = UIButton(frame: CGRectMake(25, 125, vLogin.frame.size.width - 50, 38))
         loginBtn.layer.cornerRadius = 5
         
-        loginBtn.setTitle("登          陆", forState: UIControlState.Normal)
+        loginBtn.setTitle("登       陆", forState: UIControlState.Normal)
         loginBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        loginBtn.backgroundColor = UIColor.blueColor()
+        loginBtn.backgroundColor = UIColor(red: 102/256, green: 150/256, blue: 209/256, alpha: 0.95)
         loginBtn.addTarget(self, action: "loginBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
         vLogin.addSubview(loginBtn)
 
@@ -142,12 +142,7 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
         super.touchesEnded(touches, withEvent: event)
         self.view.endEditing(true)
     }
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
     func textFieldDidBeginEditing(textField: UITextField) {
         if textField.isEqual(textUser){
