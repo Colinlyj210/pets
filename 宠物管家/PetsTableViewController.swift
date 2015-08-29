@@ -10,44 +10,30 @@ import UIKit
 import Pitaya
 class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     @IBOutlet weak var uiscview: UIView!
-    var readData = [ReadInfo]()
-    
-    
-    
-    
-    var urlStr = ""
-    var objArray = [String]()
-    var i = 0
+    var readData = [ReadInfo]()//数据源数组
+    var page = 2//控制下拉第几页
+    var urlStr = ""//定义传到web界面的值
+
     let arr = ["http://www.lyj210.cn/cwgj/pic/huli/huli.jpg","http://www.lyj210.cn/cwgj/pic/siyang/siyang.jpg","http://www.lyj210.cn/cwgj/pic/xunlian/xunlian.jpg"]
-    let urls = ["http://v.xiumi.us/board/v3/25PvV/3524920","http://v.xiumi.us/board/v3/25PvV/3525027","http://v.xiumi.us/board/v3/25PvV/3525407","","","","","","",""]
-    
-    
+
     let ss = ["宠物疾病篇","宠物吃饭篇","宠物训练篇"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getData2()
-        
-        
-        
+
         SDImageCache.sharedImageCache().cleanDisk()//清除硬盘中的缓存
         SDImageCache.sharedImageCache().clearMemory()//清除内存中的缓存
-        for i; i < 10;i++ {
-            self.objArray.append("\(i)")
-        }
+        
         self.tableView.tableFooterView = UIView()//去掉没数据的空行
         //添加下拉刷新
         self.tableView.addLegendHeaderWithRefreshingTarget(self, refreshingAction: "headRefresh")
-        //添加下拉加载
-
+        //添加上拉加载
         self.tableView.addGifFooterWithRefreshingTarget(self, refreshingAction: "footRefresh")
-        
-        
+        //定义滚动条
         let sc = SDCycleScrollView(frame:uiscview.frame, imageURLStringsGroup: nil)
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            sc.imageURLStringsGroup = self.arr
+            sc.imageURLStringsGroup = self.arr//异步获取图片数组
         }
-        
         sc.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
         sc.titlesGroup = ss
         sc.delegate = self
@@ -59,36 +45,40 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     func headRefresh(){
         //下拉刷新
         ProgressHUD.show("亲爱的别着急~~")
-        Delay(1) { () -> () in
-            self.objArray.removeAll(keepCapacity: false)
-            self.i = 0
-            for self.i ; self.i < 10 ; self.i++ {
-                self.objArray.append("new\(self.i)")
-            }
+        Delay(0.5) { () -> () in
+            self.getData2(1)
+            self.page = 2//属性状态下重置page
             self.tableView.header.endRefreshing()
-            self.tableView.reloadData()
             ProgressHUD.showSuccess("人家准备好了～～")
         }
     }
+    var flag = false
     func footRefresh(){
         //上拉加载
         ProgressHUD.show("还有更多内容")
-        self.Delay(1, closure: { () -> () in
-            let j = self.i + 10
-            for self.i ; self.i < j ; self.i++ {
-                self.objArray.append("\(self.i)")
+        self.Delay(0.5, closure: { () -> () in
+            self.getData2(self.page)
+            if self.flag {
+                self.tableView.footer.endRefreshing()
+                ProgressHUD.show("暂时没有更多内容")
+                //增加延时取消HUD
+                self.Delay(0.8, closure: { () -> () in
+                    ProgressHUD.dismiss()
+                })
+                return
             }
+            self.page++ //下拉状态每次page+1
             self.tableView.footer.endRefreshing()
-            self.tableView.reloadData()
             ProgressHUD.showSuccess("好了啦～～")
         })
         
     }
-    //模拟网络数据加载延迟
+    //模拟网络数据加载延迟.为演示HUD效果进行延时操作
     func Delay(time:Double,closure:()->()){
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(time * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), closure)
     }
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
+        //滚动条点击的图片,并执行相应的动作
         switch index {
         case 0:
             self.urlStr = "http://v.xiumi.us/board/v3/25PvV/2750964"
@@ -104,23 +94,17 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.hidden = false
-        
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.tabBarController?.tabBar.hidden = false
+        getData2(1)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return readData.count
     }
@@ -128,19 +112,30 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
         return 60
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ReadTableViewCell
-        self.urlStr = cell.cellUrl
+        //定义传到web界面的url值
+        self.urlStr = readData[indexPath.row].cellUrl
         performSegueWithIdentifier("cellToweb", sender: self)
     }
-    func getData2(){
-        Pitaya.request(.GET, url: "http://www.lyj210.cn/cwgj/index.php/Home/Read/selectRead2", params: ["page":1], errorCallback: { (error) -> Void in
+    func getData2(numPage: Int){
+        if numPage == 1 {
+            self.readData = []//刷新状态置空数据源数组
+        }
+        //获取网络数据
+        Pitaya.request(.GET, url: "http://www.lyj210.cn/cwgj/index.php/Home/Read/selectRead2", params: ["page":numPage], errorCallback: { (error) -> Void in
             print("出错了")
             }) { (data, response, error) -> Void in
                 let json = JSON(data: data!)
+                print(json)
+                //如果为空这设置flag=true,没有信息,并返回
+                if json.isEmpty {
+                    self.flag = true
+                    return
+                }
                 for var i = 0; i < json.count ; i++ {
                     let imgurl = json[i]["imgurl"]
                     let celltitle = json[i]["id"]
                     let urlstr = json[i]["urlstr"]
+                    //json解析并添加到数据源数组
                     self.readData.append(ReadInfo(cellImgUrl: "\(imgurl)", cellTitle: "\(celltitle)", cellUrl: "\(urlstr)"))
                     dispatch_async(dispatch_get_main_queue()){
                         self.tableView.reloadData()
@@ -154,20 +149,17 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ReadTableViewCell
         let info = readData[indexPath.row]
-        cell.readInfo = info
-
+        cell.readInfo = info//cell内容赋值
         return cell
     }
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        //cell显示动画效果
         cell.layer.transform = CATransform3DMakeScale(0.1, 0.1, 0.1)
         UIView.animateWithDuration(0.3, animations: { () -> Void in
             cell.layer.transform = CATransform3DMakeScale(1, 1, 1)
         })
     }
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    //跳转到web界面
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         self.hidesBottomBarWhenPushed = true
         self.tabBarController?.tabBar.hidden = true
