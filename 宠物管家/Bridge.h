@@ -17,3 +17,4 @@
 #import "RadioButton.h"
 #import "CoreFMDB.h"
 #import "BTSpiderPlotterView.h"
+#import "AJWValidator.h"

@@ -145,6 +145,20 @@
 		2C79BE5D1B8F1C7600567424 /* UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79BE5C1B8F1C7600567424 /* UpdateData.swift */; };
 		2C83251F1B899F690094F081 /* BTSpiderPlotterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C83251E1B899F690094F081 /* BTSpiderPlotterView.m */; };
 		2C8325221B89B08F0094F081 /* BtnCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8325211B89B08F0094F081 /* BtnCellView.swift */; };
+		2C898A471B914F890059422D /* AJWNumericValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A2D1B914F890059422D /* AJWNumericValidator.m */; };
+		2C898A481B914F890059422D /* AJWStringValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A2F1B914F890059422D /* AJWStringValidator.m */; };
+		2C898A491B914F890059422D /* AJWValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A321B914F890059422D /* AJWValidator.m */; };
+		2C898A4A1B914F890059422D /* AJWValidatorCustomRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A341B914F890059422D /* AJWValidatorCustomRule.m */; };
+		2C898A4B1B914F890059422D /* AJWValidatorEqualRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A361B914F890059422D /* AJWValidatorEqualRule.m */; };
+		2C898A4C1B914F890059422D /* AJWValidatorMaximumLengthRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A381B914F890059422D /* AJWValidatorMaximumLengthRule.m */; };
+		2C898A4D1B914F890059422D /* AJWValidatorMinimumLengthRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A3A1B914F890059422D /* AJWValidatorMinimumLengthRule.m */; };
+		2C898A4E1B914F890059422D /* AJWValidatorRangeRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A3C1B914F890059422D /* AJWValidatorRangeRule.m */; };
+		2C898A4F1B914F890059422D /* AJWValidatorRegularExpressionRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A3E1B914F890059422D /* AJWValidatorRegularExpressionRule.m */; };
+		2C898A501B914F890059422D /* AJWValidatorRemoteRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A401B914F890059422D /* AJWValidatorRemoteRule.m */; };
+		2C898A511B914F890059422D /* AJWValidatorRequiredRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A421B914F890059422D /* AJWValidatorRequiredRule.m */; };
+		2C898A521B914F890059422D /* AJWValidatorRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A441B914F890059422D /* AJWValidatorRule.m */; };
+		2C898A531B914F890059422D /* UIView+AJWValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A461B914F890059422D /* UIView+AJWValidator.m */; };
+		2C898A561B9153FC0059422D /* Inputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A551B9153FB0059422D /* Inputs.swift */; };
 		2C8AF0F71B78C41C00C29939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F61B78C41C00C29939 /* User.swift */; };
 		2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F81B78C57100C29939 /* Pet.swift */; };
 		2CA423F91B8ABC0D00105A85 /* SendMsgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */; };
@@ -456,6 +470,34 @@
 		2C83251D1B899F690094F081 /* BTSpiderPlotterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSpiderPlotterView.h; sourceTree = "<group>"; };
 		2C83251E1B899F690094F081 /* BTSpiderPlotterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSpiderPlotterView.m; sourceTree = "<group>"; };
 		2C8325211B89B08F0094F081 /* BtnCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnCellView.swift; sourceTree = "<group>"; };
+		2C898A2C1B914F890059422D /* AJWNumericValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWNumericValidator.h; sourceTree = "<group>"; };
+		2C898A2D1B914F890059422D /* AJWNumericValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWNumericValidator.m; sourceTree = "<group>"; };
+		2C898A2E1B914F890059422D /* AJWStringValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWStringValidator.h; sourceTree = "<group>"; };
+		2C898A2F1B914F890059422D /* AJWStringValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWStringValidator.m; sourceTree = "<group>"; };
+		2C898A301B914F890059422D /* AJWValidator+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AJWValidator+Private.h"; sourceTree = "<group>"; };
+		2C898A311B914F890059422D /* AJWValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWValidator.h; sourceTree = "<group>"; };
+		2C898A321B914F890059422D /* AJWValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWValidator.m; sourceTree = "<group>"; };
+		2C898A331B914F890059422D /* AJWValidatorCustomRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWValidatorCustomRule.h; sourceTree = "<group>"; };
+		2C898A341B914F890059422D /* AJWValidatorCustomRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWValidatorCustomRule.m; sourceTree = "<group>"; };
+		2C898A351B914F890059422D /* AJWValidatorEqualRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWValidatorEqualRule.h; sourceTree = "<group>"; };
+		2C898A361B914F890059422D /* AJWValidatorEqualRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWValidatorEqualRule.m; sourceTree = "<group>"; };
+		2C898A371B914F890059422D /* AJWValidatorMaximumLengthRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWValidatorMaximumLengthRule.h; sourceTree = "<group>"; };
+		2C898A381B914F890059422D /* AJWValidatorMaximumLengthRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWValidatorMaximumLengthRule.m; sourceTree = "<group>"; };
+		2C898A391B914F890059422D /* AJWValidatorMinimumLengthRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWValidatorMinimumLengthRule.h; sourceTree = "<group>"; };
+		2C898A3A1B914F890059422D /* AJWValidatorMinimumLengthRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWValidatorMinimumLengthRule.m; sourceTree = "<group>"; };
+		2C898A3B1B914F890059422D /* AJWValidatorRangeRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWValidatorRangeRule.h; sourceTree = "<group>"; };
+		2C898A3C1B914F890059422D /* AJWValidatorRangeRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWValidatorRangeRule.m; sourceTree = "<group>"; };
+		2C898A3D1B914F890059422D /* AJWValidatorRegularExpressionRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWValidatorRegularExpressionRule.h; sourceTree = "<group>"; };
+		2C898A3E1B914F890059422D /* AJWValidatorRegularExpressionRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWValidatorRegularExpressionRule.m; sourceTree = "<group>"; };
+		2C898A3F1B914F890059422D /* AJWValidatorRemoteRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWValidatorRemoteRule.h; sourceTree = "<group>"; };
+		2C898A401B914F890059422D /* AJWValidatorRemoteRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWValidatorRemoteRule.m; sourceTree = "<group>"; };
+		2C898A411B914F890059422D /* AJWValidatorRequiredRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWValidatorRequiredRule.h; sourceTree = "<group>"; };
+		2C898A421B914F890059422D /* AJWValidatorRequiredRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWValidatorRequiredRule.m; sourceTree = "<group>"; };
+		2C898A431B914F890059422D /* AJWValidatorRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AJWValidatorRule.h; sourceTree = "<group>"; };
+		2C898A441B914F890059422D /* AJWValidatorRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AJWValidatorRule.m; sourceTree = "<group>"; };
+		2C898A451B914F890059422D /* UIView+AJWValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AJWValidator.h"; sourceTree = "<group>"; };
+		2C898A461B914F890059422D /* UIView+AJWValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AJWValidator.m"; sourceTree = "<group>"; };
+		2C898A551B9153FB0059422D /* Inputs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inputs.swift; sourceTree = "<group>"; };
 		2C8AF0F61B78C41C00C29939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C8AF0F81B78C57100C29939 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMsgViewController.swift; sourceTree = "<group>"; };
@@ -517,6 +559,7 @@
 		2C0275C31B74491600F3C76F /* 宠物管家 */ = {
 			isa = PBXGroup;
 			children = (
+				2C898A2B1B914F890059422D /* AJWValidator */,
 				2C83251C1B899F690094F081 /* BTSpiderPlotterView */,
 				2C181A631B81BE1B0002F5F6 /* RadioButton */,
 				2C576FED1B7B4C87000D105F /* UITextBox */,
@@ -535,6 +578,7 @@
 				2C7028E11B7AEFBF00824B1E /* myTableView.swift */,
 				2C0275C81B74491600F3C76F /* Main.storyboard */,
 				2C0568BF1B75F45800B4974A /* LoginViewController.swift */,
+				2C898A551B9153FB0059422D /* Inputs.swift */,
 				2C0568C51B761B3900B4974A /* UserRegTableViewController.swift */,
 				2CA6939A1B75E72A00C1F598 /* Home.storyboard */,
 				2C0276B91B74E02C00F3C76F /* HomeTableViewController.swift */,
@@ -1263,6 +1307,40 @@
 			path = BTSpiderPlotterView;
 			sourceTree = "<group>";
 		};
+		2C898A2B1B914F890059422D /* AJWValidator */ = {
+			isa = PBXGroup;
+			children = (
+				2C898A2C1B914F890059422D /* AJWNumericValidator.h */,
+				2C898A2D1B914F890059422D /* AJWNumericValidator.m */,
+				2C898A2E1B914F890059422D /* AJWStringValidator.h */,
+				2C898A2F1B914F890059422D /* AJWStringValidator.m */,
+				2C898A301B914F890059422D /* AJWValidator+Private.h */,
+				2C898A311B914F890059422D /* AJWValidator.h */,
+				2C898A321B914F890059422D /* AJWValidator.m */,
+				2C898A331B914F890059422D /* AJWValidatorCustomRule.h */,
+				2C898A341B914F890059422D /* AJWValidatorCustomRule.m */,
+				2C898A351B914F890059422D /* AJWValidatorEqualRule.h */,
+				2C898A361B914F890059422D /* AJWValidatorEqualRule.m */,
+				2C898A371B914F890059422D /* AJWValidatorMaximumLengthRule.h */,
+				2C898A381B914F890059422D /* AJWValidatorMaximumLengthRule.m */,
+				2C898A391B914F890059422D /* AJWValidatorMinimumLengthRule.h */,
+				2C898A3A1B914F890059422D /* AJWValidatorMinimumLengthRule.m */,
+				2C898A3B1B914F890059422D /* AJWValidatorRangeRule.h */,
+				2C898A3C1B914F890059422D /* AJWValidatorRangeRule.m */,
+				2C898A3D1B914F890059422D /* AJWValidatorRegularExpressionRule.h */,
+				2C898A3E1B914F890059422D /* AJWValidatorRegularExpressionRule.m */,
+				2C898A3F1B914F890059422D /* AJWValidatorRemoteRule.h */,
+				2C898A401B914F890059422D /* AJWValidatorRemoteRule.m */,
+				2C898A411B914F890059422D /* AJWValidatorRequiredRule.h */,
+				2C898A421B914F890059422D /* AJWValidatorRequiredRule.m */,
+				2C898A431B914F890059422D /* AJWValidatorRule.h */,
+				2C898A441B914F890059422D /* AJWValidatorRule.m */,
+				2C898A451B914F890059422D /* UIView+AJWValidator.h */,
+				2C898A461B914F890059422D /* UIView+AJWValidator.m */,
+			);
+			path = AJWValidator;
+			sourceTree = "<group>";
+		};
 		2C8AF0F51B78C3FF00C29939 /* SqliteData */ = {
 			isa = PBXGroup;
 			children = (
@@ -1464,16 +1542,21 @@
 				2C0568CD1B761F5100B4974A /* Pitaya.swift in Sources */,
 				2C02765C1B745A7D00F3C76F /* WebViewController.swift in Sources */,
 				2C149EDD1B78BED9000B4FFF /* BaseTF.m in Sources */,
+				2C898A481B914F890059422D /* AJWStringValidator.m in Sources */,
+				2C898A4D1B914F890059422D /* AJWValidatorMinimumLengthRule.m in Sources */,
 				2C8325221B89B08F0094F081 /* BtnCellView.swift in Sources */,
 				2C149B151B788594000B4FFF /* EAIntroPage.m in Sources */,
 				2C0276831B745E3500F3C76F /* SDWebImageDecoder.m in Sources */,
 				2C149F091B78BED9000B4FFF /* NSObject+MJCoding.m in Sources */,
+				2C898A4B1B914F890059422D /* AJWValidatorEqualRule.m in Sources */,
+				2C898A4F1B914F890059422D /* AJWValidatorRegularExpressionRule.m in Sources */,
 				2C0276801B745E3500F3C76F /* NSData+ImageContentType.m in Sources */,
 				2C149EED1B78BED9000B4FFF /* UIImage+Extend.m in Sources */,
 				2C0568BC1B75ED3000B4974A /* SweetAlert.swift in Sources */,
 				2C149ECF1B78BED9000B4FFF /* BaseMoelConst.m in Sources */,
 				2C181A6D1B81BE6A0002F5F6 /* updateTableViewCell.swift in Sources */,
 				2C576FEF1B7B4C87000D105F /* UITextBox.swift in Sources */,
+				2C898A4C1B914F890059422D /* AJWValidatorMaximumLengthRule.m in Sources */,
 				2C149ECD1B78BED9000B4FFF /* UINavigationController+Appearance.m in Sources */,
 				2C0275F91B744A2D00F3C76F /* MJRefreshGifFooter.m in Sources */,
 				2C149EEE1B78BED9000B4FFF /* UIImage+FixOrientation.m in Sources */,
@@ -1484,6 +1567,7 @@
 				2C149EFC1B78BED9000B4FFF /* NSData+MimeType.m in Sources */,
 				2C149ECA1B78BED9000B4FFF /* ToolNetWorkView.m in Sources */,
 				2C0276811B745E3500F3C76F /* SDImageCache.m in Sources */,
+				2C898A4E1B914F890059422D /* AJWValidatorRangeRule.m in Sources */,
 				2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */,
 				2C149EE71B78BED9000B4FFF /* NSString+Password.m in Sources */,
 				2C83251F1B899F690094F081 /* BTSpiderPlotterView.m in Sources */,
@@ -1507,6 +1591,7 @@
 				2C149EE51B78BED9000B4FFF /* NSObject+Extend.m in Sources */,
 				2C0275FB1B744A2D00F3C76F /* MJRefreshHeader.m in Sources */,
 				2C149EE01B78BED9000B4FFF /* CoreArchive.m in Sources */,
+				2C898A501B914F890059422D /* AJWValidatorRemoteRule.m in Sources */,
 				2C149ECC1B78BED9000B4FFF /* UIBarButtonItem+Appearance.m in Sources */,
 				2C0568C61B761B3A00B4974A /* UserRegTableViewController.swift in Sources */,
 				2C149EDB1B78BED9000B4FFF /* BaseCollectionViewCell.m in Sources */,
@@ -1514,6 +1599,7 @@
 				2C0276091B744A5500F3C76F /* XHWaterDropRefresh.m in Sources */,
 				2C0276841B745E3500F3C76F /* SDWebImageDownloader.m in Sources */,
 				2C0568C01B75F45800B4974A /* LoginViewController.swift in Sources */,
+				2C898A471B914F890059422D /* AJWNumericValidator.m in Sources */,
 				2C149EC51B78BED9000B4FFF /* BaseNav.m in Sources */,
 				2C149B161B788594000B4FFF /* EAIntroView.m in Sources */,
 				2C149EE41B78BED9000B4FFF /* NSDate+Extend.m in Sources */,
@@ -1531,6 +1617,7 @@
 				2C149ED21B78BED9000B4FFF /* NSObject+Contrast.m in Sources */,
 				2C149ECE1B78BED9000B4FFF /* BaseModel.m in Sources */,
 				2C149F0A1B78BED9000B4FFF /* NSObject+MJKeyValue.m in Sources */,
+				2C898A561B9153FC0059422D /* Inputs.swift in Sources */,
 				2CF166DC1B8D8E4D004A3F37 /* RoundImageView.swift in Sources */,
 				2C0275FF1B744A2D00F3C76F /* UIScrollView+MJRefresh.m in Sources */,
 				2C149F0C1B78BED9000B4FFF /* NSString+MJExtension.m in Sources */,
@@ -1547,12 +1634,17 @@
 				2C0276151B74535800F3C76F /* PetsTableViewController.swift in Sources */,
 				2C060A661B77904A0011E106 /* MsgTableViewController.swift in Sources */,
 				2C149EFA1B78BED9000B4FFF /* CoreHttp.m in Sources */,
+				2C898A521B914F890059422D /* AJWValidatorRule.m in Sources */,
 				2C149EE81B78BED9000B4FFF /* UIColor+Extend.m in Sources */,
+				2C898A491B914F890059422D /* AJWValidator.m in Sources */,
 				2C149ED01B78BED9000B4FFF /* NSDictionary+Sqlite.m in Sources */,
+				2C898A531B914F890059422D /* UIView+AJWValidator.m in Sources */,
+				2C898A4A1B914F890059422D /* AJWValidatorCustomRule.m in Sources */,
 				2C149EE61B78BED9000B4FFF /* NSString+Extend.m in Sources */,
 				2C149F191B78C13F000B4FFF /* SetTableViewController.swift in Sources */,
 				2CC195CC1B8176060079DF8D /* MsgTableViewCell.swift in Sources */,
 				2C149F021B78BED9000B4FFF /* Reachability.m in Sources */,
+				2C898A511B914F890059422D /* AJWValidatorRequiredRule.m in Sources */,
 				2C8AF0F71B78C41C00C29939 /* User.swift in Sources */,
 				2C149EF81B78BED9000B4FFF /* FMDatabaseQueue.m in Sources */,
 				2C149EDC1B78BED9000B4FFF /* BaseTableViewCell.m in Sources */,
