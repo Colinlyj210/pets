@@ -141,10 +141,14 @@
 		2C181A6D1B81BE6A0002F5F6 /* updateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C181A6C1B81BE6A0002F5F6 /* updateTableViewCell.swift */; };
 		2C576FEF1B7B4C87000D105F /* UITextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C576FEE1B7B4C87000D105F /* UITextBox.swift */; };
 		2C5B4E7D1B92E99E00655C74 /* GBTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E7C1B92E99E00655C74 /* GBTagListView.m */; };
-		2C5B4E871B92E9C100655C74 /* EYInputPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E811B92E9C100655C74 /* EYInputPopupView.m */; };
-		2C5B4E881B92E9C100655C74 /* EYPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E831B92E9C100655C74 /* EYPopupView.m */; };
-		2C5B4E891B92E9C100655C74 /* EYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E861B92E9C100655C74 /* EYTextField.m */; };
 		2C5B4E8B1B92F40800655C74 /* PetSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E8A1B92F40800655C74 /* PetSkill.swift */; };
+		2C5B4E991B92FF4F00655C74 /* EYInputPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E8F1B92FF4F00655C74 /* EYInputPopupView.m */; };
+		2C5B4E9A1B92FF4F00655C74 /* EYPopupView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2C5B4E901B92FF4F00655C74 /* EYPopupView.bundle */; };
+		2C5B4E9B1B92FF4F00655C74 /* EYPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E921B92FF4F00655C74 /* EYPopupView.m */; };
+		2C5B4E9C1B92FF4F00655C74 /* EYTagPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E961B92FF4F00655C74 /* EYTagPopupView.m */; };
+		2C5B4E9D1B92FF4F00655C74 /* EYTextPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E981B92FF4F00655C74 /* EYTextPopupView.m */; };
+		2C5B4EA41B92FF5D00655C74 /* EYTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4EA11B92FF5D00655C74 /* EYTagView.m */; };
+		2C5B4EA51B92FF5D00655C74 /* EYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4EA31B92FF5D00655C74 /* EYTextField.m */; };
 		2C6329A21B8721E000BD0A5C /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6329A11B8721E000BD0A5C /* Score.swift */; };
 		2C7028E21B7AEFBF00824B1E /* myTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7028E11B7AEFBF00824B1E /* myTableView.swift */; };
 		2C79BE5D1B8F1C7600567424 /* UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79BE5C1B8F1C7600567424 /* UpdateData.swift */; };
@@ -475,14 +479,22 @@
 		2C576FEE1B7B4C87000D105F /* UITextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextBox.swift; sourceTree = "<group>"; };
 		2C5B4E7B1B92E99E00655C74 /* GBTagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBTagListView.h; sourceTree = "<group>"; };
 		2C5B4E7C1B92E99E00655C74 /* GBTagListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBTagListView.m; sourceTree = "<group>"; };
-		2C5B4E801B92E9C100655C74 /* EYInputPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYInputPopupView.h; sourceTree = "<group>"; };
-		2C5B4E811B92E9C100655C74 /* EYInputPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYInputPopupView.m; sourceTree = "<group>"; };
-		2C5B4E821B92E9C100655C74 /* EYPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYPopupView.h; sourceTree = "<group>"; };
-		2C5B4E831B92E9C100655C74 /* EYPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYPopupView.m; sourceTree = "<group>"; };
-		2C5B4E841B92E9C100655C74 /* EYPopupViewMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYPopupViewMacro.h; sourceTree = "<group>"; };
-		2C5B4E851B92E9C100655C74 /* EYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYTextField.h; sourceTree = "<group>"; };
-		2C5B4E861B92E9C100655C74 /* EYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYTextField.m; sourceTree = "<group>"; };
 		2C5B4E8A1B92F40800655C74 /* PetSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSkill.swift; sourceTree = "<group>"; };
+		2C5B4E8E1B92FF4F00655C74 /* EYInputPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYInputPopupView.h; sourceTree = "<group>"; };
+		2C5B4E8F1B92FF4F00655C74 /* EYInputPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYInputPopupView.m; sourceTree = "<group>"; };
+		2C5B4E901B92FF4F00655C74 /* EYPopupView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EYPopupView.bundle; sourceTree = "<group>"; };
+		2C5B4E911B92FF4F00655C74 /* EYPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYPopupView.h; sourceTree = "<group>"; };
+		2C5B4E921B92FF4F00655C74 /* EYPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYPopupView.m; sourceTree = "<group>"; };
+		2C5B4E931B92FF4F00655C74 /* EYPopupViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYPopupViewHeader.h; sourceTree = "<group>"; };
+		2C5B4E941B92FF4F00655C74 /* EYPopupViewMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYPopupViewMacro.h; sourceTree = "<group>"; };
+		2C5B4E951B92FF4F00655C74 /* EYTagPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYTagPopupView.h; sourceTree = "<group>"; };
+		2C5B4E961B92FF4F00655C74 /* EYTagPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYTagPopupView.m; sourceTree = "<group>"; };
+		2C5B4E971B92FF4F00655C74 /* EYTextPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYTextPopupView.h; sourceTree = "<group>"; };
+		2C5B4E981B92FF4F00655C74 /* EYTextPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYTextPopupView.m; sourceTree = "<group>"; };
+		2C5B4EA01B92FF5D00655C74 /* EYTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYTagView.h; sourceTree = "<group>"; };
+		2C5B4EA11B92FF5D00655C74 /* EYTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYTagView.m; sourceTree = "<group>"; };
+		2C5B4EA21B92FF5D00655C74 /* EYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYTextField.h; sourceTree = "<group>"; };
+		2C5B4EA31B92FF5D00655C74 /* EYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYTextField.m; sourceTree = "<group>"; };
 		2C6329A11B8721E000BD0A5C /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		2C7028E11B7AEFBF00824B1E /* myTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTableView.swift; sourceTree = "<group>"; };
 		2C79BE5C1B8F1C7600567424 /* UpdateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateData.swift; sourceTree = "<group>"; };
@@ -1288,7 +1300,7 @@
 		2C4499811B91C103003094B8 /* three */ = {
 			isa = PBXGroup;
 			children = (
-				2C5B4E7F1B92E9C100655C74 /* PopInputView */,
+				2C5B4E8D1B92FF4F00655C74 /* EYPopupView */,
 				2C5B4E7A1B92E99E00655C74 /* GBTagListView */,
 				2C898A2B1B914F890059422D /* AJWValidator */,
 				2C83251C1B899F690094F081 /* BTSpiderPlotterView */,
@@ -1383,18 +1395,42 @@
 			path = GBTagListView;
 			sourceTree = "<group>";
 		};
-		2C5B4E7F1B92E9C100655C74 /* PopInputView */ = {
+		2C5B4E8D1B92FF4F00655C74 /* EYPopupView */ = {
 			isa = PBXGroup;
 			children = (
-				2C5B4E801B92E9C100655C74 /* EYInputPopupView.h */,
-				2C5B4E811B92E9C100655C74 /* EYInputPopupView.m */,
-				2C5B4E821B92E9C100655C74 /* EYPopupView.h */,
-				2C5B4E831B92E9C100655C74 /* EYPopupView.m */,
-				2C5B4E841B92E9C100655C74 /* EYPopupViewMacro.h */,
-				2C5B4E851B92E9C100655C74 /* EYTextField.h */,
-				2C5B4E861B92E9C100655C74 /* EYTextField.m */,
+				2C5B4E9E1B92FF5D00655C74 /* EYTagView */,
+				2C5B4E8E1B92FF4F00655C74 /* EYInputPopupView.h */,
+				2C5B4E8F1B92FF4F00655C74 /* EYInputPopupView.m */,
+				2C5B4E901B92FF4F00655C74 /* EYPopupView.bundle */,
+				2C5B4E911B92FF4F00655C74 /* EYPopupView.h */,
+				2C5B4E921B92FF4F00655C74 /* EYPopupView.m */,
+				2C5B4E931B92FF4F00655C74 /* EYPopupViewHeader.h */,
+				2C5B4E941B92FF4F00655C74 /* EYPopupViewMacro.h */,
+				2C5B4E951B92FF4F00655C74 /* EYTagPopupView.h */,
+				2C5B4E961B92FF4F00655C74 /* EYTagPopupView.m */,
+				2C5B4E971B92FF4F00655C74 /* EYTextPopupView.h */,
+				2C5B4E981B92FF4F00655C74 /* EYTextPopupView.m */,
 			);
-			path = PopInputView;
+			path = EYPopupView;
+			sourceTree = "<group>";
+		};
+		2C5B4E9E1B92FF5D00655C74 /* EYTagView */ = {
+			isa = PBXGroup;
+			children = (
+				2C5B4E9F1B92FF5D00655C74 /* EYTagView */,
+			);
+			path = EYTagView;
+			sourceTree = "<group>";
+		};
+		2C5B4E9F1B92FF5D00655C74 /* EYTagView */ = {
+			isa = PBXGroup;
+			children = (
+				2C5B4EA01B92FF5D00655C74 /* EYTagView.h */,
+				2C5B4EA11B92FF5D00655C74 /* EYTagView.m */,
+				2C5B4EA21B92FF5D00655C74 /* EYTextField.h */,
+				2C5B4EA31B92FF5D00655C74 /* EYTextField.m */,
+			);
+			path = EYTagView;
 			sourceTree = "<group>";
 		};
 		2C83251C1B899F690094F081 /* BTSpiderPlotterView */ = {
@@ -1563,6 +1599,7 @@
 				2C149EC71B78BED9000B4FFF /* NetWork.bundle in Resources */,
 				2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */,
 				2C0275D21B74491600F3C76F /* LaunchScreen.storyboard in Resources */,
+				2C5B4E9A1B92FF4F00655C74 /* EYPopupView.bundle in Resources */,
 				2C0275CF1B74491600F3C76F /* Assets.xcassets in Resources */,
 				2C0275F51B744A2D00F3C76F /* MJRefresh.bundle in Resources */,
 				2C181A681B81BE1B0002F5F6 /* LICENSE in Resources */,
@@ -1635,6 +1672,7 @@
 				2C898A5F1B918FF50059422D /* ReadInfo.swift in Sources */,
 				2C5B4E8B1B92F40800655C74 /* PetSkill.swift in Sources */,
 				2C149EDA1B78BED9000B4FFF /* BaseGradientView.m in Sources */,
+				2C5B4EA51B92FF5D00655C74 /* EYTextField.m in Sources */,
 				2C6329A21B8721E000BD0A5C /* Score.swift in Sources */,
 				2C149F041B78BED9000B4FFF /* FBShimmeringView.m in Sources */,
 				2C0276851B745E3500F3C76F /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1656,7 +1694,6 @@
 				2C898A4F1B914F890059422D /* AJWValidatorRegularExpressionRule.m in Sources */,
 				2C0276801B745E3500F3C76F /* NSData+ImageContentType.m in Sources */,
 				2C149EED1B78BED9000B4FFF /* UIImage+Extend.m in Sources */,
-				2C5B4E891B92E9C100655C74 /* EYTextField.m in Sources */,
 				2C0568BC1B75ED3000B4974A /* SweetAlert.swift in Sources */,
 				2C149ECF1B78BED9000B4FFF /* BaseMoelConst.m in Sources */,
 				2C181A6D1B81BE6A0002F5F6 /* updateTableViewCell.swift in Sources */,
@@ -1665,15 +1702,16 @@
 				2C149ECD1B78BED9000B4FFF /* UINavigationController+Appearance.m in Sources */,
 				2C8D0ECE1B92C32500435E1A /* LoginInfo.swift in Sources */,
 				2C0275F91B744A2D00F3C76F /* MJRefreshGifFooter.m in Sources */,
-				2C5B4E871B92E9C100655C74 /* EYInputPopupView.m in Sources */,
 				2C149EEE1B78BED9000B4FFF /* UIImage+FixOrientation.m in Sources */,
 				2C149EEF1B78BED9000B4FFF /* UIImage+Water.m in Sources */,
 				2C149EF51B78BED9000B4FFF /* FMDatabase.m in Sources */,
 				2C5B4E7D1B92E99E00655C74 /* GBTagListView.m in Sources */,
 				2C0276071B744A5500F3C76F /* XHPathCover.m in Sources */,
 				2C149F011B78BED9000B4FFF /* CoreStatus.m in Sources */,
+				2C5B4E9B1B92FF4F00655C74 /* EYPopupView.m in Sources */,
 				2C149EFC1B78BED9000B4FFF /* NSData+MimeType.m in Sources */,
 				2C149ECA1B78BED9000B4FFF /* ToolNetWorkView.m in Sources */,
+				2C5B4EA41B92FF5D00655C74 /* EYTagView.m in Sources */,
 				2C0276811B745E3500F3C76F /* SDImageCache.m in Sources */,
 				2C898A4E1B914F890059422D /* AJWValidatorRangeRule.m in Sources */,
 				2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */,
@@ -1690,6 +1728,7 @@
 				2C0276861B745E3500F3C76F /* SDWebImageManager.m in Sources */,
 				2C149EFE1B78BED9000B4FFF /* NSString+File.m in Sources */,
 				2C02768E1B745E3500F3C76F /* UIView+WebCacheOperation.m in Sources */,
+				2C5B4E991B92FF4F00655C74 /* EYInputPopupView.m in Sources */,
 				2C0275CD1B74491600F3C76F /* cwgj.xcdatamodeld in Sources */,
 				2C149F061B78BED9000B4FFF /* MJFoundation.m in Sources */,
 				2C0568CA1B761EDD00B4974A /* SwiftyJSON.swift in Sources */,
@@ -1722,6 +1761,7 @@
 				2C149EF11B78BED9000B4FFF /* UIView+Extend.m in Sources */,
 				2CC195CF1B8178240079DF8D /* MsgInfo.swift in Sources */,
 				2C149EC81B78BED9000B4FFF /* ToolNetWorkSolveVC.m in Sources */,
+				2C5B4E9C1B92FF4F00655C74 /* EYTagPopupView.m in Sources */,
 				2C149ED61B78BED9000B4FFF /* NSObject+Save.m in Sources */,
 				2C149ED21B78BED9000B4FFF /* NSObject+Contrast.m in Sources */,
 				2C149ECE1B78BED9000B4FFF /* BaseModel.m in Sources */,
@@ -1755,6 +1795,7 @@
 				2C149F021B78BED9000B4FFF /* Reachability.m in Sources */,
 				2C898A511B914F890059422D /* AJWValidatorRequiredRule.m in Sources */,
 				2C8AF0F71B78C41C00C29939 /* User.swift in Sources */,
+				2C5B4E9D1B92FF4F00655C74 /* EYTextPopupView.m in Sources */,
 				2C149EF81B78BED9000B4FFF /* FMDatabaseQueue.m in Sources */,
 				2C149EDC1B78BED9000B4FFF /* BaseTableViewCell.m in Sources */,
 				2C02768A1B745E3500F3C76F /* UIImage+MultiFormat.m in Sources */,
@@ -1765,7 +1806,6 @@
 				2C0275F81B744A2D00F3C76F /* MJRefreshFooter.m in Sources */,
 				2C149ED41B78BED9000B4FFF /* NSObject+Delete.m in Sources */,
 				2C0276881B745E3500F3C76F /* UIButton+WebCache.m in Sources */,
-				2C5B4E881B92E9C100655C74 /* EYPopupView.m in Sources */,
 				2C0276081B744A5500F3C76F /* XHSoundManager.m in Sources */,
 				2C149F171B78C101000B4FFF /* UpdateTableViewController.swift in Sources */,
 			);

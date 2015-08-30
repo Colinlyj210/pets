@@ -108,10 +108,6 @@ class HomeTableViewController: UITableViewController {
             let button = UIButton(frame: CGRectMake(self.view.frame.width - 50, 10, 40, 30))
             button.addTarget(self, action: "pskillClick", forControlEvents: UIControlEvents.TouchUpInside)
             button.setTitle("添加", forState: UIControlState.Normal)
-//            let s = BtnCellView()
-//            s.frame = CGRectMake(50, 50, self.view.frame.width - 100, 250)
-//            s.backgroundColor = UIColor.clearColor()
-
             cell.contentView.addSubview(button)
             taglist = GBTagListView(frame: CGRectMake(10,60,self.view.frame.width - 20 , 0))
             taglist.GBbackgroundColor = UIColor.clearColor()
@@ -126,6 +122,7 @@ class HomeTableViewController: UITableViewController {
         cell.backgroundColor = UIColor(hex: "8CA2C2")
         return cell
     }
+    //cell标题
     func cellTitle(titleStr: String)->UILabel{
         let lab = UILabel(frame: CGRectMake(0, 20, self.view.frame.width, 20))
         lab.text = titleStr
@@ -133,11 +130,20 @@ class HomeTableViewController: UITableViewController {
         lab.textAlignment = NSTextAlignment.Center
         return lab
     }
+    
+    //添加宠物技能
     func pskillClick(){
-        EYInputPopupView.popViewWithTitle("qwer", contentText: "ss", type: EYInputPopupView_Type_single_line_text, cancelBlock: { () -> Void in
-            
+        EYInputPopupView.popViewWithTitle("添加宠物技能", contentText: "", type: EYInputPopupView_Type_single_line_text, cancelBlock: { () -> Void in
             }, confirmBlock: { (view:UIView!, text:String!) -> Void in
                 print(text)
+                if text == nil || text == ""{
+                    return
+                }
+                if PetSkills.petskills.contains(text) {
+                    ProgressHUD.showError("改技能已存在")
+                    return
+                }
+                //将宠物技能添加到数组中并写入数据库
                 PetSkills.petskills.append(text)
                 self.taglist.setTagWithTagArray(PetSkills.petskills)
                 let petsk = PetSkill()
@@ -145,9 +151,7 @@ class HomeTableViewController: UITableViewController {
                 petsk.petskill = text
                 PetSkill.save(petsk)
             }) { () -> Void in
-                
         }
-        
     }
     
     
