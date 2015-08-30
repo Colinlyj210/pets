@@ -163,6 +163,8 @@
 		2C898A611B9190020059422D /* ReadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C898A601B9190020059422D /* ReadTableViewCell.swift */; };
 		2C8AF0F71B78C41C00C29939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F61B78C41C00C29939 /* User.swift */; };
 		2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F81B78C57100C29939 /* Pet.swift */; };
+		2C8D0ECE1B92C32500435E1A /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D0ECD1B92C32500435E1A /* LoginInfo.swift */; };
+		2C8D0ED11B92C66200435E1A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D0ED01B92C66200435E1A /* UserInfo.swift */; };
 		2CA423F91B8ABC0D00105A85 /* SendMsgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
 		2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939D1B75E75100C1F598 /* Pets.storyboard */; };
@@ -504,6 +506,8 @@
 		2C898A601B9190020059422D /* ReadTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadTableViewCell.swift; sourceTree = "<group>"; };
 		2C8AF0F61B78C41C00C29939 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		2C8AF0F81B78C57100C29939 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		2C8D0ECD1B92C32500435E1A /* LoginInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
+		2C8D0ED01B92C66200435E1A /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMsgViewController.swift; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
@@ -567,6 +571,7 @@
 				2C8AF0F51B78C3FF00C29939 /* SqliteData */,
 				2C0275C41B74491600F3C76F /* AppDelegate.swift */,
 				2C7028E11B7AEFBF00824B1E /* myTableView.swift */,
+				2C8D0ED01B92C66200435E1A /* UserInfo.swift */,
 				2C4499831B91C137003094B8 /* login */,
 				2C4499841B91C150003094B8 /* home */,
 				2C4499851B91C15D003094B8 /* read */,
@@ -1401,6 +1406,7 @@
 				2C8AF0F61B78C41C00C29939 /* User.swift */,
 				2C8AF0F81B78C57100C29939 /* Pet.swift */,
 				2C6329A11B8721E000BD0A5C /* Score.swift */,
+				2C8D0ECD1B92C32500435E1A /* LoginInfo.swift */,
 			);
 			path = SqliteData;
 			sourceTree = "<group>";
@@ -1614,6 +1620,7 @@
 				2C576FEF1B7B4C87000D105F /* UITextBox.swift in Sources */,
 				2C898A4C1B914F890059422D /* AJWValidatorMaximumLengthRule.m in Sources */,
 				2C149ECD1B78BED9000B4FFF /* UINavigationController+Appearance.m in Sources */,
+				2C8D0ECE1B92C32500435E1A /* LoginInfo.swift in Sources */,
 				2C0275F91B744A2D00F3C76F /* MJRefreshGifFooter.m in Sources */,
 				2C149EEE1B78BED9000B4FFF /* UIImage+FixOrientation.m in Sources */,
 				2C149EEF1B78BED9000B4FFF /* UIImage+Water.m in Sources */,
@@ -1651,6 +1658,7 @@
 				2C149ECC1B78BED9000B4FFF /* UIBarButtonItem+Appearance.m in Sources */,
 				2C0568C61B761B3A00B4974A /* UserRegTableViewController.swift in Sources */,
 				2C149EDB1B78BED9000B4FFF /* BaseCollectionViewCell.m in Sources */,
+				2C8D0ED11B92C66200435E1A /* UserInfo.swift in Sources */,
 				2C149EE11B78BED9000B4FFF /* CALayer+Anim.m in Sources */,
 				2C0276091B744A5500F3C76F /* XHWaterDropRefresh.m in Sources */,
 				2C0276841B745E3500F3C76F /* SDWebImageDownloader.m in Sources */,

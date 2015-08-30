@@ -47,6 +47,7 @@ extension String {
     }
 }
 class MsgTableViewController: UITableViewController {
+
     var menu :PopMenu!
     var head : XHPathCover!
     var page = 2

@@ -8,7 +8,7 @@
 
 import UIKit
 import Pitaya
-enum LoginShowType{
+enum LoginShowType{//登陆界面光标所在位置的三种状态
     case NONE
     case USER
     case PWD
@@ -23,32 +23,53 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
     var loginBtn: UIButton!
     var showType:LoginShowType!
 
-    func loginBtnClick() {
+    func loginBtnClick() {//点击登陆按钮进行登陆
         print("dianji")
         let Id = textUser.text!
         let Pwd = txtPwd.text!
-        
+        //异步请求数据
         Pitaya.request(.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Index/selectUser", params: ["uemail":Id, "upwd":Pwd], errorCallback: { (error) -> Void in
             print("出错了")
             }) { (data, response, error) -> Void in
                 let json = JSON(data: data!)
                 if json["state"] == 1{
-                    print("登陆成功")
+                    ProgressHUD.showSuccess("登陆成功")
+                    //登陆成功记录登陆时的账号,昵称等信息
+                    UserInfo.uemail = Id
+                    let uname = json["uname"]
+                    UserInfo.uname = "\(uname)"
+                    print(UserInfo.uname)
+                    self.recordUemail(Id)
+                    //登陆成功进行界面跳转
                     self.performSegueWithIdentifier("login", sender: self)
                 }else{
-                    print("登陆失败")
+                    SweetAlert().showAlert("登陆失败", subTitle: "请检查账号密码是否正确!", style: AlertStyle.Error)
                 }
         }
         
     }
+    
+    //记录登陆的账号
+    func recordUemail(uemail: String){
+        let loginfo = LoginInfo()
+        loginfo.hostID = 1
+        loginfo.uemail = uemail
+        
+        if LoginInfo.save(loginfo){
+            print("保存成功")
+        }
+        let s = LoginInfo.selectWhere(nil, groupBy: nil, orderBy: nil, limit: nil) as! [LoginInfo]
+        print(s[0].uemail)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.hidden = true
 
-        viewLoginInit()
+        viewLoginInit()//初始化登陆界面
         
         showType = LoginShowType.NONE
-        guideView()
+        guideView()//初始化引导界面
         
         
     }
@@ -144,9 +165,28 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)
         self.view.endEditing(true)
+        
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+    }
+    func textFieldDidEndEditing(textField: UITextField) {
+        if showType != LoginShowType.PWD{
+            return
+        }
+        showType = LoginShowType.NONE
+        showTypeNoneAnimate()
+    }
+    //根据光标所在位置判断执行相应的动画效果
+    func showTypeNoneAnimate(){
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.imgLeftHand.frame = CGRectMake(self.imgLeftHand.frame.origin.x - 60, self.imgLeftHand.frame.origin.y + 30, self.imgLeftHand.frame.size.width, self.imgLeftHand.frame.size.height)
+            
+            self.imgRightHand.frame = CGRectMake(self.imgRightHand.frame.origin.x + 48, self.imgRightHand.frame.origin.y + 30, self.imgRightHand.frame.size.width, self.imgRightHand.frame.size.height)
+            self.imgLeftHandGone.frame = CGRectMake(self.imgLeftHandGone.frame.origin.x - 70, self.imgLeftHandGone.frame.origin.y, 40, 40);
+            
+            self.imgRightHandGone.frame = CGRectMake(self.imgRightHandGone.frame.origin.x + 30, self.imgRightHandGone.frame.origin.y, 40, 40)
+        })
     }
     //点击输入框执行动画
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -155,14 +195,7 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
                 return
             }
             showType = LoginShowType.USER
-            UIView.animateWithDuration(0.5, animations: { () -> Void in
-                self.imgLeftHand.frame = CGRectMake(self.imgLeftHand.frame.origin.x - 60, self.imgLeftHand.frame.origin.y + 30, self.imgLeftHand.frame.size.width, self.imgLeftHand.frame.size.height)
-                
-                self.imgRightHand.frame = CGRectMake(self.imgRightHand.frame.origin.x + 48, self.imgRightHand.frame.origin.y + 30, self.imgRightHand.frame.size.width, self.imgRightHand.frame.size.height)
-                self.imgLeftHandGone.frame = CGRectMake(self.imgLeftHandGone.frame.origin.x - 70, self.imgLeftHandGone.frame.origin.y, 40, 40);
-                
-                self.imgRightHandGone.frame = CGRectMake(self.imgRightHandGone.frame.origin.x + 30, self.imgRightHandGone.frame.origin.y, 40, 40)
-            })
+            showTypeNoneAnimate()
         }else if textField.isEqual(txtPwd){
             if showType == LoginShowType.PWD{
                 return
