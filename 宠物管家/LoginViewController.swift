@@ -37,7 +37,9 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
                     //登陆成功记录登陆时的账号,昵称等信息
                     UserInfo.uemail = Id
                     let uname = json["uname"]
+                    let usign = json["usign"]
                     UserInfo.uname = "\(uname)"
+                    UserInfo.usign = "\(usign)"
                     print(UserInfo.uname)
                     self.recordUemail(Id)
                     //登陆成功进行界面跳转

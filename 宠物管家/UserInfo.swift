@@ -11,4 +11,5 @@ import Foundation
 class UserInfo {
     static var uemail = ""
     static var uname = ""
+    static var usign = ""
 }

@@ -100,8 +100,8 @@ class MsgTableViewController: UITableViewController {
         head.setBackgroundImage(UIImage(named: "BG"))//背景
         head.setAvatarImage(UIImage(named: "IMG_0755"))//头像
         head.isZoomingEffect = true//下拉模糊设置
-        //简要信息
-        head.setInfo(NSDictionary(objects: ["落幕","我养了一只藏獒"], forKeys: [XHUserNameKey,XHBirthdayKey]) as [NSObject : AnyObject])
+        //简要信息,将用户的昵称和个性签名显示在该界面
+        head.setInfo(NSDictionary(objects: [UserInfo.uname,UserInfo.usign], forKeys: [XHUserNameKey,XHBirthdayKey]) as [NSObject : AnyObject])
         head.avatarButton.layer.cornerRadius = 33;
         head.avatarButton.layer.masksToBounds = true
         //设置下拉事件
@@ -179,6 +179,10 @@ class MsgTableViewController: UITableViewController {
                     }
                 }
         }
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.hidden = false
     }
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)

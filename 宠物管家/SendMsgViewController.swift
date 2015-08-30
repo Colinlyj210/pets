@@ -12,7 +12,7 @@ class SendMsgViewController: UIViewController {
     @IBOutlet weak var contentTxt: UITextField!
 
     @IBAction func sendBtn(sender: AnyObject) {
-        Pitaya.request(.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Msg/addMsg", params: ["userName":"zxvv","content":contentTxt.text!], errorCallback: { (error) -> Void in
+        Pitaya.request(.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Msg/addMsg", params: ["userName":UserInfo.uname,"content":contentTxt.text!], errorCallback: { (error) -> Void in
             print("出错了")
             }) { (data, response, error) -> Void in
                 
