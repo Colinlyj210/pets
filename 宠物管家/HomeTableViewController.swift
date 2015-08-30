@@ -10,13 +10,15 @@
 import UIKit
 
 class HomeTableViewController: UITableViewController {
-
+    var taglist :GBTagListView!
+    var taglistStr = [String]()
     @IBAction func updateBtn(sender: AnyObject) {
         self.toUpdateView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        taglistStr = ["吃饭","睡觉","洗澡"]
         self.title = "主页"
         self.view.backgroundColor = UIColor(hex: "8CA2C2")
 
@@ -90,10 +92,18 @@ class HomeTableViewController: UITableViewController {
             let w = self.view.frame.width - 150
             cell.contentView.addSubview(cleanChart(CGRectMake(0, 0,self.view.frame.width ,400),w: w))
         case 3:
-            let s = BtnCellView()
-            s.frame = CGRectMake(50, 50, self.view.frame.width - 100, 250)
-            s.backgroundColor = UIColor.clearColor()
-            cell.contentView.addSubview(s)
+            let button = UIButton(frame: CGRectMake(self.view.frame.width - 50, 10, 40, 30))
+            button.addTarget(self, action: "pskillClick", forControlEvents: UIControlEvents.TouchUpInside)
+            button.setTitle("添加", forState: UIControlState.Normal)
+//            let s = BtnCellView()
+//            s.frame = CGRectMake(50, 50, self.view.frame.width - 100, 250)
+//            s.backgroundColor = UIColor.clearColor()
+
+            cell.contentView.addSubview(button)
+            taglist = GBTagListView(frame: CGRectMake(10,60,self.view.frame.width - 20 , 0))
+            taglist.GBbackgroundColor = UIColor.clearColor()
+            taglist.setTagWithTagArray(taglistStr)
+            cell.contentView.addSubview(taglist)
             
         default:
             let lab = UILabel(frame: CGRectMake(0, 0, 100, 30))
@@ -103,6 +113,21 @@ class HomeTableViewController: UITableViewController {
         cell.backgroundColor = UIColor(hex: "8CA2C2")
         return cell
     }
+
+    func pskillClick(){
+        EYInputPopupView.popViewWithTitle("qwer", contentText: "ss", type: EYInputPopupView_Type_single_line_text, cancelBlock: { () -> Void in
+            
+            }, confirmBlock: { (view:UIView!, text:String!) -> Void in
+                print(text)
+                self.taglistStr.append(text)
+                self.taglist.setTagWithTagArray(self.taglistStr)
+            }) { () -> Void in
+                
+        }
+        
+    }
+    
+    
     //构建蜘蛛网图
     func spiderChart(frame: CGRect)->UIView{
         let va = UpdateData.queryspiderData()
