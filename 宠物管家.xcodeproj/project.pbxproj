@@ -144,6 +144,7 @@
 		2C5B4E871B92E9C100655C74 /* EYInputPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E811B92E9C100655C74 /* EYInputPopupView.m */; };
 		2C5B4E881B92E9C100655C74 /* EYPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E831B92E9C100655C74 /* EYPopupView.m */; };
 		2C5B4E891B92E9C100655C74 /* EYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E861B92E9C100655C74 /* EYTextField.m */; };
+		2C5B4E8B1B92F40800655C74 /* PetSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E8A1B92F40800655C74 /* PetSkill.swift */; };
 		2C6329A21B8721E000BD0A5C /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6329A11B8721E000BD0A5C /* Score.swift */; };
 		2C7028E21B7AEFBF00824B1E /* myTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7028E11B7AEFBF00824B1E /* myTableView.swift */; };
 		2C79BE5D1B8F1C7600567424 /* UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79BE5C1B8F1C7600567424 /* UpdateData.swift */; };
@@ -481,6 +482,7 @@
 		2C5B4E841B92E9C100655C74 /* EYPopupViewMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYPopupViewMacro.h; sourceTree = "<group>"; };
 		2C5B4E851B92E9C100655C74 /* EYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYTextField.h; sourceTree = "<group>"; };
 		2C5B4E861B92E9C100655C74 /* EYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYTextField.m; sourceTree = "<group>"; };
+		2C5B4E8A1B92F40800655C74 /* PetSkill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetSkill.swift; sourceTree = "<group>"; };
 		2C6329A11B8721E000BD0A5C /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		2C7028E11B7AEFBF00824B1E /* myTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTableView.swift; sourceTree = "<group>"; };
 		2C79BE5C1B8F1C7600567424 /* UpdateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateData.swift; sourceTree = "<group>"; };
@@ -1445,6 +1447,7 @@
 				2C8AF0F81B78C57100C29939 /* Pet.swift */,
 				2C6329A11B8721E000BD0A5C /* Score.swift */,
 				2C8D0ECD1B92C32500435E1A /* LoginInfo.swift */,
+				2C5B4E8A1B92F40800655C74 /* PetSkill.swift */,
 			);
 			path = SqliteData;
 			sourceTree = "<group>";
@@ -1630,6 +1633,7 @@
 				2C02768D1B745E3500F3C76F /* UIImageView+WebCache.m in Sources */,
 				2C149F031B78BED9000B4FFF /* FBShimmeringLayer.m in Sources */,
 				2C898A5F1B918FF50059422D /* ReadInfo.swift in Sources */,
+				2C5B4E8B1B92F40800655C74 /* PetSkill.swift in Sources */,
 				2C149EDA1B78BED9000B4FFF /* BaseGradientView.m in Sources */,
 				2C6329A21B8721E000BD0A5C /* Score.swift in Sources */,
 				2C149F041B78BED9000B4FFF /* FBShimmeringView.m in Sources */,

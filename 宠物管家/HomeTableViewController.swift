@@ -11,14 +11,22 @@ import UIKit
 
 class HomeTableViewController: UITableViewController {
     var taglist :GBTagListView!
-    var taglistStr = [String]()
+
     @IBAction func updateBtn(sender: AnyObject) {
         self.toUpdateView()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        taglistStr = ["吃饭","睡觉","洗澡"]
+        let petskil = PetSkill()
+        if CoreFMDB.countTable("PetSkill") != 0{
+            let petsk = PetSkill.selectWhere(nil, groupBy: nil, orderBy: nil, limit: nil) as! [PetSkill]
+            for bb in petsk{
+                PetSkills.petskills.append(bb.petskill)
+            }
+        }
+        
+
         self.title = "主页"
         self.view.backgroundColor = UIColor(hex: "8CA2C2")
 
@@ -87,11 +95,16 @@ class HomeTableViewController: UITableViewController {
             cell.contentView.addSubview(lab)
             cell.contentView.addSubview(spiderChart(CGRectMake(50, 250, self.view.frame.width - 100, self.view.frame.width - 100)))
         case 1:
-            cell.contentView.addSubview(healthChart(CGRectMake(0, 0, self.view.frame.width, 400)))
+            
+            cell.addSubview(self.cellTitle("宠物健康度"))
+            cell.contentView.addSubview(healthChart(CGRectMake(0, 30, self.view.frame.width, 400)))
         case 2:
+            cell.addSubview(self.cellTitle("宠物清洁度"))
+            
             let w = self.view.frame.width - 150
-            cell.contentView.addSubview(cleanChart(CGRectMake(0, 0,self.view.frame.width ,400),w: w))
+            cell.contentView.addSubview(cleanChart(CGRectMake(0, 30,self.view.frame.width ,400),w: w))
         case 3:
+            cell.addSubview(self.cellTitle("宠物技能"))
             let button = UIButton(frame: CGRectMake(self.view.frame.width - 50, 10, 40, 30))
             button.addTarget(self, action: "pskillClick", forControlEvents: UIControlEvents.TouchUpInside)
             button.setTitle("添加", forState: UIControlState.Normal)
@@ -102,7 +115,7 @@ class HomeTableViewController: UITableViewController {
             cell.contentView.addSubview(button)
             taglist = GBTagListView(frame: CGRectMake(10,60,self.view.frame.width - 20 , 0))
             taglist.GBbackgroundColor = UIColor.clearColor()
-            taglist.setTagWithTagArray(taglistStr)
+            taglist.setTagWithTagArray(PetSkills.petskills)
             cell.contentView.addSubview(taglist)
             
         default:
@@ -113,14 +126,24 @@ class HomeTableViewController: UITableViewController {
         cell.backgroundColor = UIColor(hex: "8CA2C2")
         return cell
     }
-
+    func cellTitle(titleStr: String)->UILabel{
+        let lab = UILabel(frame: CGRectMake(0, 20, self.view.frame.width, 20))
+        lab.text = titleStr
+        lab.textColor = UIColor.whiteColor()
+        lab.textAlignment = NSTextAlignment.Center
+        return lab
+    }
     func pskillClick(){
         EYInputPopupView.popViewWithTitle("qwer", contentText: "ss", type: EYInputPopupView_Type_single_line_text, cancelBlock: { () -> Void in
             
             }, confirmBlock: { (view:UIView!, text:String!) -> Void in
                 print(text)
-                self.taglistStr.append(text)
-                self.taglist.setTagWithTagArray(self.taglistStr)
+                PetSkills.petskills.append(text)
+                self.taglist.setTagWithTagArray(PetSkills.petskills)
+                let petsk = PetSkill()
+                petsk.hostID = Int(CoreFMDB.countTable("PetSkill")) + 1
+                petsk.petskill = text
+                PetSkill.save(petsk)
             }) { () -> Void in
                 
         }
@@ -189,7 +212,7 @@ class HomeTableViewController: UITableViewController {
         lineChart.backgroundColor = UIColor.clearColor()
         uiview.addSubview(lineChart)
         
-        let label = UILabel(frame: CGRectMake(30, 350, self.view.frame.width - 60, 70))
+        let label = UILabel(frame: CGRectMake(30, 330, self.view.frame.width - 60, 70))
         label.text = UpdateData.description[1]
         label.textColor  = UIColor.whiteColor()
         label.lineBreakMode = NSLineBreakMode.ByWordWrapping//这两行实现label换行
