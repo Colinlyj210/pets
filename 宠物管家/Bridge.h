@@ -18,3 +18,5 @@
 #import "CoreFMDB.h"
 #import "BTSpiderPlotterView.h"
 #import "AJWValidator.h"
+#import "GBTagListView.h"
+#import "EYInputPopupView.h"

@@ -140,6 +140,10 @@
 		2C181A6A1B81BE1B0002F5F6 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 2C181A671B81BE1B0002F5F6 /* README.md */; };
 		2C181A6D1B81BE6A0002F5F6 /* updateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C181A6C1B81BE6A0002F5F6 /* updateTableViewCell.swift */; };
 		2C576FEF1B7B4C87000D105F /* UITextBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C576FEE1B7B4C87000D105F /* UITextBox.swift */; };
+		2C5B4E7D1B92E99E00655C74 /* GBTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E7C1B92E99E00655C74 /* GBTagListView.m */; };
+		2C5B4E871B92E9C100655C74 /* EYInputPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E811B92E9C100655C74 /* EYInputPopupView.m */; };
+		2C5B4E881B92E9C100655C74 /* EYPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E831B92E9C100655C74 /* EYPopupView.m */; };
+		2C5B4E891B92E9C100655C74 /* EYTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C5B4E861B92E9C100655C74 /* EYTextField.m */; };
 		2C6329A21B8721E000BD0A5C /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6329A11B8721E000BD0A5C /* Score.swift */; };
 		2C7028E21B7AEFBF00824B1E /* myTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7028E11B7AEFBF00824B1E /* myTableView.swift */; };
 		2C79BE5D1B8F1C7600567424 /* UpdateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79BE5C1B8F1C7600567424 /* UpdateData.swift */; };
@@ -468,6 +472,15 @@
 		2C181A671B81BE1B0002F5F6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		2C181A6C1B81BE6A0002F5F6 /* updateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updateTableViewCell.swift; sourceTree = "<group>"; };
 		2C576FEE1B7B4C87000D105F /* UITextBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextBox.swift; sourceTree = "<group>"; };
+		2C5B4E7B1B92E99E00655C74 /* GBTagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBTagListView.h; sourceTree = "<group>"; };
+		2C5B4E7C1B92E99E00655C74 /* GBTagListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBTagListView.m; sourceTree = "<group>"; };
+		2C5B4E801B92E9C100655C74 /* EYInputPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYInputPopupView.h; sourceTree = "<group>"; };
+		2C5B4E811B92E9C100655C74 /* EYInputPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYInputPopupView.m; sourceTree = "<group>"; };
+		2C5B4E821B92E9C100655C74 /* EYPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYPopupView.h; sourceTree = "<group>"; };
+		2C5B4E831B92E9C100655C74 /* EYPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYPopupView.m; sourceTree = "<group>"; };
+		2C5B4E841B92E9C100655C74 /* EYPopupViewMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYPopupViewMacro.h; sourceTree = "<group>"; };
+		2C5B4E851B92E9C100655C74 /* EYTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EYTextField.h; sourceTree = "<group>"; };
+		2C5B4E861B92E9C100655C74 /* EYTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EYTextField.m; sourceTree = "<group>"; };
 		2C6329A11B8721E000BD0A5C /* Score.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		2C7028E11B7AEFBF00824B1E /* myTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myTableView.swift; sourceTree = "<group>"; };
 		2C79BE5C1B8F1C7600567424 /* UpdateData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateData.swift; sourceTree = "<group>"; };
@@ -1273,6 +1286,8 @@
 		2C4499811B91C103003094B8 /* three */ = {
 			isa = PBXGroup;
 			children = (
+				2C5B4E7F1B92E9C100655C74 /* PopInputView */,
+				2C5B4E7A1B92E99E00655C74 /* GBTagListView */,
 				2C898A2B1B914F890059422D /* AJWValidator */,
 				2C83251C1B899F690094F081 /* BTSpiderPlotterView */,
 				2C181A631B81BE1B0002F5F6 /* RadioButton */,
@@ -1355,6 +1370,29 @@
 				2C576FEE1B7B4C87000D105F /* UITextBox.swift */,
 			);
 			path = UITextBox;
+			sourceTree = "<group>";
+		};
+		2C5B4E7A1B92E99E00655C74 /* GBTagListView */ = {
+			isa = PBXGroup;
+			children = (
+				2C5B4E7B1B92E99E00655C74 /* GBTagListView.h */,
+				2C5B4E7C1B92E99E00655C74 /* GBTagListView.m */,
+			);
+			path = GBTagListView;
+			sourceTree = "<group>";
+		};
+		2C5B4E7F1B92E9C100655C74 /* PopInputView */ = {
+			isa = PBXGroup;
+			children = (
+				2C5B4E801B92E9C100655C74 /* EYInputPopupView.h */,
+				2C5B4E811B92E9C100655C74 /* EYInputPopupView.m */,
+				2C5B4E821B92E9C100655C74 /* EYPopupView.h */,
+				2C5B4E831B92E9C100655C74 /* EYPopupView.m */,
+				2C5B4E841B92E9C100655C74 /* EYPopupViewMacro.h */,
+				2C5B4E851B92E9C100655C74 /* EYTextField.h */,
+				2C5B4E861B92E9C100655C74 /* EYTextField.m */,
+			);
+			path = PopInputView;
 			sourceTree = "<group>";
 		};
 		2C83251C1B899F690094F081 /* BTSpiderPlotterView */ = {
@@ -1614,6 +1652,7 @@
 				2C898A4F1B914F890059422D /* AJWValidatorRegularExpressionRule.m in Sources */,
 				2C0276801B745E3500F3C76F /* NSData+ImageContentType.m in Sources */,
 				2C149EED1B78BED9000B4FFF /* UIImage+Extend.m in Sources */,
+				2C5B4E891B92E9C100655C74 /* EYTextField.m in Sources */,
 				2C0568BC1B75ED3000B4974A /* SweetAlert.swift in Sources */,
 				2C149ECF1B78BED9000B4FFF /* BaseMoelConst.m in Sources */,
 				2C181A6D1B81BE6A0002F5F6 /* updateTableViewCell.swift in Sources */,
@@ -1622,9 +1661,11 @@
 				2C149ECD1B78BED9000B4FFF /* UINavigationController+Appearance.m in Sources */,
 				2C8D0ECE1B92C32500435E1A /* LoginInfo.swift in Sources */,
 				2C0275F91B744A2D00F3C76F /* MJRefreshGifFooter.m in Sources */,
+				2C5B4E871B92E9C100655C74 /* EYInputPopupView.m in Sources */,
 				2C149EEE1B78BED9000B4FFF /* UIImage+FixOrientation.m in Sources */,
 				2C149EEF1B78BED9000B4FFF /* UIImage+Water.m in Sources */,
 				2C149EF51B78BED9000B4FFF /* FMDatabase.m in Sources */,
+				2C5B4E7D1B92E99E00655C74 /* GBTagListView.m in Sources */,
 				2C0276071B744A5500F3C76F /* XHPathCover.m in Sources */,
 				2C149F011B78BED9000B4FFF /* CoreStatus.m in Sources */,
 				2C149EFC1B78BED9000B4FFF /* NSData+MimeType.m in Sources */,
@@ -1720,6 +1761,7 @@
 				2C0275F81B744A2D00F3C76F /* MJRefreshFooter.m in Sources */,
 				2C149ED41B78BED9000B4FFF /* NSObject+Delete.m in Sources */,
 				2C0276881B745E3500F3C76F /* UIButton+WebCache.m in Sources */,
+				2C5B4E881B92E9C100655C74 /* EYPopupView.m in Sources */,
 				2C0276081B744A5500F3C76F /* XHSoundManager.m in Sources */,
 				2C149F171B78C101000B4FFF /* UpdateTableViewController.swift in Sources */,
 			);

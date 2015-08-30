@@ -94,6 +94,7 @@ class HomeTableViewController: UITableViewController {
             s.frame = CGRectMake(50, 50, self.view.frame.width - 100, 250)
             s.backgroundColor = UIColor.clearColor()
             cell.contentView.addSubview(s)
+            
         default:
             let lab = UILabel(frame: CGRectMake(0, 0, 100, 30))
             lab.text = "\(indexPath.row)"
