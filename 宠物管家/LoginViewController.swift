@@ -78,17 +78,22 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
     //引导界面
     func guideView(){
         var pages = [EAIntroPage]()
-        pages.append(setPage("b1", title: "第一个页面"))
-        pages.append(setPage("b2", title: "第二个页面"))
-        pages.append(setPage("b3", title: "第三个页面"))
+        pages.append(setPage("b1", title: "First",titlePostionOffSet: 180,color: UIColor.whiteColor()))
+        pages.append(setPage("b2", title: "Second",titlePostionOffSet: -50,color: UIColor.redColor()))
+        pages.append(setPage("b3", title: "Third",titlePostionOffSet: 50,color: UIColor.blueColor()))
+        
+        
         let intro = EAIntroView(frame: self.view.frame, andPages: pages)
         intro.delegate = self
         intro.showInView(self.view) 
     }
-    func setPage(img: String,title: String)->EAIntroPage{
+    func setPage(img: String,title: String,titlePostionOffSet: CGFloat,color: UIColor)->EAIntroPage{
         let page = EAIntroPage()
         page.bgImage = UIImage(named: img)
         page.title = title
+        page.titleColor = color
+        page.titleFont = UIFont(name: "Zapfino", size: 48)
+        page.titlePositionY = self.view.frame.height/2 + titlePostionOffSet
         return page
     }
     //登陆见面用代码进行初始化
