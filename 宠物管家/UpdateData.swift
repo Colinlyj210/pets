@@ -27,6 +27,7 @@ class UpdateData {
         spiderAllScore[1] = querycleanData()//清洁度
         spiderAllScore[2] = 80//不饥饿
         spiderAllScore[3] = skillData()//技能
+        print(skillData())
         var sum = 0
         for var i = 0 ; i < 4; i++ {
             sum += spiderAllScore[i]
@@ -37,6 +38,7 @@ class UpdateData {
     //返回蜘蛛网图分数数组
     static func queryspiderData()->[Float]{
         var a = [Float]()
+        queryAllScoreData()
         for d in spiderAllScore{
             a.append(Float(d/20))
         }
@@ -68,40 +70,9 @@ class UpdateData {
     }
     //返回技能分数
     static func skillData()->Int{
-        return PetSkills.petskills.count > 5 ? 100:PetSkills.petskills.count/5 * 100
+        print("------\(PetSkills.petskills.count)")
+        return PetSkills.petskills.count > 5 ? 100:PetSkills.petskills.count * 20
     }
-
-//    static func hungerData(date :NSData)->Float{
-//        func timeDiffer(){
-//            let a = Int(date.timeIntervalSinceNow)
-//            let h = Int(a / 3600)
-//            let m = Int((a - h * 3600)/60)
-//            let s = Int(a - h * 3600 - m * 60)
-//            print("h:\(h)   m:\(m)   s:\(s)")
-//            if h > 0{
-//                print("主人,我好饿啊,已经超过\(h)小时没吃东西了,给我点吃的把")
-//                return
-//            }
-//            if m > 0{
-//                print("主人,我好饿啊,已经超过\(m)分钟没吃东西了,给我点吃的把")
-//                return
-//            }
-//            if s > 0{
-//                print("主人,我好饿啊,已经超过\(s)秒没吃东西了,给我点吃的把")
-//                return
-//            }
-//            
-//        }
-//    
-//    }
-    
-    
-    
-    
-    
-    
-    
-    
 }
 /**
 1、观察狗狗的精神状态和行走步态。

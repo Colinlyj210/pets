@@ -19,10 +19,10 @@ class HomeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if CoreFMDB.countTable("PetSkill") != 0{
-            self.selectaa()
             let petsk = PetSkill.selectWhere(nil, groupBy: nil, orderBy: nil, limit: nil) as! [PetSkill]
             for bb in petsk{
                 PetSkills.petskills.append(bb.petskill)
+                self.tableView.reloadData()
             }
         }
         self.title = "主页"
@@ -42,6 +42,7 @@ class HomeTableViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         self.tabBarController?.tabBar.hidden = false
+        
         self.tableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
@@ -205,6 +206,7 @@ class HomeTableViewController: UITableViewController {
     //构建蜘蛛网图
     func spiderChart(frame: CGRect)->UIView{
         let va = UpdateData.queryspiderData()
+
         let value = ["健康": "\(va[0])","清洁": "\(va[1])","不饥饿": "\(va[2])","技能": "\(va[3])","综合得分": "\(va[4])"]
         let spide = BTSpiderPlotterView(frame: frame, valueDictionary: value)
         spide.maxValue = 5
