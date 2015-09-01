@@ -18,24 +18,20 @@ class HomeTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let petskil = PetSkill()
         if CoreFMDB.countTable("PetSkill") != 0{
+            self.selectaa()
             let petsk = PetSkill.selectWhere(nil, groupBy: nil, orderBy: nil, limit: nil) as! [PetSkill]
             for bb in petsk{
                 PetSkills.petskills.append(bb.petskill)
             }
         }
-        
-
         self.title = "主页"
         self.view.backgroundColor = UIColor(hex: "8CA2C2")
-
         SweetAlert().showAlert("是否更新宠物信息?", subTitle: "你将跳转到下个界面进行输入信息!", style: AlertStyle.Warning, buttonTitle:"取消!", buttonColor:UIColor.colorFromRGB(0xD0D0D0) , otherButtonTitle:  "确定", otherButtonColor: UIColor.colorFromRGB(0xDD6B55)) { (isOtherButton) -> Void in
             if isOtherButton == false {
                 self.toUpdateView()
             }
         }
-
         self.tableView.tableFooterView = UIView()
     }
 
@@ -95,25 +91,27 @@ class HomeTableViewController: UITableViewController {
             cell.contentView.addSubview(lab)
             cell.contentView.addSubview(spiderChart(CGRectMake(50, 250, self.view.frame.width - 100, self.view.frame.width - 100)))
         case 1:
-            
             cell.addSubview(self.cellTitle("宠物健康度"))
             cell.contentView.addSubview(healthChart(CGRectMake(0, 30, self.view.frame.width, 400)))
         case 2:
             cell.addSubview(self.cellTitle("宠物清洁度"))
-            
             let w = self.view.frame.width - 150
             cell.contentView.addSubview(cleanChart(CGRectMake(0, 30,self.view.frame.width ,400),w: w))
         case 3:
             cell.addSubview(self.cellTitle("宠物技能"))
-            let button = UIButton(frame: CGRectMake(self.view.frame.width - 50, 10, 40, 30))
-            button.addTarget(self, action: "pskillClick", forControlEvents: UIControlEvents.TouchUpInside)
-            button.setTitle("添加", forState: UIControlState.Normal)
-            cell.contentView.addSubview(button)
-            taglist = GBTagListView(frame: CGRectMake(10,60,self.view.frame.width - 20 , 0))
+            let delbutton = UIButton(frame: CGRectMake(self.view.frame.width - 50, 30, 40, 20))
+            delbutton.addTarget(self, action: "pskillClickdel", forControlEvents: UIControlEvents.TouchUpInside)
+            delbutton.setTitle("删除", forState: UIControlState.Normal)
+            cell.contentView.addSubview(delbutton)
+            
+            let addbutton = UIButton(frame: CGRectMake(10, 30, 40, 20))
+            addbutton.addTarget(self, action: "pskillClickadd", forControlEvents: UIControlEvents.TouchUpInside)
+            addbutton.setTitle("添加", forState: UIControlState.Normal)
+            cell.contentView.addSubview(addbutton)
+            taglist = GBTagListView(frame: CGRectMake(10,70,self.view.frame.width - 20 , 0))
             taglist.GBbackgroundColor = UIColor.clearColor()
             taglist.setTagWithTagArray(PetSkills.petskills)
             cell.contentView.addSubview(taglist)
-            
         default:
             let lab = UILabel(frame: CGRectMake(0, 0, 100, 30))
             lab.text = "\(indexPath.row)"
@@ -130,9 +128,49 @@ class HomeTableViewController: UITableViewController {
         lab.textAlignment = NSTextAlignment.Center
         return lab
     }
+    //删除宠物技能
+    func pskillClickdel(){
+        EYInputPopupView.popViewWithTitle("删除宠物技能", contentText: "", type: EYInputPopupView_Type_single_line_text, cancelBlock: { () -> Void in
+            }, confirmBlock: { (view:UIView!, text:String!) -> Void in
+                print(text)
+                if text == nil || text == ""{
+                    return
+                }
+                if !PetSkills.petskills.contains(text) {
+                    ProgressHUD.showError("该技能不存在")
+                    return
+                }
+                for i in 0..<PetSkills.petskills.count{
+                    if PetSkills.petskills[i] == text {
+                        print("找到了")
+                        self.selectaa()
+                        let pskl = PetSkill.selectWhere("petskill = '\(text)'", groupBy: nil, orderBy: nil, limit: nil) as! [PetSkill]
+                        print(pskl[0].hostID)
+                        
+                        PetSkills.petskills.removeAtIndex(i)
+                        if PetSkill.delete(UInt(pskl[0].hostID)){
+                            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.tableView.reloadData()
+                            })
+                        }
+                        return
+                    }
+                }
+            }) { () -> Void in
+        }
+    }
     
+    func selectaa(){
+        let p = PetSkill.selectWhere(nil, groupBy: nil, orderBy: nil, limit: nil) as! [PetSkill]
+        for i in 0..<p.count{
+            print(p[i].hostID)
+            print(p[i].petskill)
+        }
+        
+    }
     //添加宠物技能
-    func pskillClick(){
+    var existnum = 1
+    func pskillClickadd(){
         EYInputPopupView.popViewWithTitle("添加宠物技能", contentText: "", type: EYInputPopupView_Type_single_line_text, cancelBlock: { () -> Void in
             }, confirmBlock: { (view:UIView!, text:String!) -> Void in
                 print(text)
@@ -140,21 +178,30 @@ class HomeTableViewController: UITableViewController {
                     return
                 }
                 if PetSkills.petskills.contains(text) {
-                    ProgressHUD.showError("改技能已存在")
+                    ProgressHUD.showError("该技能已存在")
                     return
                 }
                 //将宠物技能添加到数组中并写入数据库
                 PetSkills.petskills.append(text)
-                self.taglist.setTagWithTagArray(PetSkills.petskills)
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                //self.taglist.setTagWithTagArray(PetSkills.petskills)
+                    self.tableView.reloadData()
+                })
                 let petsk = PetSkill()
-                petsk.hostID = Int(CoreFMDB.countTable("PetSkill")) + 1
+                let pskl = PetSkill.selectWhere(nil, groupBy: nil, orderBy: nil, limit: nil) as! [PetSkill]
+                if pskl.count != 0{
+                    petsk.hostID = pskl[pskl.count - 1].hostID + 1
+                }else{
+                    petsk.hostID = 1
+                }
+    
                 petsk.petskill = text
                 PetSkill.save(petsk)
+
             }) { () -> Void in
         }
     }
-    
-    
+
     //构建蜘蛛网图
     func spiderChart(frame: CGRect)->UIView{
         let va = UpdateData.queryspiderData()

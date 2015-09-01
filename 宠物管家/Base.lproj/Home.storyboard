@@ -156,7 +156,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="home" width="16" height="15"/>
+        <image name="home" width="19" height="18"/>
         <image name="radio_unchecked" width="15" height="15"/>
     </resources>
 </document>

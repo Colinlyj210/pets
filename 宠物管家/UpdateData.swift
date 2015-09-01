@@ -18,9 +18,6 @@ class UpdateData {
     //用户选择后的分数
 
 
-    static var skill = [0,0,0,0,0]
-
-    
     static var spiderAllScore = [1,1,1,1,1]
     
     
@@ -29,7 +26,7 @@ class UpdateData {
         spiderAllScore[0] = queryhealthData().first!//健康度
         spiderAllScore[1] = querycleanData()//清洁度
         spiderAllScore[2] = 80//不饥饿
-        spiderAllScore[3] = 60//技能
+        spiderAllScore[3] = skillData()//技能
         var sum = 0
         for var i = 0 ; i < 4; i++ {
             sum += spiderAllScore[i]
@@ -71,11 +68,7 @@ class UpdateData {
     }
     //返回技能分数
     static func skillData()->Int{
-        var s = 0
-        for a in skill{
-            s += a
-        }
-        return s
+        return PetSkills.petskills.count > 5 ? 100:PetSkills.petskills.count/5 * 100
     }
 
 //    static func hungerData(date :NSData)->Float{
