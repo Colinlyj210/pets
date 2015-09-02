@@ -173,6 +173,7 @@
 		2C8AF0F91B78C57100C29939 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8AF0F81B78C57100C29939 /* Pet.swift */; };
 		2C8D0ECE1B92C32500435E1A /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D0ECD1B92C32500435E1A /* LoginInfo.swift */; };
 		2C8D0ED11B92C66200435E1A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8D0ED01B92C66200435E1A /* UserInfo.swift */; };
+		2C93F9BC1B96D8D40037674F /* ISGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C93F9BB1B96D8D40037674F /* ISGuide.swift */; };
 		2CA423F91B8ABC0D00105A85 /* SendMsgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */; };
 		2CA6939C1B75E72A00C1F598 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939A1B75E72A00C1F598 /* Home.storyboard */; };
 		2CA6939F1B75E75100C1F598 /* Pets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA6939D1B75E75100C1F598 /* Pets.storyboard */; };
@@ -533,6 +534,7 @@
 		2C8AF0F81B78C57100C29939 /* Pet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		2C8D0ECD1B92C32500435E1A /* LoginInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
 		2C8D0ED01B92C66200435E1A /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		2C93F9BB1B96D8D40037674F /* ISGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISGuide.swift; sourceTree = "<group>"; };
 		2CA423F81B8ABC0D00105A85 /* SendMsgViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMsgViewController.swift; sourceTree = "<group>"; };
 		2CA6939B1B75E72A00C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		2CA6939E1B75E75100C1F598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Pets.storyboard; sourceTree = "<group>"; };
@@ -1481,6 +1483,7 @@
 				2C6329A11B8721E000BD0A5C /* Score.swift */,
 				2C8D0ECD1B92C32500435E1A /* LoginInfo.swift */,
 				2C5B4E8A1B92F40800655C74 /* PetSkill.swift */,
+				2C93F9BB1B96D8D40037674F /* ISGuide.swift */,
 			);
 			path = SqliteData;
 			sourceTree = "<group>";
@@ -1784,6 +1787,7 @@
 				2C898A491B914F890059422D /* AJWValidator.m in Sources */,
 				2C149ED01B78BED9000B4FFF /* NSDictionary+Sqlite.m in Sources */,
 				2C898A531B914F890059422D /* UIView+AJWValidator.m in Sources */,
+				2C93F9BC1B96D8D40037674F /* ISGuide.swift in Sources */,
 				2C898A4A1B914F890059422D /* AJWValidatorCustomRule.m in Sources */,
 				2C149EE61B78BED9000B4FFF /* NSString+Extend.m in Sources */,
 				2C149F191B78C13F000B4FFF /* SetTableViewController.swift in Sources */,

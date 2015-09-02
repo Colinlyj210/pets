@@ -77,7 +77,16 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
         viewLoginInit()//初始化登陆界面
         
         showType = LoginShowType.NONE
-        guideView()//初始化引导界面
+        
+        let gg = ISGuide.selectWhere(nil, groupBy: nil, orderBy: nil, limit: nil) as! [ISGuide]
+        if gg.count == 0{
+            let gu = ISGuide()
+            gu.hostID = 1
+            gu.isguide = true
+            ISGuide.save(gu)
+            guideView()
+        }
+        //初始化引导界面
         
         
     }
