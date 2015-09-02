@@ -60,9 +60,9 @@ class HomeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.row{
         case 0:
-            return self.view.frame.width + 200
+            return self.view.frame.width + 230
         case 1:
-            return 430
+            return 400
         case 2:
             return 400
         case 3:
@@ -80,17 +80,32 @@ class HomeTableViewController: UITableViewController {
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         switch indexPath.row{
         case 0:
+            let allScore = UpdateData.queryAllScoreData()
             let tlab = UILabel(frame: CGRectMake(50, 40, 200, 30))
             tlab.text = "宠物综合得分"
             tlab.textColor = UIColor.whiteColor()
             cell.contentView.addSubview(tlab)
             let lab = UILabel(frame: CGRectMake(self.view.frame.width/2 - 100, 50, 200, 200))
-            lab.text = "\(UpdateData.queryAllScoreData())"
+            lab.text = "\(allScore)"
             lab.textColor = UIColor.whiteColor()
             lab.textAlignment = NSTextAlignment.Center
             lab.font = UIFont(name: "Arial", size: 100)
             cell.contentView.addSubview(lab)
-            cell.contentView.addSubview(spiderChart(CGRectMake(50, 250, self.view.frame.width - 100, self.view.frame.width - 100)))
+            cell.contentView.addSubview(spiderChart(CGRectMake(50, 230, self.view.frame.width - 100, self.view.frame.width - 100)))
+            let label = UILabel(frame: CGRectMake(30, 530, self.view.frame.width - 60, 70))
+            if allScore >= 85{
+                label.text = UpdateData.description[0]
+            }else if allScore >= 60 && allScore < 85{
+                label.text = UpdateData.description[1]
+            }else if allScore < 60{
+                label.text = UpdateData.description[2]
+            }
+            
+            label.textColor  = UIColor.whiteColor()
+            label.lineBreakMode = NSLineBreakMode.ByWordWrapping//这两行实现label换行
+            label.numberOfLines = 0
+            label.sizeToFit()
+            cell.contentView.addSubview(label)
         case 1:
             cell.addSubview(self.cellTitle("宠物健康度"))
             cell.contentView.addSubview(healthChart(CGRectMake(0, 30, self.view.frame.width, 400)))
@@ -265,13 +280,14 @@ class HomeTableViewController: UITableViewController {
         lineChart.backgroundColor = UIColor.clearColor()
         uiview.addSubview(lineChart)
         
-        let label = UILabel(frame: CGRectMake(30, 330, self.view.frame.width - 60, 70))
-        label.text = UpdateData.description[1]
-        label.textColor  = UIColor.whiteColor()
-        label.lineBreakMode = NSLineBreakMode.ByWordWrapping//这两行实现label换行
-        label.numberOfLines = 0
-        label.sizeToFit()
-        uiview.addSubview(label)
+//        let label = UILabel(frame: CGRectMake(30, 330, self.view.frame.width - 60, 70))
+//        
+//        label.text = UpdateData.description[1]
+//        label.textColor  = UIColor.whiteColor()
+//        label.lineBreakMode = NSLineBreakMode.ByWordWrapping//这两行实现label换行
+//        label.numberOfLines = 0
+//        label.sizeToFit()
+//        uiview.addSubview(label)
         return uiview
     }
     

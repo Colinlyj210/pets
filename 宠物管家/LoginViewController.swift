@@ -29,8 +29,14 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
         let Pwd = txtPwd.text!
         //异步请求数据
         Pitaya.request(.POST, url: "http://www.lyj210.cn/cwgj/index.php/Home/Index/selectUser", params: ["uemail":Id, "upwd":Pwd], errorCallback: { (error) -> Void in
-            print("出错了")
+            print("请检查网络是否已连接")
             }) { (data, response, error) -> Void in
+                if data == nil{
+                    print("网络是否已连接")
+                    ProgressHUD.showError("请检查网络是否已连接")
+                    self.view.endEditing(true)
+                    return
+                }
                 let json = JSON(data: data!)
                 if json["state"] == 1{
                     ProgressHUD.showSuccess("登陆成功")
@@ -78,9 +84,9 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
     //引导界面
     func guideView(){
         var pages = [EAIntroPage]()
-        pages.append(setPage("b1", title: "First",titlePostionOffSet: 180,color: UIColor.whiteColor()))
-        pages.append(setPage("b2", title: "Second",titlePostionOffSet: -50,color: UIColor.redColor()))
-        pages.append(setPage("b3", title: "Third",titlePostionOffSet: 50,color: UIColor.blueColor()))
+        pages.append(setPage("b1", title: "Pets are human's best friends",titlePostionOffSet: self.view.frame.height/2 - 80,color: UIColor(hex: "E45825")!))
+        pages.append(setPage("b2", title: "Please give your pet a good master",titlePostionOffSet: -50,color: UIColor.redColor()))
+        pages.append(setPage("b3", title: "PetHk to help you\nLet's Go",titlePostionOffSet: 100,color: UIColor(hex: "A3D714")!))
         
         
         let intro = EAIntroView(frame: self.view.frame, andPages: pages)
@@ -92,7 +98,7 @@ class LoginViewController: UIViewController,EAIntroDelegate ,UITextFieldDelegate
         page.bgImage = UIImage(named: img)
         page.title = title
         page.titleColor = color
-        page.titleFont = UIFont(name: "Zapfino", size: 48)
+        page.titleFont = UIFont(name: "Zapfino", size: 28)
         page.titlePositionY = self.view.frame.height/2 + titlePostionOffSet
         return page
     }
