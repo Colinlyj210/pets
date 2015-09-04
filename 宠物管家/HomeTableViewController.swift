@@ -60,7 +60,7 @@ class HomeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         switch indexPath.row{
         case 0:
-            return self.view.frame.width + 230
+            return self.view.frame.width + 220
         case 1:
             return 400
         case 2:

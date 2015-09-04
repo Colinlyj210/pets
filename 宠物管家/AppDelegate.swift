@@ -20,14 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for i in 1..<6{
             let score = Score()
             score.hostID = i
-            score.feshu = "27"
-            score.num1 = "5"
-            score.num2 = "3"
-            score.num3 = "3"
-            score.num4 = "5"
-            score.num5 = "3"
-            score.num6 = "5"
-            score.num7 = "3"
+            score.feshu = "0"
+            score.num1 = "0"
+            score.num2 = "0"
+            score.num3 = "0"
+            score.num4 = "0"
+            score.num5 = "0"
+            score.num6 = "0"
+            score.num7 = "0"
             Score.save(score)
         }
         
