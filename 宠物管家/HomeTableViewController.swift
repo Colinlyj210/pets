@@ -107,14 +107,14 @@ class HomeTableViewController: UITableViewController {
             label.sizeToFit()
             cell.contentView.addSubview(label)
         case 1:
-            cell.addSubview(self.cellTitle("宠物健康度"))
+            cell.contentView.addSubview(self.cellTitle("宠物健康度"))
             cell.contentView.addSubview(healthChart(CGRectMake(0, 30, self.view.frame.width, 400)))
         case 2:
-            cell.addSubview(self.cellTitle("宠物清洁度"))
+            cell.contentView.addSubview(self.cellTitle("宠物清洁度"))
             let w = self.view.frame.width - 150
             cell.contentView.addSubview(cleanChart(CGRectMake(0, 30,self.view.frame.width ,400),w: w))
         case 3:
-            cell.addSubview(self.cellTitle("宠物技能"))
+            cell.contentView.addSubview(self.cellTitle("宠物技能"))
             let delbutton = UIButton(frame: CGRectMake(self.view.frame.width - 50, 30, 40, 20))
             delbutton.addTarget(self, action: "pskillClickdel", forControlEvents: UIControlEvents.TouchUpInside)
             delbutton.setTitle("删除", forState: UIControlState.Normal)
@@ -129,9 +129,7 @@ class HomeTableViewController: UITableViewController {
             taglist.setTagWithTagArray(PetSkills.petskills)
             cell.contentView.addSubview(taglist)
         default:
-            let lab = UILabel(frame: CGRectMake(0, 0, 100, 30))
-            lab.text = "\(indexPath.row)"
-            cell.contentView.addSubview(lab)
+            break
         }
         cell.backgroundColor = UIColor(hex: "8CA2C2")
         return cell

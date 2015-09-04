@@ -98,7 +98,7 @@ class MsgTableViewController: UITableViewController {
         //下拉刷新
         head = XHPathCover(frame: CGRectMake(0, 0, self.view.frame.width , 220))
         head.setBackgroundImage(UIImage(named: "BG"))//背景
-        head.setAvatarImage(UIImage(named: "IMG_0755"))//头像
+        head.setAvatarImage(UIImage(named: "touxiang"))//头像
         head.isZoomingEffect = true//下拉模糊设置
         //简要信息,将用户的昵称和个性签名显示在该界面
         head.setInfo(NSDictionary(objects: [UserInfo.uname,UserInfo.usign], forKeys: [XHUserNameKey,XHBirthdayKey]) as [NSObject : AnyObject])
@@ -172,7 +172,7 @@ class MsgTableViewController: UITableViewController {
                     let username = json[i]["username"]
                     let time = json[i]["time"]
                     let msg = json[i]["msg"]
-                    self.msgData.append(MsgInfo(userImg: "IMG_0755", userName: "\(username)", time: "\(time)", contentText: "\(msg)"))
+                    self.msgData.append(MsgInfo(userImg: "touxiang", userName: "\(username)", time: "\(time)", contentText: "\(msg)"))
                     //获取到数据 主线程更新UI
                     dispatch_async(dispatch_get_main_queue()){
                         self.tableView.reloadData()
