@@ -46,7 +46,7 @@ extension String {
         return nsSt.stringByAppendingPathExtension(ext)
     }
 }
-class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XActionSheetDelegate{
+class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XActionSheetDelegate,DoImagePickerControllerDelegate{
 
     var menu :PopMenu!
     var head : XHPathCover!
@@ -149,12 +149,7 @@ class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XA
     }
 
     func PhotoBrowse(){
-//        let photobrowsevc = HZPhotoBrowser()
-//        photobrowsevc.sourceImagesContainerView = head.avatarButton
-//        photobrowsevc.imageCount = 1
-//        photobrowsevc.currentImageIndex = 0
-//        photobrowsevc.delegate = self
-//        photobrowsevc.show()
+
         let action = XActionSheet()
         action.delegate = self
         action.addCancelButton("取消")
@@ -170,12 +165,31 @@ class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XA
         case 0:
             print("paizhao")
         case 1:
-            print("xiangce")
+            let picker = DoImagePickerController(nibName: "DoImagePickerController", bundle: nil)
+            picker.delegate = self
+            picker.nMaxCount = 1
+            picker.nColumnCount = 4
+            self.presentViewController(picker, animated: true, completion: nil)
             
         case 2:
-            print("chakna")
+            let photobrowsevc = HZPhotoBrowser()
+            photobrowsevc.sourceImagesContainerView = head.avatarButton
+            photobrowsevc.imageCount = 1
+            photobrowsevc.currentImageIndex = 0
+            photobrowsevc.delegate = self
+            photobrowsevc.show()
         default:
             break
+        }
+    }
+    func didCancelDoImagePickerController() {
+        self.dismissViewControllerAnimated(true) { () -> Void in
+        }
+    }
+    func didSelectPhotosFromDoImagePickerController(picker: DoImagePickerController!, result aSelected: [AnyObject]!) {
+        let image = aSelected.first as! UIImage
+        head.avatarButton.setImage(image, forState: UIControlState.Normal)
+        self.dismissViewControllerAnimated(true) { () -> Void in
         }
     }
     func photoBrowser(browser: HZPhotoBrowser!, placeholderImageForIndex index: Int) -> UIImage! {

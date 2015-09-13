@@ -22,3 +22,4 @@
 #import "EYPopupViewHeader.h"
 #import "XActionSheet.h"
 #import "HZPhotoBrowser.h"
+#import "DoImagePickerController.h"
