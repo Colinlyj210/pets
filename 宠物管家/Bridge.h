@@ -20,3 +20,5 @@
 #import "AJWValidator.h"
 #import "GBTagListView.h"
 #import "EYPopupViewHeader.h"
+#import "XActionSheet.h"
+#import "HZPhotoBrowser.h"

@@ -46,7 +46,7 @@ extension String {
         return nsSt.stringByAppendingPathExtension(ext)
     }
 }
-class MsgTableViewController: UITableViewController {
+class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XActionSheetDelegate{
 
     var menu :PopMenu!
     var head : XHPathCover!
@@ -104,6 +104,8 @@ class MsgTableViewController: UITableViewController {
         head.setInfo(NSDictionary(objects: [UserInfo.uname,UserInfo.usign], forKeys: [XHUserNameKey,XHBirthdayKey]) as [NSObject : AnyObject])
         head.avatarButton.layer.cornerRadius = 33;
         head.avatarButton.layer.masksToBounds = true
+        head.avatarButton.addTarget(self, action: "PhotoBrowse", forControlEvents: UIControlEvents.TouchUpInside)
+
         //设置下拉事件
         head.handleRefreshEvent = {
             self.headRefresh()
@@ -146,6 +148,44 @@ class MsgTableViewController: UITableViewController {
         
     }
 
+    func PhotoBrowse(){
+//        let photobrowsevc = HZPhotoBrowser()
+//        photobrowsevc.sourceImagesContainerView = head.avatarButton
+//        photobrowsevc.imageCount = 1
+//        photobrowsevc.currentImageIndex = 0
+//        photobrowsevc.delegate = self
+//        photobrowsevc.show()
+        let action = XActionSheet()
+        action.delegate = self
+        action.addCancelButton("取消")
+        action.addButtonwithTitle("拍照")
+        action.addButtonwithTitle("相册")
+        action.addButtonwithTitle("查看高清大图")
+        
+        self.presentViewController(action, animated: true) { () -> Void in
+        }
+    }
+    func buttonClick(index: Int) {
+        switch index{
+        case 0:
+            print("paizhao")
+        case 1:
+            print("xiangce")
+            
+        case 2:
+            print("chakna")
+        default:
+            break
+        }
+    }
+    func photoBrowser(browser: HZPhotoBrowser!, placeholderImageForIndex index: Int) -> UIImage! {
+        return head.avatarButton.currentImage
+    }
+    func photoBrowser(browser: HZPhotoBrowser!, highQualityImageURLForIndex index: Int) -> NSURL! {
+        
+        return NSURL(string: "http://www.lyj210.cn/pic.JPG")
+    }
+    
     //界面出现之后开始获取数据
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
