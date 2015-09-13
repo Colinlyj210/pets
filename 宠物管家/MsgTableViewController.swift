@@ -46,7 +46,7 @@ extension String {
         return nsSt.stringByAppendingPathExtension(ext)
     }
 }
-class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XActionSheetDelegate,DoImagePickerControllerDelegate{
+class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
 
     var menu :PopMenu!
     var head : XHPathCover!
@@ -104,6 +104,7 @@ class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XA
         head.setInfo(NSDictionary(objects: [UserInfo.uname,UserInfo.usign], forKeys: [XHUserNameKey,XHBirthdayKey]) as [NSObject : AnyObject])
         head.avatarButton.layer.cornerRadius = 33;
         head.avatarButton.layer.masksToBounds = true
+        //点击头像弹出下拉菜单
         head.avatarButton.addTarget(self, action: "PhotoBrowse", forControlEvents: UIControlEvents.TouchUpInside)
 
         //设置下拉事件
@@ -147,7 +148,7 @@ class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XA
         }
         
     }
-
+    //下拉菜单选项
     func PhotoBrowse(){
 
         let action = XActionSheet()
@@ -162,16 +163,17 @@ class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XA
     }
     func buttonClick(index: Int) {
         switch index{
-        case 0:
+        case 0://拍照
             print("paizhao")
-        case 1:
-            let picker = DoImagePickerController(nibName: "DoImagePickerController", bundle: nil)
+        case 1://相册
+            let picker = UIImagePickerController()
             picker.delegate = self
-            picker.nMaxCount = 1
-            picker.nColumnCount = 4
-            self.presentViewController(picker, animated: true, completion: nil)
-            
-        case 2:
+            picker.view.frame = self.view.frame
+            picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.presentViewController(picker, animated: true, completion: { () -> Void in
+                
+            })
+        case 2://查看高清大图
             let photobrowsevc = HZPhotoBrowser()
             photobrowsevc.sourceImagesContainerView = head.avatarButton
             photobrowsevc.imageCount = 1
@@ -182,22 +184,23 @@ class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XA
             break
         }
     }
-    func didCancelDoImagePickerController() {
-        self.dismissViewControllerAnimated(true) { () -> Void in
-        }
+    //取消相册选择
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
-    func didSelectPhotosFromDoImagePickerController(picker: DoImagePickerController!, result aSelected: [AnyObject]!) {
-        let image = aSelected.first as! UIImage
-        head.avatarButton.setImage(image, forState: UIControlState.Normal)
-        self.dismissViewControllerAnimated(true) { () -> Void in
-        }
+    //选择照片更改头像
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        self.head.avatarButton.setImage(image, forState: UIControlState.Normal)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
+    //如果没有大图返回默认图像
     func photoBrowser(browser: HZPhotoBrowser!, placeholderImageForIndex index: Int) -> UIImage! {
         return head.avatarButton.currentImage
     }
+    //返回高清大图连接地址
     func photoBrowser(browser: HZPhotoBrowser!, highQualityImageURLForIndex index: Int) -> NSURL! {
         
-        return NSURL(string: "http://www.lyj210.cn/pic.JPG")
+        return NSURL(string: "http://www.lyj210.cn/touxiang.jpg")
     }
     
     //界面出现之后开始获取数据
