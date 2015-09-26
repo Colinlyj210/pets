@@ -190,6 +190,7 @@ class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XA
     }
     //选择照片更改头像
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        MsgTableViewCell.img = image
         self.head.avatarButton.setImage(image, forState: UIControlState.Normal)
         self.dismissViewControllerAnimated(true, completion: nil)
     }

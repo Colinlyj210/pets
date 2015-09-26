@@ -19,13 +19,22 @@ class MsgTableViewCell: UITableViewCell {
             configCell()
         }
     }
+    static var img: UIImage!
     private func configCell(){
         contentText.text = msgInfo?.contentText
         contentText.lineBreakMode = NSLineBreakMode.ByWordWrapping
         contentText.numberOfLines = 0
         time.text = msgInfo?.time
         userName.text = msgInfo?.userName
-        userImg.image = UIImage(named: (msgInfo?.userImg)!)
-        
+        if UserInfo.uname == userName.text{
+            if MsgTableViewCell.img != nil{
+                userImg.image = MsgTableViewCell.img
+            }else{
+                userImg.image = UIImage(named: (msgInfo?.userImg)!)
+            }
+        }else{
+            userImg.image = UIImage(named: (msgInfo?.userImg)!)
+        }
+
     }
 }
