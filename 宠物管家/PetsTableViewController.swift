@@ -87,6 +87,7 @@ class PetsTableViewController: UITableViewController,SDCycleScrollViewDelegate {
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "na2"), forBarMetrics: UIBarMetrics.Default)
         self.tabBarController?.tabBar.hidden = false
     }
     override func viewDidAppear(animated: Bool) {

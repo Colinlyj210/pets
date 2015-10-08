@@ -204,6 +204,7 @@ class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XA
         return NSURL(string: "http://www.lyj210.cn/touxiang.jpg")
     }
     
+    
     //界面出现之后开始获取数据
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
@@ -240,6 +241,7 @@ class MsgTableViewController: UITableViewController ,HZPhotoBrowserDelegate , XA
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "na3"), forBarMetrics: UIBarMetrics.Default)
         self.tabBarController?.tabBar.hidden = false
     }
     override func viewDidDisappear(animated: Bool) {

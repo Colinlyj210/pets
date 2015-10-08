@@ -13,6 +13,7 @@ class UpdateTableViewController: UITableViewController {
     var fenshu = [1,1,1,1,1,1,1]
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //定义每个cell并放到cells数组中,因为重用会发生不可知的错误,所以只能先定义好
         for _ in 0..<UpdateData.titiles.count{
             let cell = tableView.dequeueReusableCellWithIdentifier("updatecell") as! updateTableViewCell
